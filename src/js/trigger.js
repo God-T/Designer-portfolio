@@ -23,11 +23,11 @@ function addObserver(el, options) {
             if (entry.isIntersecting) {
                 /* Excute callback */
                 if (options.cb) options.cb(el);
-                /* Unsubscribe */
+                /* Unsubscribe observer*/
                 observer.unobserve(entry.target);
             }
         });
     }, options);
-    /* Subscribe */
+    /* Start observing */
     observer.observe(el);
 }

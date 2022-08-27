@@ -22,17 +22,16 @@ export const bindAnimations = () => {
         },
     });
 
-    scrollTrigger('.slideIn--bottom2up', {
-        rootMargin: '-50px',
+    scrollTrigger('.slideIn--bottom-up', {
         cb: function (el) {
-            el.classList.add('slideIn--bottom2up--active');
+            el.classList.add('slideIn--bottom-up--active');
         },
     });
 
-    scrollTrigger('.slideIn--bottom2up__large-box', {
+    scrollTrigger('.slideIn--bottom-up__large-box', {
         rootMargin: '-200px',
         cb: function (el) {
-            el.classList.add('slideIn--bottom2up__large-box--active');
+            el.classList.add('slideIn--bottom-up__large-box--active');
         },
     });
 
@@ -40,6 +39,13 @@ export const bindAnimations = () => {
         rootMargin: '-200px',
         cb: function (el) {
             el.classList.add('slideIn--left2right__far--active');
+        },
+    });
+
+    scrollTrigger('.slideIn--left2right__close', {
+        rootMargin: '-200px',
+        cb: function (el) {
+            el.classList.add('slideIn--left2right__close--active');
         },
     });
 };

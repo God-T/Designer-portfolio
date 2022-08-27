@@ -77,7 +77,7 @@
     color: #656565;
 }
 
-.animate-color {
+.fill-color-bottom2top {
     background: linear-gradient(to bottom, black, black 50%, #ff9110 50%);
     background-clip: text;
     -webkit-background-clip: text;
@@ -87,7 +87,7 @@
     transition: background-position 0.6s ease;
 }
 
-.message-hyperlink:hover + h1 .animate-color {
+.message-hyperlink:hover + h1 .fill-color-bottom2top {
     background-position: 0 100%;
 }
 
