@@ -1,0 +1,96 @@
+@import './animation.css';
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    display: flex;
+    margin: 5vw 10vw 4vw 2.8vw;
+}
+
+.about-content-wrapper {
+    flex: 1 1 70%;
+}
+
+.contact-info {
+    border-top: 4px solid #959595;
+    padding: 2.5vw 5vw 2vw 2.7vw;
+    position: relative;
+}
+
+.contact-info h1,
+.about-content-wrapper h1 {
+    margin: 0;
+    font-size: 3.2vw;
+    line-height: 0.8;
+}
+
+.about-content-wrapper h5 {
+    font-size: 2vw;
+    color: #a0a09f;
+    margin-top: 4.5vw;
+    margin-right: 8.5vw;
+    font-weight: 500;
+}
+
+.about-photo-wrapper {
+    flex: 1 1 30%;
+}
+
+.about-photo-wrapper img {
+    height: 26vw;
+    width: 100%;
+    object-fit: contain;
+    margin-left: 1vw;
+}
+
+.message-hyperlink {
+    top: 2.7vw;
+    left: 18.2vw;
+    position: absolute;
+    width: 13vw;
+    height: 3vw;
+    border-bottom: 8px solid #ff9110;
+}
+
+.message-hyperlink:hover {
+    cursor: pointer;
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vw;
+}
+
+.navigation-bar a {
+    color: #a0a09f;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.navigation-bar a:hover {
+    color: #656565;
+}
+
+.animate-color {
+    background: linear-gradient(to bottom, black, black 50%, #ff9110 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 100% 200%;
+    background-position: 0% 0%;
+    transition: background-position 0.6s ease;
+}
+
+.message-hyperlink:hover + h1 .animate-color {
+    background-position: 0 100%;
+}
+
+#back2top-Btn {
+    cursor: pointer;
+}
