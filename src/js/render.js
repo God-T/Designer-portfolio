@@ -21,12 +21,18 @@ export const renderProjects = async () => {
         );
         /* Render projects */
         projectListElement.appendChild(
-            newHTMLElement('div', 'project-top-divider')
+            newHTMLElement('div', [
+                'project-top-divider',
+                'slideIn--left2right__far',
+            ])
         );
         /* Render projects */
         const list = projectData.projectList;
         for (let i = 0; i < list.length; i++) {
-            const project = newHTMLElement('div', 'project');
+            const project = newHTMLElement('div', [
+                'project',
+                'slideIn--left2right__far',
+            ]);
             project.appendChild(
                 newHTMLElement('h1', 'project-name', list[i].name)
             );

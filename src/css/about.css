@@ -17,7 +17,7 @@
 .contact-info {
     border-top: 4px solid #959595;
     padding: 2.5vw 5vw 2vw 2.7vw;
-    position: relative;
+    overflow: hidden;
 }
 
 .contact-info h1,
@@ -47,8 +47,8 @@
 }
 
 .message-hyperlink {
-    top: 2.7vw;
-    left: 18.2vw;
+    top: 0.1vw;
+    left: 15.5vw;
     position: absolute;
     width: 13vw;
     height: 3vw;

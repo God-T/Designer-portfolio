@@ -1,8 +1,10 @@
-function scrollTrigger(selector, options = {}) {
+export function scrollTrigger(selector, options, forward = () => {}) {
     let els = document.querySelectorAll(selector);
     /* NodeList to Array */
     els = Array.from(els);
     els.forEach(el => {
+        /* Excute forward callback */
+        forward(el);
         /* Add trigger observers */
         addObserver(el, options);
     });
@@ -21,18 +23,11 @@ function addObserver(el, options) {
             if (entry.isIntersecting) {
                 /* Excute callback */
                 if (options.cb) options.cb(el);
-                /* Unsubscribe observer */
+                /* Unsubscribe */
                 observer.unobserve(entry.target);
             }
         });
     }, options);
-    /* Subscribe observer */
+    /* Subscribe */
     observer.observe(el);
 }
-
-scrollTrigger('.loader', {
-    rootMargin: '-200px',
-    cb: function (el) {
-        el.classList.add('active');
-    },
-});
