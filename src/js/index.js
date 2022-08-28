@@ -1,11 +1,8 @@
-import { renderProjects } from './render.js';
-import { bindBackToTopBtnEvent } from './event.js';
-import { bindAnimations } from './animation.js';
+import { renderProjectsList } from './common/render.js';
+import { bindBackToTopBtnEvent } from './common/event.js';
+import { bindAnimations } from './common/animation.js';
+import { getProjectList } from './common/fetch.js';
 
-await renderProjects();
+renderProjectsList(await getProjectList());
 bindAnimations();
 bindBackToTopBtnEvent();
-
-window.onbeforeunload = () => {
-    window.scrollTo(0, 0);
-};

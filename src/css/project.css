@@ -1,0 +1,17 @@
+.project-name {
+    font-size: 85px;
+}
+
+.project-detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 40px;
+}
+
+.project-detail-description {
+    width: 200px;
+    height: 100px;
+    background-color: red;
+    margin: 40px;
+}

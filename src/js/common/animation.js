@@ -2,7 +2,7 @@ import { scrollTrigger } from './trigger.js';
 
 export const bindAnimations = () => {
     scrollTrigger('.fadeIn', {
-        rootMargin: '-50px',
+        rootMargin: '-20px -50px -50px -50px',
         cb: function (el) {
             el.classList.add('fadeIn--active');
         },
@@ -29,21 +29,21 @@ export const bindAnimations = () => {
     });
 
     scrollTrigger('.slideIn--bottom-up__large-box', {
-        rootMargin: '-200px',
+        rootMargin: '0px -200px -200px -200px',
         cb: function (el) {
             el.classList.add('slideIn--bottom-up__large-box--active');
         },
     });
 
     scrollTrigger('.slideIn--left2right__far', {
-        rootMargin: '-200px',
+        rootMargin: '0px -200px -200px -200px',
         cb: function (el) {
             el.classList.add('slideIn--left2right__far--active');
         },
     });
 
     scrollTrigger('.slideIn--left2right__close', {
-        rootMargin: '-200px',
+        rootMargin: '0px -200px -200px -200px',
         cb: function (el) {
             el.classList.add('slideIn--left2right__close--active');
         },
