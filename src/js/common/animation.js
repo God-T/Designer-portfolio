@@ -38,6 +38,7 @@ export const bindAnimations = () => {
     scrollTrigger('.slideIn--left2right__far', {
         rootMargin: '0px -200px -200px -200px',
         cb: function (el) {
+            console.log('inininini', el);
             el.classList.add('slideIn--left2right__far--active');
         },
     });

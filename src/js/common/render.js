@@ -1,4 +1,5 @@
 import { getProjectList, getProjectDetails } from './fetch.js';
+import { createParagraphsWithNewLinekey } from './util.js';
 
 const newHTMLElement = (tagType, classNames, content = null) => {
     const newEl = document.createElement(tagType);
@@ -60,10 +61,7 @@ export const renderProjectDetail = async projectID => {
 
         /* Render divider */
         projectDetailElement.appendChild(
-            newHTMLElement('div', [
-                'project-top-divider',
-                'slideIn--left2right__far',
-            ])
+            newHTMLElement('div', ['project-top-divider'])
         );
 
         /* Render project */
@@ -79,9 +77,28 @@ export const renderProjectDetail = async projectID => {
         );
         projectDetailElement.appendChild(project);
 
-        projectDetailElement.appendChild(
-            newHTMLElement('div', 'project-detail-description')
+        /* Render description */
+        const descriptionEle = newHTMLElement('div', [
+            'project-detail-description',
+        ]);
+        const paragraphs = createParagraphsWithNewLinekey(
+            projectDetails.description
         );
+        paragraphs.map(p => {
+            descriptionEle.appendChild(
+                newHTMLElement('div', 'project-detail-description__p', p)
+            );
+        });
+        projectDetailElement.appendChild(descriptionEle);
+
+        /* Render image */
+        const projectImg = newHTMLElement(
+            'img',
+            ['project-detail-img'],
+            projectDetails.description
+        );
+        projectImg.src = `../../assets/images/${projectDetails.imgFileName}`;
+        projectDetailElement.appendChild(projectImg);
     } catch (e) {
         throw ('Failed to fetch projects data', e);
     }

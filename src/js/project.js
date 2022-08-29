@@ -1,4 +1,6 @@
 import { renderProjectsList, renderProjectDetail } from './common/render.js';
+import { bindBackToTopBtnEvent } from './common/event.js';
+import { bindAnimations } from './common/animation.js';
 
 const getCurrentProjectId = () => {
     const queryString = window.location.search;
@@ -8,5 +10,7 @@ const getCurrentProjectId = () => {
 };
 
 const projectId = getCurrentProjectId();
-renderProjectsList({ id: projectId });
-renderProjectDetail(projectId);
+await renderProjectsList({ id: projectId });
+await renderProjectDetail(projectId);
+bindBackToTopBtnEvent();
+bindAnimations();

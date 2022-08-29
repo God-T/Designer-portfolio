@@ -29,6 +29,12 @@
             media="screen"
             href="../css/project.css"
         />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="../css/animation.css"
+        />
         <script
             src="https://kit.fontawesome.com/6851e60266.js"
             crossorigin="anonymous"
@@ -38,9 +44,29 @@
     </head>
 
     <body>
-        <div style="padding: 100px 200px">
+        <div class="main-title__logo">
+            <i class="fa-brands fa-instagram fa-5x fadeIn"></i>
+        </div>
+        <div style="padding: 200px 350px">
             <div id="project-detail-container"></div>
             <div id="projects-list-container"></div>
+            <div class="navigation-bar">
+                <span class="slideIn--bottom-up">
+                    <a href="./contact.html">
+                        <i class="fa-brands fa-square-instagram"></i>
+                        Instagram</a
+                    >
+                    <a style="margin-left: 4vw" href="./contact.html">
+                        <i class="fa-brands fa-square-behance"></i>
+                        Behance</a
+                    >
+                    <a style="margin-left: 4vw" href="./contact.html">
+                        <i class="fa-solid fa-envelope"></i>
+                        Email</a
+                    >
+                </span>
+                <a class="slideIn--bottom-up" id="back2top-Btn">Back to top</a>
+            </div>
         </div>
     </body>
 </html>

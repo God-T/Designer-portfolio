@@ -2,6 +2,7 @@ export function scrollTrigger(selector, options, forward = () => {}) {
     let els = document.querySelectorAll(selector);
     /* NodeList to Array */
     els = Array.from(els);
+    console.log(els, '?');
     els.forEach(el => {
         /* Excute forward callback */
         forward(el);

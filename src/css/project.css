@@ -1,5 +1,5 @@
 .project-name {
-    font-size: 85px;
+    font-size: 90px;
 }
 
 .project-detail {
@@ -9,9 +9,24 @@
     padding: 40px;
 }
 
+.project-type {
+    margin-top: 15px;
+}
+
+.project-detail-img,
 .project-detail-description {
-    width: 200px;
-    height: 100px;
-    background-color: red;
     margin: 40px;
+}
+
+.project-detail-description__p {
+    margin-bottom: 20px;
+}
+
+.project-detail-description {
+    font-size: 25px;
+    width: 60%;
+}
+
+#projects-list-container {
+    margin-top: 10vw;
 }

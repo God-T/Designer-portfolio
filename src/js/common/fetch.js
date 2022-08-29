@@ -29,3 +29,9 @@ export const getProjectDetails = async id => {
     const res = list.find(p => p.id == id);
     return res;
 };
+
+export const getRelativeImgSrc = fileName => {
+    return (
+        document.body.getAttribute('data-root') + `/assets/images/${fileName}`
+    );
+};

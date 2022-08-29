@@ -1,7 +1,7 @@
 {
     "projectList": [
         { "id": 1, "name": "League of Legends", "type": "MOBL" },
-        { "id": 2, "name": "Elden Ring", "type": "RPG" },
+        { "id": 2, "name": "Responsive static page", "type": "HTML&CSS" },
         { "id": 3, "name": "Dying Light 2", "type": "Open world FFP" },
         { "id": 4, "name": "Stardew Valley", "type": "Farming simulation" },
         {

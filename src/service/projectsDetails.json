@@ -1,7 +1,19 @@
 {
     "projectDetails": [
-        { "id": 1, "name": "League of Legends", "type": "MOBL" },
-        { "id": 2, "name": "Elden Ring", "type": "RPG" },
+        {
+            "id": 1,
+            "name": "League of Legends",
+            "type": "MOBL",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam at leo at libero efficitur lacinia dapibus ac erat. In purus sapien, facilisis et suscipit eget, porttitor sit amet enim. Donec sed orci sit amet dui auctor varius. Fusce sem elit, posuere fermentum felis ut, rhoncus consectetur lorem. Donec a lectus eget metus porta euismod maximus sit amet diam. Aliquam ultricies volutpat ullamcorper. Praesent aliquet diam eu risus consequat, quis mollis libero pulvinar. Proin massa tortor, molestie ut velit a, viverra sodales enim. Mauris sollicitudin ante ut ligula venenatis hendrerit. Donec pellentesque purus eu lorem dapibus, sit amet imperdiet leo finibus.",
+            "imgFileName": "hkdoll.jpg"
+        },
+        {
+            "id": 2,
+            "name": "Responsive static page",
+            "type": "HTML&CSS",
+            "description": "Build a responsive page that complies with task3/page_big.png and task3/page_small.png. The big page is 1197 x 1610 pixels, and the small page is 453 x 1873 pixels. Your single page (note that you're not using two separate HTML files) should like identical to either of these pages depending on the window sized the browser is at.\nYour are expected to have reasonable intermediate states. In other words, if the window size is some combination of widths between 453 and 1197, combined with some combination of heights between 1610 and 1873, the page should still reflect the same general structure.",
+            "imgFileName": "example-project.jpg"
+        },
         { "id": 3, "name": "Dying Light 2", "type": "Open world FFP" },
         { "id": 4, "name": "Stardew Valley", "type": "Farming simulation" },
         {
