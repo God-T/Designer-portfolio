@@ -2,7 +2,7 @@
     "projectList": [
         { "id": 1, "name": "League of Legends", "type": "MOBL" },
         { "id": 2, "name": "Responsive static page", "type": "HTML&CSS" },
-        { "id": 3, "name": "Dying Light 2", "type": "Open world FFP" },
+        { "id": 3, "name": "Vladimir Putin YYDS", "type": "New cold war" },
         { "id": 4, "name": "Stardew Valley", "type": "Farming simulation" },
         {
             "id": 5,
@@ -11,7 +11,7 @@
         },
         {
             "id": 6,
-            "name": "This is the end of the project list",
+            "name": "IntersectionObserver.rootMargin rootMargin",
             "type": "Somehow it didn't work"
         }
     ]

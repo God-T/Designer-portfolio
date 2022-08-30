@@ -3,7 +3,7 @@
 .slideIn--right2left,
 .slideIn--bottom-up,
 .slideIn--bottom-up__large-box,
-.slideIn--left2right__far {
+.slideIn--left2right--slow {
     opacity: 0;
 }
 
@@ -28,7 +28,7 @@
     animation-iteration-count: 1;
 }
 
-.slideIn--left2right__far--active {
+.slideIn--left2right--slow--active {
     animation: slideIn--left2right--slow 2s forwards;
     animation-iteration-count: 1;
 }

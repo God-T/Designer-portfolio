@@ -1,5 +1,8 @@
 .project-name {
     font-size: 90px;
+    width: 80%;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-detail {

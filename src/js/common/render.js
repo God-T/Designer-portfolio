@@ -14,7 +14,10 @@ const newHTMLElement = (tagType, classNames, content = null) => {
     return newEl;
 };
 
-export const renderProjectsList = async (except = {}) => {
+export const renderProjectsList = async (
+    useRelativePath = false,
+    except = {}
+) => {
     try {
         const projectListElement = document.getElementById(
             'projects-list-container'
@@ -23,7 +26,7 @@ export const renderProjectsList = async (except = {}) => {
         projectListElement.appendChild(
             newHTMLElement('div', [
                 'project-top-divider',
-                'slideIn--left2right__far',
+                'slideIn--left2right--slow',
             ])
         );
         /* Render projects */
@@ -31,7 +34,7 @@ export const renderProjectsList = async (except = {}) => {
         for (let i = 0; i < projectList.length; i++) {
             const project = newHTMLElement('div', [
                 'project',
-                'slideIn--left2right__far',
+                'slideIn--left2right--slow',
             ]);
             project.setAttribute('id', 'project-' + projectList[i].id);
             project.appendChild(
@@ -43,11 +46,14 @@ export const renderProjectsList = async (except = {}) => {
             projectListElement.appendChild(project);
 
             project.addEventListener('click', () => {
-                window.location.href = `./html/project.html?id=${projectList[i].id}&name=${projectList[i].name}`;
+                window.location.href = !useRelativePath
+                    ? `./html/project.html?id=${projectList[i].id}&name=${projectList[i].name}`
+                    : `./project.html?id=${projectList[i].id}&name=${projectList[i].name}`;
             });
         }
     } catch (e) {
-        throw ('Failed to fetch projects data', e);
+        alert('Failed to fetch projects data');
+        throw e;
     }
 };
 
@@ -67,7 +73,7 @@ export const renderProjectDetail = async projectID => {
         /* Render project */
         const project = newHTMLElement('div', [
             'project-detail',
-            'slideIn--left2right__far',
+            'slideIn--left2right',
         ]);
         project.appendChild(
             newHTMLElement('h1', 'project-name', projectDetails.name)
@@ -84,7 +90,7 @@ export const renderProjectDetail = async projectID => {
         const paragraphs = createParagraphsWithNewLinekey(
             projectDetails.description
         );
-        paragraphs.map(p => {
+        paragraphs?.map(p => {
             descriptionEle.appendChild(
                 newHTMLElement('div', 'project-detail-description__p', p)
             );
@@ -100,6 +106,7 @@ export const renderProjectDetail = async projectID => {
         projectImg.src = `../../assets/images/${projectDetails.imgFileName}`;
         projectDetailElement.appendChild(projectImg);
     } catch (e) {
-        throw ('Failed to fetch projects data', e);
+        alert('Failed to fetch project deatils data');
+        throw e;
     }
 };
