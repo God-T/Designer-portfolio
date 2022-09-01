@@ -23,16 +23,17 @@
 .contact-info h1,
 .about-content-wrapper h1 {
     margin: 0;
-    font-size: 3.2vw;
+    font-size: 3.5vw;
     line-height: 0.8;
+    font-weight: 600;
 }
 
 .about-content-wrapper h5 {
     font-size: 2vw;
     color: #a0a09f;
     margin-top: 4.5vw;
-    margin-right: 8.5vw;
-    font-weight: 500;
+    margin-right: 5.5vw;
+    font-weight: normal;
 }
 
 .about-photo-wrapper {
@@ -46,9 +47,12 @@
     margin-left: 1vw;
 }
 
+.contact-info__greating h1 {
+    font-weight: 600;
+}
+
 .message-hyperlink {
-    top: 0.1vw;
-    left: 15.5vw;
+    left: 14.9vw;
     position: absolute;
     width: 13vw;
     height: 3vw;

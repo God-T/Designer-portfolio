@@ -1,5 +1,5 @@
 .project-name {
-    font-size: 90px;
+    font-size: 4vw;
     width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -14,11 +14,12 @@
 
 .project-type {
     margin-top: 15px;
+    font-size: 0.9vw;
 }
 
 .project-detail-img,
 .project-detail-description {
-    margin: 40px;
+    margin: 45px;
 }
 
 .project-detail-description__p {

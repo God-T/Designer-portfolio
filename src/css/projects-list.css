@@ -21,10 +21,35 @@
     border-bottom: 4px solid #959595;
 }
 
+.project-name,
+.project-type {
+    font-weight: 600;
+}
+
 .project-name {
-    font-size: 100px;
+    font-size: 4vw;
 }
 
 .project-type {
-    font-weight: bold;
+    font-size: 0.9vw;
+}
+
+/* Mobile version */
+@media screen and (max-width: 501px) {
+    .project-top-divider {
+        border-bottom-width: 2px;
+    }
+
+    .project {
+        padding: 15px 30px;
+        border-bottom-width: 2px;
+    }
+
+    .project-name {
+        font-size: 5.5vw;
+    }
+
+    .project-type {
+        font-size: 1.5vw;
+    }
 }
