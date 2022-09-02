@@ -59,6 +59,7 @@ body {
     background-color: #efeeed;
     margin: 0;
     overflow-y: overlay;
+    overflow-x: hidden;
 }
 
 .landing-container {
@@ -86,62 +87,4 @@ body {
     background-color: #000000;
     border-radius: 20px;
     border: 2px solid #efeeed;
-}
-
-/* Mobile version */
-@media screen and (max-width: 501px) {
-    .sub-title {
-        flex: 25%;
-    }
-
-    .main-title > div:first-child,
-    .main-title > div:last-child {
-        height: 50% !important;
-    }
-
-    .main-title__content h1 {
-        font-size: 11.5vw !important;
-    }
-
-    .main-title__content__wrapper {
-        margin-bottom: 11vw !important;
-    }
-
-    .main-title__content__top {
-        right: 13.7vw !important;
-    }
-
-    .main-title__content__bottom {
-        right: 0.7vw !important;
-    }
-
-    .main-title__content__top__nick-name {
-        right: 0.5vw !important;
-    }
-
-    .main-title__content h5 {
-        font-size: 2vw !important;
-    }
-
-    .main-title__content__bottom__city {
-        bottom: -8vw !important;
-        right: 7.5vw !important;
-    }
-
-    .main-title__content__projects {
-        height: 10vw !important;
-    }
-
-    .main-title__content__projects h1 {
-        font-size: 9.5vw !important;
-    }
-
-    .main-title__content__years {
-        margin-bottom: 6vw !important;
-    }
-
-    .main-title__content__years h5 {
-        font-size: 4vw !important;
-        right: 21.6vw !important;
-    }
 }

@@ -9,13 +9,14 @@
 .about {
     display: flex;
     flex: 70%;
-    margin: 5vw 10vw 3vw 2.8vw;
+    margin: 4vw 10vw 5vw 2.8vw;
 }
 
 .contact-info {
     flex: 30%;
     border-top: 4px solid #959595;
     padding: 2.5vw 5vw 2vw 2.7vw;
+    overflow: hidden;
 }
 
 .about-content-wrapper {
@@ -25,9 +26,9 @@
 .contact-info h1,
 .about-content-wrapper h1 {
     margin: 0;
-    font-size: 3vw;
+    font-size: 3.5vw;
     line-height: 0.8;
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .about-content-wrapper h5 {
@@ -50,7 +51,7 @@
 }
 
 .contact-info__greating h1 {
-    font-weight: 700;
+    font-weight: 600;
 }
 
 .message-hyperlink {
@@ -79,37 +80,7 @@
     background-position: 0 100%;
 }
 
-/* Viewports Responsiveness  */
-@media (max-aspect-ratio: 175/100) {
-    .about-content-wrapper h5 {
-        font-size: 2.5vw;
-    }
-
-    .about-photo-wrapper img {
-        height: 48vw;
-    }
-
-    .about {
-        margin-bottom: 0;
-    }
-
-    .contact-info {
-        flex: 25%;
-        padding-top: 4.5vw;
-    }
-
-    .about-content-wrapper h1 {
-        font-size: 4vw;
-    }
-}
-
-@media (max-aspect-ratio: 90/80) {
-    .about-content-wrapper h5 {
-        font-size: 3vw;
-    }
-}
-
-@media screen and (max-aspect-ratio: 1/1), screen and (max-width: 770px) {
+@media screen and (max-width: 770px) {
     .about {
         flex-direction: column;
         margin-left: 8vw;

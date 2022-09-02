@@ -58,3 +58,82 @@
     font-size: 1vw;
     letter-spacing: 1px;
 }
+
+/* Tablet viewport */
+@media (max-aspect-ratio: 4/3), screen and (max-width: 770px) {
+    .sub-title {
+        flex: 25%;
+    }
+
+    .container--justified {
+        align-items: flex-start;
+    }
+
+    .main-title > div:first-child,
+    .main-title > div:last-child {
+        height: 50% !important;
+    }
+
+    .main-title__content h1 {
+        font-size: 11.5vw !important;
+    }
+
+    .main-title__content__wrapper {
+        margin-bottom: 11vw !important;
+        height: 2vw !important;
+    }
+
+    .main-title__content__top {
+        right: 13.7vw !important;
+    }
+
+    .main-title__content__bottom {
+        right: 0.7vw !important;
+    }
+
+    .main-title__content__top__nick-name {
+        right: 0.5vw !important;
+    }
+
+    .main-title__content h5 {
+        font-size: 2vw !important;
+    }
+
+    .fa-5x {
+        transform: scale(0.7);
+    }
+
+    .main-title__content__bottom__city {
+        bottom: -13vw !important;
+        right: 8.5vw !important;
+    }
+
+    .main-title__content__projects {
+        margin-bottom: 1vw !important;
+        height: 7vw !important;
+    }
+
+    .main-title__content__projects h1 {
+        font-size: 9.5vw !important;
+    }
+
+    .main-title__content__years {
+        margin-bottom: 6vw !important;
+    }
+
+    .main-title__content__years h5 {
+        font-size: 4vw !important;
+        right: 21.6vw !important;
+    }
+}
+
+/* Mobile viewport */
+@media screen and (max-width: 600px) {
+    .container--justified {
+        align-items: center !important;
+    }
+
+    .main-title__content__projects {
+        height: 10vw !important;
+    }
+}

@@ -29,14 +29,14 @@ export const bindAnimations = () => {
     });
 
     scrollTrigger('.slideIn--bottom-up__large-box', {
-        rootMargin: '0px -200px -200px -200px',
+        rootMargin: '0px -100px -100px -100px',
         cb: function (el) {
             el.classList.add('slideIn--bottom-up__large-box--active');
         },
     });
 
     scrollTrigger('.slideIn--left2right--slow', {
-        rootMargin: '0px -200px -200px -200px',
+        rootMargin: '0px -100px -200px -100px',
         cb: function (el) {
             console.log('inininini', el);
             el.classList.add('slideIn--left2right--slow--active');
