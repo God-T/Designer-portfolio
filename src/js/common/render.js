@@ -1,4 +1,9 @@
-import { getProjectList, getProjectDetails, getBaseInfo } from './fetch.js';
+import {
+    getProjectList,
+    getProjectDetails,
+    getLandingDetails,
+    getAboutDetails,
+} from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 
 const createNewElement = (tagType, classNames, content = null) => {
@@ -16,7 +21,7 @@ const createNewElement = (tagType, classNames, content = null) => {
 
 const setTextById = (id, content = '') => {
     const el = document.getElementById(id);
-    el.appendChild(document.createTextNode(content));
+    el.textContent = content;
 };
 
 export const renderProjectsList = async (
@@ -116,8 +121,8 @@ export const renderProjectDetail = async projectID => {
 };
 
 export const renderLandingPage = async () => {
-    const info = await getBaseInfo();
-    for (let key in info) {
-        console.log(key);
+    const data = await getLandingDetails();
+    for (let key in data) {
+        setTextById(`landing-page--${key}`, data[key]);
     }
 };
