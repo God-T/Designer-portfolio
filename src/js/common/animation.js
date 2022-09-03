@@ -2,7 +2,7 @@ import { scrollTrigger } from './trigger.js';
 
 export const bindAnimations = () => {
     scrollTrigger('.fadeIn', {
-        rootMargin: '-20px -50px -50px -50px',
+        rootMargin: '-20px -20px -50px -20px',
         cb: function (el) {
             el.classList.add('fadeIn--active');
         },
@@ -38,7 +38,6 @@ export const bindAnimations = () => {
     scrollTrigger('.slideIn--left2right--slow', {
         rootMargin: '0px -100px -200px -100px',
         cb: function (el) {
-            console.log('inininini', el);
             el.classList.add('slideIn--left2right--slow--active');
         },
     });

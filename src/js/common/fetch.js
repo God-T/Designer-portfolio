@@ -13,7 +13,7 @@ export const getProjectsDetails = async () => {
 };
 
 export const getBaseInfo = async () => {
-    return await getJson('../../service/baseInfo,json');
+    return await getJson('../../service/baseInfo.json');
 };
 
 export const getProjectList = async except => {

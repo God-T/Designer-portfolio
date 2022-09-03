@@ -8,7 +8,7 @@
 
     /* Gradually fill in color from left to right; revert when  */
     background: linear-gradient(to right, #d4d4d4 50%, #efeeed 50%);
-    background-size: 200% 100%;
+    background-size: 202% 100%;
     background-position: right bottom;
     transition: all 0.8s ease;
 }

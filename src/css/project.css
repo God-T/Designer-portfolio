@@ -9,7 +9,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding: 40px;
+    padding-block: 40px;
 }
 
 .project-type {
@@ -17,9 +17,12 @@
     font-size: 0.9vw;
 }
 
-.project-detail-img,
 .project-detail-description {
-    margin: 45px;
+    margin-block: 45px;
+}
+
+.project-detail-img {
+    max-width: 100%;
 }
 
 .project-detail-description__p {
@@ -33,4 +36,111 @@
 
 #projects-list-container {
     margin-top: 10vw;
+}
+
+.navigation-bar {
+    height: 10vh;
+    min-height: 80px;
+    overflow: hidden;
+}
+
+.padding-wrapper {
+    padding: 9.5vw 17vw;
+}
+
+.projects-list-nav {
+    display: none;
+}
+
+.project-detail .project-name {
+    font-weight: 700;
+}
+
+/* Mobile viewport */
+@media screen and (max-width: 770px) {
+    .project-detail-description {
+        font-size: 15px;
+        width: 80%;
+    }
+
+    .project-detail {
+        padding-block: 20px 10px;
+    }
+
+    #project-detail-container {
+        padding-bottom: 10px;
+    }
+
+    .project-detail-description {
+        margin-block: 20px;
+    }
+
+    #projects-list-container {
+        display: none;
+    }
+
+    .navigation-bar {
+        display: flex;
+        flex-direction: column;
+        border-top: 2px solid #959595;
+    }
+
+    .navigation-bar a {
+        font-size: 10px;
+    }
+
+    #back2top-Btn {
+        display: none;
+    }
+
+    .padding-wrapper {
+        padding: 60px 12vw 3vh 12vw;
+    }
+
+    .fa-5x {
+        transform: scale(0.4);
+    }
+
+    #main-title__logo {
+        top: -10px;
+        right: 0;
+    }
+
+    .projects-list-nav {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 9px;
+    }
+
+    .projects-list-nav a {
+        font-size: 17px;
+        font-weight: 700;
+    }
+
+    .project-detail .project-type {
+        margin-top: 4px;
+        font-size: 1.5vw;
+    }
+
+    .project-detail .project-name {
+        font-weight: 700;
+        font-size: 6vw;
+    }
+
+    .social-medias-nav {
+        align-self: center;
+    }
+
+    .project-detail-description__p,
+    .social-medias-nav a {
+        font-weight: 400;
+    }
+
+    .projects-list-nav--font {
+        color: black !important;
+    }
+
+    .projects-list-nav--font:hover {
+        color: orange !important;
+    }
 }

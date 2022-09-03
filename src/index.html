@@ -53,10 +53,11 @@
     <body>
         <div class="landing-container container--center">
             <div class="main-title container--justified">
-                <div class="main-title__content">
-                    <div class="main-title__content__wrapper">
+                <div class="main-title-content">
+                    <div class="main-title-content__wrapper">
                         <h1
-                            class="slideIn--left2right main-title__content__top"
+                            id="landing-page--fullName"
+                            class="slideIn--left2right main-title-content__top"
                             style="
                                 position: absolute;
                                 right: 8.3vw;
@@ -66,14 +67,16 @@
                             SIYU QIAN
                         </h1>
                         <h5
-                            class="fadeIn main-title__content__top__nick-name"
+                            id="landing-page--nickName"
+                            class="fadeIn main-title-content__top__nick-name"
                             style="position: absolute; top: 0; right: 1.5vw"
                         >
                             MONICA
                         </h5>
                     </div>
-                    <div class="main-title__content__wrapper">
+                    <div class="main-title-content__wrapper">
                         <h1
+                            id="landing-page--titleLine1"
                             class="slideIn--right2left"
                             style="position: absolute; right: 1.3vw"
                         >
@@ -81,11 +84,12 @@
                         </h1>
                     </div>
                     <div
-                        class="main-title__content__wrapper"
+                        class="main-title-content__wrapper"
                         style="height: 9vw"
                     >
                         <h1
-                            class="slideIn--left2right main-title__content__bottom"
+                            id="landing-page--titleLine2"
+                            class="slideIn--left2right main-title-content__bottom"
                             style="
                                 position: absolute;
                                 right: 1vw;
@@ -95,7 +99,8 @@
                             DESIGNER
                         </h1>
                         <h5
-                            class="fadeIn main-title__content__bottom__city"
+                            id="landing-page--city"
+                            class="fadeIn main-title-content__bottom__city"
                             style="position: absolute; bottom: 0; right: 6.5vw"
                         >
                             BASED IN SYDNEY
@@ -109,10 +114,11 @@
                 </div>
                 <div class="slideIn--bottom-up" style="width: 100%">
                     <div
-                        class="main-title__content__wrapper main-title__content__years"
+                        class="main-title-content__wrapper main-title-content__years"
                         style="height: 2vw; margin-bottom: 2vw"
                     >
                         <h5
+                            id="landing-page--years"
                             style="
                                 position: absolute;
                                 font-size: 2vw;
@@ -125,7 +131,7 @@
                         </h5>
                     </div>
                     <div
-                        class="main-title__content__wrapper main-title__content__projects"
+                        class="main-title-content__wrapper main-title-content__projects"
                         style="height: 2vw"
                     >
                         <h1
@@ -152,7 +158,10 @@
                     >
                         ABOUT ME
                     </h1>
-                    <h5 class="slideIn--bottom-up__large-box">
+                    <h5
+                        id="about-content-text__h5"
+                        class="slideIn--bottom-up__large-box"
+                    >
                         I am Sydney based visual designer. After I finished my
                         accounting degree in university, I realised that I am
                         more passionate about creating. Shillington has given me
@@ -170,28 +179,26 @@
                 </div>
             </div>
             <div class="contact-info">
-                <div
-                    class="contact-info__greating slideIn--bottom-up"
-                    style="position: relative"
-                >
-                    <span class="message-hyperlink"> </span>
-                    <h1
-                        class="margin-bottom"
-                        style="font-size: 3vw; margin-bottom: 1.5vw"
-                    >
-                        Drop me a
-                        <span
-                            class="fill-color-bottom2top"
-                            style="font-size: 3vw"
-                            >message</span
+                <div class="contact-info__greating" style="position: relative">
+                    <div class="slideIn--bottom-up">
+                        <span class="message-hyperlink"> </span>
+                        <h1
+                            class="margin-bottom"
+                            style="font-size: 3vw; margin-bottom: 0.5vw"
                         >
-                        and let's create something
-                    </h1>
-                    <h1 style="font-size: 3vw">great together.</h1>
+                            Drop me a
+                            <span
+                                class="fill-color-bottom2top"
+                                style="font-size: 3vw"
+                                >message</span
+                            >
+                            and let's create something great together.
+                        </h1>
+                    </div>
                 </div>
                 <div class="navigation-bar">
                     <span
-                        class="slideIn--bottom-up navigation-bar--contact-links-wrapper"
+                        class="navigation-bar--contact-links-wrapper slideIn--bottom-up"
                     >
                         <a href="./html/contact.html">
                             <i class="fa-brands fa-square-instagram"></i>

@@ -1,7 +1,7 @@
-import { getProjectList, getProjectDetails } from './fetch.js';
+import { getProjectList, getProjectDetails, getBaseInfo } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 
-const newHTMLElement = (tagType, classNames, content = null) => {
+const createNewElement = (tagType, classNames, content = null) => {
     const newEl = document.createElement(tagType);
     /* Create class name(s) */
     if (Array.isArray(classNames))
@@ -14,6 +14,11 @@ const newHTMLElement = (tagType, classNames, content = null) => {
     return newEl;
 };
 
+const setTextById = (id, content = '') => {
+    const el = document.getElementById(id);
+    el.appendChild(document.createTextNode(content));
+};
+
 export const renderProjectsList = async (
     useRelativePath = false,
     except = {}
@@ -24,7 +29,7 @@ export const renderProjectsList = async (
         );
         /* Render divider */
         projectListElement.appendChild(
-            newHTMLElement('div', [
+            createNewElement('div', [
                 'project-top-divider',
                 'slideIn--left2right--slow',
             ])
@@ -32,16 +37,16 @@ export const renderProjectsList = async (
         /* Render projects */
         const projectList = await getProjectList(except);
         for (let i = 0; i < projectList.length; i++) {
-            const project = newHTMLElement('div', [
+            const project = createNewElement('div', [
                 'project',
                 'slideIn--left2right--slow',
             ]);
             project.setAttribute('id', 'project-' + projectList[i].id);
             project.appendChild(
-                newHTMLElement('h1', 'project-name', projectList[i].name)
+                createNewElement('h1', 'project-name', projectList[i].name)
             );
             project.appendChild(
-                newHTMLElement('span', 'project-type', projectList[i].type)
+                createNewElement('span', 'project-type', projectList[i].type)
             );
             projectListElement.appendChild(project);
 
@@ -63,28 +68,27 @@ export const renderProjectDetail = async projectID => {
         const projectDetailElement = document.getElementById(
             'project-detail-container'
         );
-        console.log(projectDetailElement);
 
         /* Render divider */
         projectDetailElement.appendChild(
-            newHTMLElement('div', ['project-top-divider'])
+            createNewElement('div', ['project-top-divider'])
         );
 
         /* Render project */
-        const project = newHTMLElement('div', [
+        const project = createNewElement('div', [
             'project-detail',
             'slideIn--left2right',
         ]);
         project.appendChild(
-            newHTMLElement('h1', 'project-name', projectDetails.name)
+            createNewElement('h1', 'project-name', projectDetails.name)
         );
         project.appendChild(
-            newHTMLElement('span', 'project-type', projectDetails.type)
+            createNewElement('span', 'project-type', projectDetails.type)
         );
         projectDetailElement.appendChild(project);
 
         /* Render description */
-        const descriptionEle = newHTMLElement('div', [
+        const descriptionEle = createNewElement('div', [
             'project-detail-description',
         ]);
         const paragraphs = createParagraphsWithNewLinekey(
@@ -92,13 +96,13 @@ export const renderProjectDetail = async projectID => {
         );
         paragraphs?.map(p => {
             descriptionEle.appendChild(
-                newHTMLElement('div', 'project-detail-description__p', p)
+                createNewElement('div', 'project-detail-description__p', p)
             );
         });
         projectDetailElement.appendChild(descriptionEle);
 
         /* Render image */
-        const projectImg = newHTMLElement(
+        const projectImg = createNewElement(
             'img',
             ['project-detail-img'],
             projectDetails.description
@@ -108,5 +112,12 @@ export const renderProjectDetail = async projectID => {
     } catch (e) {
         alert('Failed to fetch project deatils data');
         throw e;
+    }
+};
+
+export const renderLandingPage = async () => {
+    const info = await getBaseInfo();
+    for (let key in info) {
+        console.log(key);
     }
 };

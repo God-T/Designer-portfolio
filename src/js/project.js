@@ -12,6 +12,6 @@ const getCurrentProjectId = () => {
 const projectId = getCurrentProjectId();
 await renderProjectsList(true, { id: projectId });
 await renderProjectDetail(projectId);
-bindAnimations();
 bindBackToTopBtnEvent();
+bindAnimations();
 bindLogoClickEvent(true);
