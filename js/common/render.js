@@ -128,7 +128,9 @@ export const renderProjectDetails = async projectID => {
 
         /* Render image */
         const imageData = projectDetails.image;
-        const rootPath = `../../${SERVICE_ID}/assets/images/${imageData.folderName}/`;
+        const rootPath = `${document.body.getAttribute(
+            'data-root'
+        )}/${SERVICE_ID}/assets/images/${imageData.folderName}/`;
         if (imageData.autoImporting) {
             // TODO: auto read image file names form given dir
             // const fileNamesFromReaddir = fs.readdirSync(
