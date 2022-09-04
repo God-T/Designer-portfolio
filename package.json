@@ -1,0 +1,23 @@
+{
+    "name": "v2",
+    "version": "1.0.0",
+    "description": "-   `IntersectionObserver`: to check if element in view",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "http-server src -p 8080"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/God-T/Designer-portfolio.git"
+    },
+    "author": "Godt-zz",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/God-T/Designer-portfolio/issues"
+    },
+    "homepage": "https://github.com/God-T/Designer-portfolio#readme",
+    "dependencies": {
+        "http-server": "^14.1.1"
+    }
+}
