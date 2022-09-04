@@ -1,10 +1,13 @@
 import {
+    SERVICE_ID,
     getProjectList,
     getProjectDetails,
     getLandingDetails,
     getAboutDetails,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
+import { bindMessageClickEvent } from './event.js';
+// import * as fs from 'fs/promises';
 
 const createNewElement = (tagType, classNames, content = null) => {
     const newEl = document.createElement(tagType);
@@ -22,6 +25,17 @@ const createNewElement = (tagType, classNames, content = null) => {
 const setTextById = (id, content = '') => {
     const el = document.getElementById(id);
     el.textContent = content;
+};
+
+const setImgSrcById = (id, imgFileName, alt = '') => {
+    try {
+        const imgEl = document.getElementById(id);
+        imgEl.src = `../../${SERVICE_ID}/assets/images/${imgFileName}`;
+        imgEl.alt = alt;
+    } catch (e) {
+        alert('Failed to load image');
+        console.log(e);
+    }
 };
 
 export const renderProjectsList = async (
@@ -62,12 +76,12 @@ export const renderProjectsList = async (
             });
         }
     } catch (e) {
-        alert('Failed to fetch projects data');
-        throw e;
+        alert('Failed to render projects list');
+        console.log(e);
     }
 };
 
-export const renderProjectDetail = async projectID => {
+export const renderProjectDetails = async projectID => {
     try {
         const projectDetails = await getProjectDetails(projectID);
         const projectDetailElement = document.getElementById(
@@ -101,28 +115,105 @@ export const renderProjectDetail = async projectID => {
         );
         paragraphs?.map(p => {
             descriptionEle.appendChild(
-                createNewElement('div', 'project-detail-description__p', p)
+                createNewElement(
+                    'div',
+                    ['project-detail-description__p', 'fadeIn'],
+                    p
+                )
             );
         });
         projectDetailElement.appendChild(descriptionEle);
 
         /* Render image */
-        const projectImg = createNewElement(
-            'img',
-            ['project-detail-img'],
-            projectDetails.description
-        );
-        projectImg.src = `../../assets/images/${projectDetails.imgFileName}`;
-        projectDetailElement.appendChild(projectImg);
+        const imageData = projectDetails.image;
+        const rootPath = `../../${SERVICE_ID}/assets/images/${imageData.folderName}/`;
+        if (imageData.autoImporting) {
+            // TODO: auto read image file names form given dir
+            // const fileNamesFromReaddir = fs.readdirSync(
+            //     `../../${SERVICE_ID}/assets/images/`
+            // );
+            // console.log(fileNamesFromReaddir);
+        }
+        const fileNames = imageData.autoImporting
+            ? imageData.fileNames
+            : imageData.fileNames;
+
+        for (let i = 0; i < fileNames.length; i++) {
+            const projectImg = createNewElement('img', [
+                'project-detail-img',
+                'fadeIn',
+            ]);
+            projectImg.src = rootPath + fileNames[i];
+            projectDetailElement.appendChild(projectImg);
+        }
     } catch (e) {
-        alert('Failed to fetch project deatils data');
-        throw e;
+        alert('Failed to render project deatils');
+        console.log(e);
     }
 };
 
-export const renderLandingPage = async () => {
-    const data = await getLandingDetails();
-    for (let key in data) {
-        setTextById(`landing-page--${key}`, data[key]);
+export const renderLandingData = async () => {
+    try {
+        const data = await getLandingDetails();
+        for (let key in data) {
+            setTextById(`landing-data-id--${key}`, data[key]);
+        }
+    } catch (e) {
+        alert('Failed to render landing data');
+        console.log(e);
+    }
+};
+
+export const renderContactDetails = async (shouldRenderMainMessage = false) => {
+    try {
+        const data = await getAboutDetails();
+        const container = document.getElementById('contact-details-wrapper');
+
+        for (let i in data.contactDetails) {
+            const contact = data.contactDetails[i];
+            if (!shouldRenderMainMessage && contact.type === 'main-message') {
+                bindMessageClickEvent(contact.href);
+                continue;
+            }
+
+            const a = createNewElement(
+                'a',
+                `contact-${contact.name}`,
+                contact.name
+            );
+            a.href = shouldRenderMainMessage
+                ? 'mailto:' + contact.href
+                : contact.href;
+            /* Set to open a new tab */
+            a.target = '_blank';
+            container.appendChild(a);
+        }
+    } catch (e) {
+        alert('Failed to render contact details');
+        console.log(e);
+    }
+};
+
+export const renderAboutData = async () => {
+    try {
+        const data = await getAboutDetails();
+        setTextById('about-data-id--aboutText', data.aboutText);
+        setImgSrcById('about-data-id--photo', data.photo.src, data.photo.alt);
+    } catch (e) {
+        alert('Failed to render about data');
+        console.log(e);
+    }
+};
+
+export const renderBackToHomePageBtn = () => {
+    try {
+        const navBar = document.getElementById('projects-list-nav');
+        const a = createNewElement('a');
+        a.href = '../../index.html';
+        a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
+        navBar.appendChild(a);
+    } catch (e) {
+        alert('Failed to render back to home page btn');
+        console.log(e);
     }
 };

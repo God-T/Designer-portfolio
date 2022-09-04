@@ -177,14 +177,17 @@
         margin-left: 20vw;
     }
 
-    .navigation-bar--contact-links-wrapper {
+    #contact-details-wrapper {
         display: flex;
         flex-direction: column;
     }
 
-    .navigation-bar--contact-links-wrapper a:last-child {
+    #contact-details-wrapper a:last-child {
         margin-left: 0 !important;
-        margin-top: 10px;
+    }
+
+    #contact-details-wrapper {
+        gap: 10px;
     }
 
     .navigation-bar a {

@@ -1,5 +1,9 @@
-import { renderProjectsList, renderProjectDetail } from './common/render.js';
-import { bindBackToTopBtnEvent, bindLogoClickEvent } from './common/event.js';
+import {
+    renderProjectsList,
+    renderProjectDetails,
+    renderContactDetails,
+} from './common/render.js';
+import { bindBackToTopBtnEvent, bindProjectsNavEvent } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
 
 const getCurrentProjectId = () => {
@@ -11,7 +15,8 @@ const getCurrentProjectId = () => {
 
 const projectId = getCurrentProjectId();
 await renderProjectsList(true, { id: projectId });
-await renderProjectDetail(projectId);
+await renderProjectDetails(projectId);
+await renderContactDetails(true);
 bindBackToTopBtnEvent();
+await bindProjectsNavEvent(projectId);
 bindAnimations();
-bindLogoClickEvent(true);

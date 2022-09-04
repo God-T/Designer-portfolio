@@ -21,9 +21,12 @@
     border-bottom: 4px solid #959595;
 }
 
-.project-name,
-.project-type {
+.project-name {
     font-weight: 600;
+}
+
+.project-type {
+    font-weight: 300;
 }
 
 .project-name {

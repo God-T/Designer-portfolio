@@ -99,8 +99,13 @@
         font-size: 2vw !important;
     }
 
-    .fa-5x {
+    #main-title__logo {
         transform: scale(0.7);
+        right: 1vw;
+    }
+
+    #main-title__logo:hover {
+        transform: scale(1);
     }
 
     .main-title-content__bottom__city {
@@ -130,7 +135,7 @@
 /* Mobile viewport 425px < width < 600px */
 @media (max-aspect-ratio: 1/1), screen and (max-width: 600px) {
     #main-title__logo {
-        right: 1vw;
+        right: 4vw;
     }
 
     .container--justified {

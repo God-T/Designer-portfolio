@@ -44,32 +44,34 @@
     </head>
 
     <body>
-        <div id="main-title__logo">
-            <i class="fa-brands fa-instagram fa-5x fadeIn"></i>
-        </div>
         <div class="padding-wrapper">
             <div id="project-detail-container"></div>
             <div id="projects-list-container"></div>
             <div class="navigation-bar">
-                <span class="projects-list-nav">
-                    <a href="./contact.html"> Pre</a>
-                    <a class="projects-list-nav--font" href="./contact.html">
+                <span
+                    id="projects-list-nav"
+                    class="projects-list-nav slideIn--bottom-up"
+                >
+                    <a id="prev-project-Btn" href="./contact.html"> Pre</a>
+                    <a
+                        id="next-project-Btn"
+                        class="projects-list-nav--font"
+                        href="./contact.html"
+                    >
                         Next Project</a
                     >
+                    <!-- <a id="back-homepage-Btn" href="../index.html"
+                        ><i class="fa-solid fa-house"></i>
+                    </a> -->
                 </span>
-                <span class="social-medias-nav" class="slideIn--bottom-up">
-                    <a href="./contact.html">
-                        <i class="fa-brands fa-square-instagram"></i>
-                        Instagram</a
-                    >
-                    <a style="margin-left: 4vw" href="./contact.html">
-                        <i class="fa-brands fa-square-behance"></i>
-                        Behance</a
-                    >
-                    <a style="margin-left: 4vw" href="./contact.html">
-                        <i class="fa-solid fa-envelope"></i>
-                        Email</a
-                    >
+                <span
+                    id="contact-details-wrapper"
+                    class="social-medias-nav slideIn--bottom-up"
+                >
+                    <a id="back-homepage-Btn" href="../index.html"
+                        ><i class="fa-solid fa-house"></i>
+                    </a>
+                    <!-- Contact details -->
                 </span>
                 <a class="slideIn--bottom-up" id="back2top-Btn">Back to top</a>
             </div>

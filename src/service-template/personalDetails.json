@@ -1,0 +1,23 @@
+{
+    "landing": {
+        "fullName": "_FULL_NAME_",
+        "titleLine1": "_TITLE_LINE_1_",
+        "titleLine2": "_TITLE_LINE_1_",
+        "nickName": "_NICK_NAME_",
+        "city": "_CITY_",
+        "years": "_YEAR_"
+    },
+    "about": {
+        "aboutText": "_ABOUT_TEXT_",
+        "contactDetails": [
+            { "type": "_TYPE_", "href": "" },
+            { "type": "_TYPE_", "href": "" },
+            { "type": "_TYPE_", "href": "" }
+        ],
+        "photo": {
+            "src": "",
+            "alt": ""
+        },
+        "messageHref": ""
+    }
+}

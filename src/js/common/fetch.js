@@ -1,49 +1,96 @@
-const getJson = async path => {
-    const response = await fetch(path);
-    const json = await response.json();
-    return json;
-};
+/* Change service for different data source */
+export const SERVICE_ID = 'service-monica';
 
-export const getProjects = async () => {
-    return await getJson('../../service/projectsList.json');
+const getJson = async path => {
+    try {
+        const response = await fetch(path);
+        const json = await response.json();
+        return json;
+    } catch (e) {
+        throw e;
+    }
 };
 
 export const getProjectsDetails = async () => {
-    return await getJson('../../service/projectsDetails.json');
+    try {
+        return await getJson(`../../${SERVICE_ID}/projectsDetails.json`);
+    } catch (e) {
+        alert('Failed to fetch projects details from service');
+        console.log(e);
+    }
 };
 
-export const getBaseInfo = async () => {
-    return await getJson('../../service/personalDetails.json');
+export const getPersonalDetails = async () => {
+    try {
+        return await getJson(`../../${SERVICE_ID}/personalDetails.json`);
+    } catch (e) {
+        alert('Failed to fetch personal details from service');
+        console.log(e);
+    }
 };
 
 export const getProjectList = async except => {
-    const json = await getProjects();
-    const list = json.projectList;
-    const res = list.filter(p => p.id != except.id);
-    return res;
+    try {
+        const json = await getProjectsDetails();
+        let list = json.projectDetails;
+        list = list.filter(p => p.id != except.id);
+        const res = list.map(p => {
+            return {
+                id: p.id,
+                name: p.name,
+                type: p.type,
+            };
+        });
+        return res;
+    } catch (e) {
+        alert('Failed to fetch project list');
+        console.log(e);
+    }
 };
 
 export const getProjectDetails = async id => {
-    const json = await getProjectsDetails();
-    const list = json.projectDetails;
-    const res = list.find(p => p.id == id);
-    return res;
+    try {
+        const json = await getProjectsDetails();
+        const list = json.projectDetails;
+        const res = list.find(p => p.id == id);
+        return res;
+    } catch (e) {
+        alert('Failed to fetch project details');
+        console.log(e);
+    }
 };
 
 export const getLandingDetails = async id => {
-    const json = await getBaseInfo();
-    const res = json.landing;
-    return res;
+    try {
+        const json = await getPersonalDetails();
+        const res = json.landing;
+        return res;
+    } catch (e) {
+        alert('Failed to fetch landing details');
+        console.log(e);
+    }
 };
 
 export const getAboutDetails = async id => {
-    const json = await getBaseInfo();
-    const res = json.about;
-    return res;
+    try {
+        const json = await getPersonalDetails();
+        const res = json.about;
+        return res;
+    } catch (e) {
+        alert('Failed to fetch about details');
+        console.log(e);
+    }
 };
 
+/* get relative img path */
 export const getRelativeImgSrc = fileName => {
-    return (
-        document.body.getAttribute('data-root') + `/assets/images/${fileName}`
-    );
+    try {
+        return (
+            document.body.getAttribute('data-root') +
+            `/assets/images/${fileName}`
+        );
+    } catch (e) {
+        alert('Failed to load image assets');
+        console.log(e);
+    }
 };

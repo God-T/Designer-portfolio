@@ -22,7 +22,9 @@
 }
 
 .project-detail-img {
-    max-width: 100%;
+    width: 100%;
+    display: block;
+    margin-top: 25px !important;
 }
 
 .project-detail-description__p {
@@ -45,7 +47,7 @@
 }
 
 .padding-wrapper {
-    padding: 9.5vw 17vw;
+    padding: 6.5vw 17vw;
 }
 
 .projects-list-nav {
@@ -97,11 +99,11 @@
         padding: 60px 12vw 3vh 12vw;
     }
 
-    .fa-5x {
+    #main-title__logo {
         transform: scale(0.4);
     }
 
-    #main-title__logo {
+    main-title__logo-image {
         top: -10px;
         right: 0;
     }
@@ -141,6 +143,10 @@
     }
 
     .projects-list-nav--font:hover {
-        color: orange !important;
+        color: #0096ff !important;
+    }
+
+    #back-homepage-Btn {
+        display: none;
     }
 }
