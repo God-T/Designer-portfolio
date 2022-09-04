@@ -1,5 +1,9 @@
 @import './fonts.css';
 
+* {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
 /* Shared styles */
 .container--justified {
     display: flex;

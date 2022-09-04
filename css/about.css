@@ -171,10 +171,14 @@
     .contact-info__greating h1 {
         font-weight: 700;
     }
+    .about-photo-wrapper {
+        display: flex;
+        justify-content: end;
+    }
 
     .about-photo-wrapper img {
         height: 50vw;
-        margin-left: 20vw;
+        width: fit-content;
     }
 
     #contact-details-wrapper {
@@ -210,13 +214,13 @@
     .contact-info h1 span,
     .contact-info h1 {
         font-size: 5.5vw !important;
-        line-height: 6.5vw;
+        line-height: 7vw;
     }
 
     .message-hyperlink {
         left: 27.5vw;
         width: 23.5vw;
-        height: 6.3vw;
+        height: 6.7vw;
     }
 
     .about-photo-wrapper {
@@ -225,7 +229,7 @@
 
     .about-photo-wrapper img {
         height: 65vw;
-        margin-left: 18vw;
+        margin-top: 5vw;
     }
 
     .about-content-wrapper h5 {
