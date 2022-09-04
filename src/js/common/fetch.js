@@ -13,6 +13,11 @@ const getJson = async path => {
 
 export const getProjectsDetails = async relative => {
     try {
+        console.log(
+            `${document.body.getAttribute(
+                'data-root'
+            )}/${SERVICE_ID}/projectsDetails.json`
+        );
         return await getJson(
             `${document.body.getAttribute(
                 'data-root'
@@ -26,6 +31,11 @@ export const getProjectsDetails = async relative => {
 
 export const getPersonalDetails = async () => {
     try {
+        console.log(
+            `${document.body.getAttribute(
+                'data-root'
+            )}/${SERVICE_ID}/personalDetails.json`
+        );
         return await getJson(
             `${document.body.getAttribute(
                 'data-root'
