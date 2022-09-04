@@ -1,0 +1,64 @@
+{
+    "projectDetails": [
+        {
+            "id": 1,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        },
+        {
+            "id": 2,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        },
+        {
+            "id": 3,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        },
+        {
+            "id": 4,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        },
+        {
+            "id": 5,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        },
+        {
+            "id": 6,
+            "name": "_NAME_",
+            "type": "_TYPE_",
+            "description": "_DESCRIPTION_",
+            "image": {
+                "folderName": "",
+                "fileNames": []
+            }
+        }
+    ]
+}
