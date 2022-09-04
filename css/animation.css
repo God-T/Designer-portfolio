@@ -8,7 +8,7 @@
 }
 
 .fadeIn--active {
-    animation: fadeIn 1s forwards;
+    animation: fadeIn 1.8s forwards;
     animation-iteration-count: 1;
 }
 
