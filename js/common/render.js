@@ -213,7 +213,7 @@ export const renderBackToHomePageBtn = () => {
     try {
         const navBar = document.getElementById('projects-list-nav');
         const a = createNewElement('a');
-        a.href = '../../index.html';
+        a.href = `${document.body.getAttribute('data-root')}/index.html`;
         a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
         navBar.appendChild(a);
     } catch (e) {
