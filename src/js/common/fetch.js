@@ -11,9 +11,13 @@ const getJson = async path => {
     }
 };
 
-export const getProjectsDetails = async () => {
+export const getProjectsDetails = async relative => {
     try {
-        return await getJson(`./${SERVICE_ID}/projectsDetails.json`);
+        return await getJson(
+            `${document.body.getAttribute(
+                'data-root'
+            )}/${SERVICE_ID}/projectsDetails.json`
+        );
     } catch (e) {
         alert('Failed to fetch projects details from service');
         console.log(e);
@@ -22,7 +26,11 @@ export const getProjectsDetails = async () => {
 
 export const getPersonalDetails = async () => {
     try {
-        return await getJson(`./${SERVICE_ID}/personalDetails.json`);
+        return await getJson(
+            `${document.body.getAttribute(
+                'data-root'
+            )}/${SERVICE_ID}/personalDetails.json`
+        );
     } catch (e) {
         alert('Failed to fetch personal details from service');
         console.log(e);
