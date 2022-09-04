@@ -1,4 +1,4 @@
-# Designer-portfolio
+# Projects portfolio template
 
 -   `IntersectionObserver`: to check if element in view
 
