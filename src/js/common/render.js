@@ -30,7 +30,9 @@ const setTextById = (id, content = '') => {
 const setImgSrcById = (id, imgFileName, alt = '') => {
     try {
         const imgEl = document.getElementById(id);
-        imgEl.src = `../../${SERVICE_ID}/assets/images/${imgFileName}`;
+        imgEl.src = `${document.body.getAttribute(
+            'data-root'
+        )}/${SERVICE_ID}/assets/images/${imgFileName}`;
         imgEl.alt = alt;
     } catch (e) {
         alert('Failed to load image');
