@@ -13,7 +13,7 @@ const getJson = async path => {
 
 export const getProjectsDetails = async () => {
     try {
-        return await getJson(`../../${SERVICE_ID}/projectsDetails.json`);
+        return await getJson(`./${SERVICE_ID}/projectsDetails.json`);
     } catch (e) {
         alert('Failed to fetch projects details from service');
         console.log(e);
@@ -22,7 +22,7 @@ export const getProjectsDetails = async () => {
 
 export const getPersonalDetails = async () => {
     try {
-        return await getJson(`../../${SERVICE_ID}/personalDetails.json`);
+        return await getJson(`./${SERVICE_ID}/personalDetails.json`);
     } catch (e) {
         alert('Failed to fetch personal details from service');
         console.log(e);
