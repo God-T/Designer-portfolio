@@ -24,7 +24,7 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 -   [Service directory structure](#service-directory-structure)
 -   [Data format](#data-format)
 
-### Features & Tech
+## Features & Tech
 
 ##### Element fly in from different directions
 
@@ -61,7 +61,7 @@ A personal website that can be used to exhibit portfolio and projects. Implement
     -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
     -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
 
-### Code structure
+## Code structure
 
 Organise code based on pages and functionaliteis, extract scripts and styles into different files. Routing between 2 template files `index.html` and `project.html`
 
@@ -74,7 +74,7 @@ Organise code based on pages and functionaliteis, extract scripts and styles int
 -   `fetch.js` handles Json data fetching. <sub>(Act like API calls)<sub>
 -   ...
 
-### Design
+## Design
 
 ##### Font family
 
@@ -82,7 +82,7 @@ Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/t
 
 ##### [Full design doc](./design.pdf)
 
-### Service directory structure
+## Service directory structure
 
 ```
 src /
@@ -102,7 +102,7 @@ src /
 
 [Example](https://github.com/God-T/Projects-portfolio-template/tree/main/src/service-template)
 
-### Data format
+## Data format
 
 ##### personalDetails.json
 
