@@ -28,7 +28,7 @@ h1 {
 
 #main-title__logo {
     display: flex;
-    justify-content: end;
+    justify-content: flex-end;
     position: absolute;
     top: 3vw;
     right: 3vw;
