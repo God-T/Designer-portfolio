@@ -33,7 +33,7 @@ Developing: `npm http-server`, `Chrome dev tool`
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
 
 -   Implementation:
-    -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](/src/js/common/event.js)
+    -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](/src/js/common/event.js#L4)
 
 ### Get relative path for each `.html`
 
