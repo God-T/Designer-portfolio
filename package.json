@@ -1,23 +1,27 @@
 {
     "name": "v2",
     "version": "1.0.0",
+    "homepage": "https://god-t.github.io/Projects-portfolio-template",
     "description": "-   `IntersectionObserver`: to check if element in view",
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "http-server src -p 8080"
+        "start": "http-server src -p 8080",
+        "deploy": "gh-pages -d src"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/God-T/Designer-portfolio.git"
+        "url": "git+https://github.com/God-T/Projects-portfolio-template.git"
     },
     "author": "Godt-zz",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/God-T/Designer-portfolio/issues"
+        "url": "https://github.com/God-T/Projects-portfolio-template/issues"
     },
-    "homepage": "https://github.com/God-T/Designer-portfolio#readme",
     "dependencies": {
         "http-server": "^14.1.1"
+    },
+    "devDependencies": {
+        "gh-pages": "^4.0.0"
     }
 }

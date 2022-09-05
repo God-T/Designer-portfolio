@@ -142,14 +142,18 @@ export const renderProjectDetails = async projectID => {
             ? imageData.fileNames
             : imageData.fileNames;
 
+        const collection = [];
         for (let i = 0; i < fileNames.length; i++) {
             const projectImg = createNewElement('img', [
                 'project-detail-img',
-                'fadeIn',
+                'loader',
             ]);
             projectImg.src = rootPath + fileNames[i];
-            projectDetailElement.appendChild(projectImg);
+            collection.push(projectImg);
         }
+        collection.map(img => {
+            projectDetailElement.appendChild(img);
+        });
     } catch (e) {
         alert('Failed to render project deatils');
         console.log(e);
@@ -190,9 +194,10 @@ export const renderContactDetails = async (shouldRenderMainMessage = false) => {
                 `contact-${contact.name}`,
                 contact.name
             );
-            a.href = shouldRenderMainMessage
-                ? 'mailto:' + contact.href
-                : contact.href;
+            a.href =
+                data.contactDetails[i].type === 'media'
+                    ? contact.href
+                    : 'mailto:' + contact.href;
             /* Set to open a new tab */
             a.target = '_blank';
             container.appendChild(a);
