@@ -162,6 +162,11 @@ export const renderLandingData = async () => {
         for (let key in data) {
             setTextById(`landing-data-id--${key}`, data[key]);
         }
+
+        const logo = document.getElementById('main-title__logo-image');
+        logo.src = `${document.body.getAttribute(
+            'data-root'
+        )}/${SERVICE_ID}/assets/images/logo.gif`;
     } catch (e) {
         alert('Failed to render landing data');
         console.log(e);
@@ -218,6 +223,18 @@ export const renderBackToHomePageBtn = () => {
         navBar.appendChild(a);
     } catch (e) {
         alert('Failed to render back to home page btn');
+        console.log(e);
+    }
+};
+
+export const renderFavicon = () => {
+    try {
+        const fav = document.getElementById('favicon-link');
+        fav.href = `${document.body.getAttribute(
+            'data-root'
+        )}/${SERVICE_ID}/assets/images/favicon.ico`;
+    } catch (e) {
+        alert('Failed to render favicon');
         console.log(e);
     }
 };

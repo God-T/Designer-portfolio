@@ -4,6 +4,11 @@
     -webkit-tap-highlight-color: transparent !important;
 }
 
+html,
+body {
+    height: 100%;
+}
+
 /* Shared styles */
 .container--justified {
     display: flex;
@@ -25,8 +30,8 @@ h1 {
     display: flex;
     justify-content: end;
     position: absolute;
-    top: 5vw;
-    right: 4vw;
+    top: 3vw;
+    right: 3vw;
     cursor: pointer;
     transition: all 0.3s ease;
 }
@@ -68,7 +73,7 @@ body {
 
 .landing-container {
     padding: 5vw 4vw 5vw 7vw;
-    height: calc(100vh - 10vw);
+    height: calc(100% - 10vw);
 }
 
 #contact-details-wrapper {
