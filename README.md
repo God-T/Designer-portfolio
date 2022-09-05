@@ -26,19 +26,19 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 
 ## Features & Tech
 
-##### Element fly in from different directions
+### Element fly in from different directions
 
 -   `CSS` animation `@keyframes` with `translateX` and `translateY`
 -   Implementation:
     -   Defines animation classes `animation.css`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/animation.css)
 
-##### Gradually fill in color from left to right
+### Gradually fill in color from left to right
 
 -   `CSS` transition set `background: linear-gradient(to right, ...)` along with `background-size: 200% 100%;` and `background-position: right bottom;`
 -   Implementation:
     -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/projects-list.css)
 
-##### Trigger animations when elements scrolled into view
+#### Trigger animations when elements scrolled into view
 
 -   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
 
@@ -46,7 +46,7 @@ A personal website that can be used to exhibit portfolio and projects. Implement
     -   Defines observer `trigger.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/trigger.js)
     -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/animation.js)
 
-##### Back to top
+#### Back to top
 
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
 
