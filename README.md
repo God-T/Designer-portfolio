@@ -6,21 +6,21 @@ Reponsiveness enabled: :desktop_computer: :computer: :iphone:
 
 Developing: `npm http-server`, `Chrome dev tool`
 
-### Features & Tech
+## Features & Tech
 
-##### Element fly in from different directions
+### Element fly in from different directions
 
 -   `CSS` animation `@keyframes` with `translateX` and `translateY`
 -   Implementation:
     -   Defines animation classes `animation.css`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/animation.css)
 
-##### Gradually fill in color from left to right
+### Gradually fill in color from left to right
 
 -   `CSS` transition set `background: linear-gradient(to right, ...)` along with `background-size: 200% 100%;` and `background-position: right bottom;`
 -   Implementation:
     -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/projects-list.css)
 
-##### Trigger animations when elements in view
+### Trigger animations when elements in view
 
 -   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
 
@@ -28,14 +28,14 @@ Developing: `npm http-server`, `Chrome dev tool`
     -   Defines observer `trigger.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/trigger.js)
     -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/animation.js)
 
-##### Back to top
+### Back to top
 
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
 
 -   Implementation:
     -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/event.js)
 
-##### Get relative path for each `.html`
+### Get relative path for each `.html`
 
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
 
@@ -43,13 +43,13 @@ Developing: `npm http-server`, `Chrome dev tool`
     -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
     -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
 
-### Design
+## Design
 
 Font family: Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
 
 [Full design doc](./design.pdf)
 
-### Code structure
+## Code structure
 
 Organise code based on pages and functionaliteis, extract scripts and styles into different files. Routing between 2 template files `index.html` and `project.html`
 
@@ -62,7 +62,7 @@ Organise code based on pages and functionaliteis, extract scripts and styles int
 -   `fetch.js` handles Json data fetching. <sub>(Act like API calls)<sub>
 -   ...
 
-### Service directory structure
+## Service directory structure
 
 ```
 src /
@@ -82,9 +82,9 @@ src /
 
 [Example](https://github.com/God-T/Projects-portfolio-template/tree/main/src/service-template)
 
-### Json format
+## Json format
 
-##### personalDetails.json
+### personalDetails.json
 
 ```JSON
 {
@@ -112,7 +112,7 @@ src /
 }
 ```
 
-##### projectsDetails.json
+### projectsDetails.json
 
 ```JSON
 {
