@@ -1,22 +1,22 @@
 # Projects portfolio template
 
-#### Published on Github
+### Published on Github
 
 [:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html)
 
-#### About
+### About
 
 A personal website that can be used to exhibit portfolio and projects. Implemented as a template that can accept Json, images data with given [Json format](#json-format) and fixed [service directory structure](#service-directory-structure).
 
-#### Reponsiveness enabled
+### Reponsiveness enabled
 
 :desktop_computer: :computer: :iphone:
 
-#### Dev environment
+### Dev environment
 
 `npm http-server`, `Chrome dev tool`
 
-#### Catlog
+### Catlog
 
 -   [Features & Tech](#features--tech)
 -   [Code structure](#code-structure)
@@ -41,7 +41,6 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 ### Trigger animations when elements scrolled into view
 
 -   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
-
 -   Implementation:
     -   Defines observer `trigger.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/trigger.js)
     -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/animation.js)
@@ -49,14 +48,12 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 ### Back to top
 
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
-
 -   Implementation:
     -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/event.js)
 
 ### Get relative path for each `.html`
 
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
-
 -   Implementation (One example):
     -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
     -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
@@ -67,7 +64,7 @@ Organise code based on pages and functionaliteis, extract scripts and styles int
 
 -   `index.html` landing page contains personal details and projects list.
 -   `project.html` project details page contains project details and projects list.
-    <br>
+
 -   `animation.js` handles main animations trigger events.
 -   `render.js` handles page components loading and rendering.
 -   `event.js` handles buttons, anchors click events.
