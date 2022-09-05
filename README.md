@@ -18,34 +18,34 @@ Developing: `npm http-server`, `Chrome dev tool`
 
 -   `CSS` transition set `background: linear-gradient(to right, ...)` along with `background-size: 200% 100%;` and `background-position: right bottom;`
 -   Implementation:
-    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/projects-list.css)
+    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](/src/css/projects-list.css)
 
 ### Trigger animations when elements in view
 
--   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
+-   `Intersection Observer API`[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
 
 -   Implementation:
-    -   Defines observer `trigger.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/trigger.js)
-    -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/animation.js)
+    -   Defines observer `trigger.js`[<sup>:link:</sup>](/src/js/common/trigger.js)
+    -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](/src/js/common/animation.js)
 
 ### Back to top
 
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
 
 -   Implementation:
-    -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/event.js)
+    -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](/src/js/common/event.js)
 
 ### Get relative path for each `.html`
 
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
 
 -   Implementation (One example):
-    -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
-    -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
+    -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](/src/index.html)
+    -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](/src/js/common/render.js)
 
 ## Design
 
-Font family: Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
+Font family: Orkney[<sup>:link:</sup>](/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
 
 [Full design doc](./design.pdf)
 
@@ -80,7 +80,7 @@ src /
     └── projectsDetails.json
 ```
 
-[Example](https://github.com/God-T/Projects-portfolio-template/tree/main/src/service-template)
+[Example](/src/service-template)
 
 ## Json format
 
