@@ -16,6 +16,14 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 
 `npm http-server`, `Chrome dev tool`
 
+##### Catlog
+
+-   [Features & Tech](#features--tech)
+-   [Code structure](#code-structure)
+-   [Design](#design)
+-   [Service directory structure](#service-directory-structure)
+-   [Data format](#data-format)
+
 ### Features & Tech
 
 ##### Element fly in from different directions
@@ -53,14 +61,6 @@ A personal website that can be used to exhibit portfolio and projects. Implement
     -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
     -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
 
-### Design
-
-##### Font family
-
-Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
-
-##### [Full design doc](./design.pdf)
-
 ### Code structure
 
 Organise code based on pages and functionaliteis, extract scripts and styles into different files. Routing between 2 template files `index.html` and `project.html`
@@ -73,6 +73,14 @@ Organise code based on pages and functionaliteis, extract scripts and styles int
 -   `event.js` handles buttons, anchors click events.
 -   `fetch.js` handles Json data fetching. <sub>(Act like API calls)<sub>
 -   ...
+
+### Design
+
+##### Font family
+
+Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
+
+##### [Full design doc](./design.pdf)
 
 ### Service directory structure
 
@@ -94,7 +102,7 @@ src /
 
 [Example](https://github.com/God-T/Projects-portfolio-template/tree/main/src/service-template)
 
-### Json format
+### Data format
 
 ##### personalDetails.json
 
