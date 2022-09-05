@@ -58,6 +58,16 @@
     font-weight: 700;
 }
 
+.project {
+    /* Gradually fill in color from left to right*/
+    background: initial;
+    transition: color 0.5s ease-in-out;
+}
+
+.project:hover {
+    color: #0096ff;
+}
+
 /* Mobile viewport */
 @media screen and (max-width: 770px) {
     .project-detail-description {
@@ -101,11 +111,6 @@
 
     #main-title__logo {
         transform: scale(0.4);
-    }
-
-    main-title__logo-image {
-        top: -10px;
-        right: 0;
     }
 
     .projects-list-nav {

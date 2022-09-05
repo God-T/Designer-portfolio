@@ -2,6 +2,7 @@ import {
     renderProjectsList,
     renderProjectDetails,
     renderContactDetails,
+    renderFavicon,
 } from './common/render.js';
 import { bindBackToTopBtnEvent, bindProjectsNavEvent } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
@@ -13,6 +14,7 @@ const getCurrentProjectId = () => {
     return projectID;
 };
 
+renderFavicon();
 const projectId = getCurrentProjectId();
 await renderProjectsList(true, { id: projectId });
 await renderProjectDetails(projectId);

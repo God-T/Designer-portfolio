@@ -6,7 +6,7 @@
     padding: 40px;
     cursor: pointer;
 
-    /* Gradually fill in color from left to right; revert when  */
+    /* Gradually fill in color from left to right */
     background: linear-gradient(to right, #d4d4d4 50%, #efeeed 50%);
     background-size: 202% 100%;
     background-position: right bottom;
