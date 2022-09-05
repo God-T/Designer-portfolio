@@ -18,7 +18,7 @@ Developing: `npm http-server`, `Chrome dev tool`
 
 -   `CSS` transition set `background: linear-gradient(to right, ...)` along with `background-size: 200% 100%;` and `background-position: right bottom;`
 -   Implementation:
-    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](/src/css/projects-list.css)
+    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](/src/css/projects-list.css#L10)
 
 ### Trigger animations when elements in view
 
@@ -40,8 +40,8 @@ Developing: `npm http-server`, `Chrome dev tool`
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
 
 -   Implementation (One example):
-    -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](/src/index.html)
-    -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](/src/js/common/render.js)
+    -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](/src/index.html#L44)
+    -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](/src/js/common/render.js#L33)
 
 ## Design
 
