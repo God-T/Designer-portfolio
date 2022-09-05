@@ -12,7 +12,7 @@ Developing: `npm http-server`, `Chrome dev tool`
 
 -   `CSS` animation `@keyframes` with `translateX` and `translateY`
 -   Implementation:
-    -   Defines animation classes `animation.css`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/animation.css)
+    -   Defines animation classes `animation.css`[<sup>:link:</sup>](/src/css/animation.css)
 
 ### Gradually fill in color from left to right
 
