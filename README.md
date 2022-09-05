@@ -1,10 +1,20 @@
 # Projects portfolio template
 
+##### Published on Github
+
+[:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html)
+
+##### About
+
 A personal website that can be used to exhibit portfolio and projects. Implemented as a template that can accept Json, images data with given [Json format](#json-format) and fixed [service directory structure](#service-directory-structure).
 
-Reponsiveness enabled: :desktop_computer: :computer: :iphone:
+##### Reponsiveness enabled
 
-Developing: `npm http-server`, `Chrome dev tool`
+:desktop_computer: :computer: :iphone:
+
+##### Dev environment
+
+`npm http-server`, `Chrome dev tool`
 
 ### Features & Tech
 
@@ -20,7 +30,7 @@ Developing: `npm http-server`, `Chrome dev tool`
 -   Implementation:
     -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/projects-list.css)
 
-##### Trigger animations when elements in view
+##### Trigger animations when elements scrolled into view
 
 -   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
 
@@ -45,9 +55,11 @@ Developing: `npm http-server`, `Chrome dev tool`
 
 ### Design
 
-Font family: Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
+##### Font family
 
-[Full design doc](./design.pdf)
+Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
+
+##### [Full design doc](./design.pdf)
 
 ### Code structure
 

@@ -52,7 +52,7 @@ export const renderProjectsList = async (
         projectListElement.appendChild(
             createNewElement('div', [
                 'project-top-divider',
-                'slideIn--left2right--slow',
+                'slideIn--left2right__large-box',
             ])
         );
         /* Render projects */
@@ -60,7 +60,7 @@ export const renderProjectsList = async (
         for (let i = 0; i < projectList.length; i++) {
             const project = createNewElement('div', [
                 'project',
-                'slideIn--left2right--slow',
+                'slideIn--left2right__large-box',
             ]);
             project.setAttribute('id', 'project-' + projectList[i].id);
             project.appendChild(
