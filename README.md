@@ -1,22 +1,22 @@
 # Projects portfolio template
 
-##### Published on Github
+#### Published on Github
 
 [:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html)
 
-##### About
+#### About
 
 A personal website that can be used to exhibit portfolio and projects. Implemented as a template that can accept Json, images data with given [Json format](#json-format) and fixed [service directory structure](#service-directory-structure).
 
-##### Reponsiveness enabled
+#### Reponsiveness enabled
 
 :desktop_computer: :computer: :iphone:
 
-##### Dev environment
+#### Dev environment
 
 `npm http-server`, `Chrome dev tool`
 
-##### Catlog
+#### Catlog
 
 -   [Features & Tech](#features--tech)
 -   [Code structure](#code-structure)
@@ -38,7 +38,7 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 -   Implementation:
     -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/css/projects-list.css)
 
-#### Trigger animations when elements scrolled into view
+### Trigger animations when elements scrolled into view
 
 -   [`Intersection Observer API`](https://blog.webdevsimplified.com/2022-01/intersection-observer/)[<sup>:link:</sup>](https://blog.webdevsimplified.com/2022-01/intersection-observer/) to check if element in view.
 
@@ -46,14 +46,14 @@ A personal website that can be used to exhibit portfolio and projects. Implement
     -   Defines observer `trigger.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/trigger.js)
     -   Defines animation trigger events `animation.js`[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/animation.js)
 
-#### Back to top
+### Back to top
 
 -   Trigger body `scrollIntoView` function, and set `behavior` attribute to `"smooth"` for smoothly scrolling
 
 -   Implementation:
     -   Defines event handler `event.js`<sub>_line 4-8_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/event.js)
 
-##### Get relative path for each `.html`
+### Get relative path for each `.html`
 
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
 
@@ -76,11 +76,11 @@ Organise code based on pages and functionaliteis, extract scripts and styles int
 
 ## Design
 
-##### Font family
+### Font family
 
 Orkney[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts) (Light.woff, Regular.woff, Medium.woff, Bold.woff)
 
-##### [Full design doc](./design.pdf)
+### [Full design doc](./design.pdf)
 
 ## Service directory structure
 
@@ -104,7 +104,7 @@ src /
 
 ## Data format
 
-##### personalDetails.json
+### personalDetails.json
 
 ```JSON
 {
@@ -132,7 +132,7 @@ src /
 }
 ```
 
-##### projectsDetails.json
+### projectsDetails.json
 
 ```JSON
 {
