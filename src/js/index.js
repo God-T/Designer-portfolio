@@ -8,11 +8,16 @@ import {
 import { bindBackToTopBtnEvent, bindLogoClickEvent } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
 
-renderFavicon();
-await renderProjectsList();
-await renderLandingData();
+function turnGreen() {
+    document.body.style.backgroundColor = 'green';
+}
+
+// renderFavicon();
+// await renderProjectsList();
+renderLandingData();
 await renderAboutData();
 await renderContactDetails();
-bindAnimations();
-bindBackToTopBtnEvent();
-bindLogoClickEvent();
+// bindAnimations();
+// bindBackToTopBtnEvent();
+// bindLogoClickEvent();
+// turnGreen();

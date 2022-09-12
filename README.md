@@ -162,3 +162,9 @@ src /
     ]
 }
 ```
+
+### Things can be improve
+
+##### Organise styles with `.scss`
+
+-   store colors into variables

@@ -1,3 +1,11 @@
+// import(
+//     `${document.body.getAttribute(
+//         'data-root'
+//     )}/${SERVICE_ID}/projectsDetails.json`
+// );
+
+import personalDetails from '../../assets/jsons/personalDetails.json';
+
 /* Change service for different data source */
 export const SERVICE_ID = 'service-monica';
 
@@ -24,13 +32,9 @@ export const getProjectsDetails = async relative => {
     }
 };
 
-export const getPersonalDetails = async () => {
+export const getPersonalDetails = () => {
     try {
-        return await getJson(
-            `${document.body.getAttribute(
-                'data-root'
-            )}/${SERVICE_ID}/personalDetails.json`
-        );
+        return personalDetails;
     } catch (e) {
         alert('Failed to fetch personal details from service');
         console.log(e);
