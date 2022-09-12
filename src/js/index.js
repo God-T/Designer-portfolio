@@ -12,7 +12,7 @@ function turnGreen() {
     document.body.style.backgroundColor = 'green';
 }
 
-// renderFavicon();
+renderFavicon();
 // await renderProjectsList();
 renderLandingData();
 await renderAboutData();
