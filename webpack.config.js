@@ -10,7 +10,7 @@ module.exports = {
         project: './src/js/project.js',
     },
     output: {
-        filename: '[name].[contenthash].js',
+        filename: '[contenthash].bundle.js',
         path: path.resolve(__dirname, './dist'),
         /* Needs Webpack version > 5.20 */
         clean: true,
@@ -58,13 +58,26 @@ module.exports = {
                 // use: ['style-loader', 'css-loader'],
                 use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
+            {
+                test: /\.htaccess$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '.htaccess',
+                        },
+                    },
+                ],
+            },
         ],
     },
     plugins: [
         /* Minification of the resulting JS file bundle */
         new TerserPlugin(),
         /* Extracting CSS into a separate bundle */
-        new MiniCssExtractPlugin({ filename: '[name].[contenthash].css' }),
+        new MiniCssExtractPlugin({
+            filename: '[contenthash].min.css',
+        }),
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'index.html',
