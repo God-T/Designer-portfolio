@@ -23,9 +23,17 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg)$/,
+                test: /\.(png|jpg|ico|gif)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: 'images/[name].[ext]',
+                        },
+                    },
+                ],
                 /* Bundle image file into the files under the build folder; more http requests */
-                type: 'asset/resource',
+                // type: 'asset/resource',
                 /* Bundle image file into the inline; increase JS bundle file size  */
                 // type: 'asset/inline',
                 /* Webpack choose asset/inline(< 8kb in default) or asset/resource based(> 8kb in default) on image size*/
@@ -43,7 +51,7 @@ module.exports = {
             // },
             {
                 test: /\.json$/,
-                type: 'asset/resource',
+                type: 'asset/source',
             },
             {
                 test: /\.css$/,

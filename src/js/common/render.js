@@ -24,7 +24,6 @@ const createNewElement = (tagType, classNames, content = null) => {
 
 const setTextById = (id, content = '') => {
     const el = document.getElementById(id);
-    console.log('el:', el, id);
     el.textContent = content;
 };
 
@@ -71,7 +70,7 @@ export const renderProjectsList = async (
             projectListElement.appendChild(project);
 
             project.addEventListener('click', () => {
-                window.location.href = `${window.location.origin}/project.html?id=${projectList[i].id}&name=${projectList[i].name}`;
+                window.location.href = `${window.location.origin}/project?id=${projectList[i].id}&name=${projectList[i].name}`;
             });
         }
     } catch (e) {
@@ -145,7 +144,7 @@ export const renderProjectDetails = async projectID => {
                 'project-detail-img',
                 'loader',
             ]);
-            projectImg.src = rootPath + fileNames[i];
+            projectImg.src = `images/${fileNames[i]}`;
             collection.push(projectImg);
         }
         collection.map(img => {
@@ -209,7 +208,11 @@ export const renderAboutData = async () => {
     try {
         const data = await getAboutDetails();
         setTextById('about-data-id--aboutText', data.aboutText);
-        setImgSrcById('about-data-id--photo', data.photo.src, data.photo.alt);
+        setImgSrcById(
+            'about-data-id--photo',
+            `images/${data.photo.src}`,
+            data.photo.alt
+        );
     } catch (e) {
         alert('Failed to render about data');
         console.log(e);

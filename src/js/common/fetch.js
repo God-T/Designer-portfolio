@@ -1,14 +1,31 @@
-import personalDetails from '../../assets/json/personalDetails.json';
-import projectsDetails from '../../assets/json/projectsDetails.json';
+import personalDetailsRaw from '../../assets/json/personalDetails.json';
+import projectsDetailsRaw from '../../assets/json/projectsDetails.json';
+
+const personalDetails = JSON.parse(personalDetailsRaw);
+const projectsDetails = JSON.parse(projectsDetailsRaw);
+console.log(projectsDetails.projectDetails);
+
+const loadImagesForWebpack = () => {
+    console.log('new', personalDetails.about.photo.src);
+    const aboutImg = personalDetails.about.photo.src;
+    import(`../../assets/images/about.jpg`);
+    projectsDetails.projectDetails.map(p => {
+        const folderName = p.image.folderName;
+        const fileNames = p.image.fileNames;
+        fileNames.map(img => {
+            import(`../../assets/images/${folderName}/${img}`);
+        });
+    });
+};
+loadImagesForWebpack();
 
 /* Change service for different data source */
 export const SERVICE_ID = 'service-monica';
 
 const getJson = async path => {
     try {
-        const response = await fetch(path);
-        const json = await response.json();
-        return json;
+        //TODO
+        return path;
     } catch (e) {
         throw e;
     }
