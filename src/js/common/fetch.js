@@ -1,10 +1,5 @@
-// import(
-//     `${document.body.getAttribute(
-//         'data-root'
-//     )}/${SERVICE_ID}/projectsDetails.json`
-// );
-
-import personalDetails from '../../assets/jsons/personalDetails.json';
+import personalDetails from '../../assets/json/personalDetails.json';
+import projectsDetails from '../../assets/json/projectsDetails.json';
 
 /* Change service for different data source */
 export const SERVICE_ID = 'service-monica';
@@ -21,20 +16,16 @@ const getJson = async path => {
 
 export const getProjectsDetails = async relative => {
     try {
-        return await getJson(
-            `${document.body.getAttribute(
-                'data-root'
-            )}/${SERVICE_ID}/projectsDetails.json`
-        );
+        return await getJson(projectsDetails);
     } catch (e) {
         alert('Failed to fetch projects details from service');
         console.log(e);
     }
 };
 
-export const getPersonalDetails = () => {
+export const getPersonalDetails = async () => {
     try {
-        return personalDetails;
+        return await getJson(personalDetails);
     } catch (e) {
         alert('Failed to fetch personal details from service');
         console.log(e);
@@ -90,19 +81,6 @@ export const getAboutDetails = async id => {
         return res;
     } catch (e) {
         alert('Failed to fetch about details');
-        console.log(e);
-    }
-};
-
-/* get relative img path */
-export const getRelativeImgSrc = fileName => {
-    try {
-        return (
-            document.body.getAttribute('data-root') +
-            `/assets/images/${fileName}`
-        );
-    } catch (e) {
-        alert('Failed to load image assets');
         console.log(e);
     }
 };

@@ -6,8 +6,9 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "http-server dist -p 8080",
-        "deploy": "gh-pages -d src"
+        "start": "webpack serve",
+        "deploy": "gh-pages -d src",
+        "build": "npx webpack"
     },
     "repository": {
         "type": "git",
@@ -19,9 +20,12 @@
         "url": "https://github.com/God-T/Projects-portfolio-template/issues"
     },
     "devDependencies": {
+        "clean-webpack-plugin": "^4.0.0",
         "css-loader": "^6.7.1",
         "gh-pages": "^4.0.0",
+        "html-webpack-plugin": "^5.5.0",
         "http-server": "^14.1.1",
+        "mini-css-extract-plugin": "^2.6.1",
         "style-loader": "^3.3.1",
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",

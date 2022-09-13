@@ -1,3 +1,8 @@
+import '../css/index.css';
+import '../css/about.css';
+import '../css/landing.css';
+import '../css/projects-list.css';
+import '../css/animation.css';
 import {
     renderProjectsList,
     renderLandingData,
@@ -8,16 +13,10 @@ import {
 import { bindBackToTopBtnEvent, bindLogoClickEvent } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
 
-function turnGreen() {
-    document.body.style.backgroundColor = 'green';
-}
-
-renderFavicon();
-// await renderProjectsList();
-renderLandingData();
+await renderProjectsList();
+await renderLandingData();
 await renderAboutData();
 await renderContactDetails();
-// bindAnimations();
-// bindBackToTopBtnEvent();
-// bindLogoClickEvent();
-// turnGreen();
+bindAnimations();
+bindBackToTopBtnEvent();
+bindLogoClickEvent();
