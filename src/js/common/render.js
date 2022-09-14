@@ -1,13 +1,12 @@
 import {
-    SERVICE_ID,
     getProjectList,
     getProjectDetails,
     getLandingDetails,
     getAboutDetails,
+    getProjectImageSrc,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindMessageClickEvent } from './event.js';
-// import * as fs from 'fs/promises';
 
 const createNewElement = (tagType, classNames, content = null) => {
     const newEl = document.createElement(tagType);
@@ -24,7 +23,7 @@ const createNewElement = (tagType, classNames, content = null) => {
 
 const setTextById = (id, content = '') => {
     const el = document.getElementById(id);
-    el.textContent = content;
+    if (el) el.textContent = content;
 };
 
 const setImgSrcById = (id, imgFileName, alt = '') => {
@@ -38,10 +37,7 @@ const setImgSrcById = (id, imgFileName, alt = '') => {
     }
 };
 
-export const renderProjectsList = async (
-    useRelativePath = false,
-    except = {}
-) => {
+export const renderProjectsList = (except = {}) => {
     try {
         const projectListElement = document.getElementById(
             'projects-list-container'
@@ -54,7 +50,7 @@ export const renderProjectsList = async (
             ])
         );
         /* Render projects */
-        const projectList = await getProjectList(except);
+        const projectList = getProjectList(except);
         for (let i = 0; i < projectList.length; i++) {
             const project = createNewElement('div', [
                 'project',
@@ -79,9 +75,9 @@ export const renderProjectsList = async (
     }
 };
 
-export const renderProjectDetails = async projectID => {
+export const renderProjectDetails = projectID => {
     try {
-        const projectDetails = await getProjectDetails(projectID);
+        const projectDetails = getProjectDetails(projectID);
         const projectDetailElement = document.getElementById(
             'project-detail-container'
         );
@@ -124,58 +120,40 @@ export const renderProjectDetails = async projectID => {
 
         /* Render image */
         const imageData = projectDetails.image;
-        const rootPath = `${document.body.getAttribute(
-            'data-root'
-        )}/${SERVICE_ID}/assets/images/${imageData.folderName}/`;
-        if (imageData.autoImporting) {
-            // TODO: auto read image file names form given dir
-            // const fileNamesFromReaddir = fs.readdirSync(
-            //     `../../${SERVICE_ID}/assets/images/`
-            // );
-            // console.log(fileNamesFromReaddir);
-        }
-        const fileNames = imageData.autoImporting
-            ? imageData.fileNames
-            : imageData.fileNames;
-
-        const collection = [];
+        const fileNames = imageData.fileNames;
         for (let i = 0; i < fileNames.length; i++) {
             const projectImg = createNewElement('img', [
                 'project-detail-img',
-                'loader',
+                'fadeIn',
             ]);
-            projectImg.src = `images/${fileNames[i]}`;
-            collection.push(projectImg);
+            projectImg.src = getProjectImageSrc(
+                `${imageData.folderName}/${fileNames[i]}`
+            );
+            projectDetailElement.appendChild(projectImg);
         }
-        collection.map(img => {
-            projectDetailElement.appendChild(img);
-        });
     } catch (e) {
         alert('Failed to render project deatils');
         console.log(e);
     }
 };
 
-export const renderLandingData = async () => {
+export const renderLandingData = () => {
     try {
-        const data = await getLandingDetails();
+        const data = getLandingDetails();
         for (let key in data) {
             setTextById(`landing-data-id--${key}`, data[key]);
         }
-
-        // const logo = document.getElementById('main-title__logo-image');
-        // logo.src = `${document.body.getAttribute(
-        //     'data-root'
-        // )}/${SERVICE_ID}/assets/images/logo.gif`;
+        const logo = document.getElementById('main-title__logo-image');
+        logo.src = getProjectImageSrc(data.logoFilename);
     } catch (e) {
         alert('Failed to render landing data');
         console.log(e);
     }
 };
 
-export const renderContactDetails = async (shouldRenderMainMessage = false) => {
+export const renderContactDetails = (shouldRenderMainMessage = false) => {
     try {
-        const data = await getAboutDetails();
+        const data = getAboutDetails();
         const container = document.getElementById('contact-details-wrapper');
 
         for (let i in data.contactDetails) {
@@ -204,13 +182,13 @@ export const renderContactDetails = async (shouldRenderMainMessage = false) => {
     }
 };
 
-export const renderAboutData = async () => {
+export const renderAboutData = () => {
     try {
-        const data = await getAboutDetails();
+        const data = getAboutDetails();
         setTextById('about-data-id--aboutText', data.aboutText);
         setImgSrcById(
             'about-data-id--photo',
-            `images/${data.photo.src}`,
+            getProjectImageSrc(data.photo.src),
             data.photo.alt
         );
     } catch (e) {
@@ -223,7 +201,7 @@ export const renderBackToHomePageBtn = () => {
     try {
         const navBar = document.getElementById('projects-list-nav');
         const a = createNewElement('a');
-        a.href = `${document.body.getAttribute('data-root')}/index.html`;
+        a.href = '.';
         a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
         navBar.appendChild(a);
     } catch (e) {
@@ -235,9 +213,7 @@ export const renderBackToHomePageBtn = () => {
 export const renderFavicon = () => {
     try {
         const fav = document.getElementById('favicon-link');
-        fav.href = `${document.body.getAttribute(
-            'data-root'
-        )}/${SERVICE_ID}/assets/images/favicon.ico`;
+        fav.href = getProjectImageSrc('favicon.ico');
     } catch (e) {
         alert('Failed to render favicon');
         console.log(e);

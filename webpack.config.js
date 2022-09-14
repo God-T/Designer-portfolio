@@ -24,18 +24,26 @@ module.exports = {
         rules: [
             {
                 test: /\.(png|jpg|ico|gif)$/,
-                use: [
-                    {
-                        loader: 'file-loader',
-                        options: {
-                            name: 'images/[name].[ext]',
-                        },
-                    },
-                ],
+                type: 'asset/resource',
+                /* Specify output path for 'asset/resource' */
+                generator: {
+                    filename: 'assets/images/[contenthash][ext]',
+                },
+                // use: [
+                //     {
+                //         loader: 'file-loader',
+                //         options: {
+                //             name: 'assets/images/[name].[ext]',
+                //         },
+                //     },
+                // ],
+
                 /* Bundle image file into the files under the build folder; more http requests */
                 // type: 'asset/resource',
+
                 /* Bundle image file into the inline; increase JS bundle file size  */
                 // type: 'asset/inline',
+
                 /* Webpack choose asset/inline(< 8kb in default) or asset/resource based(> 8kb in default) on image size*/
                 // type: 'asset',
                 // parser: {
@@ -68,6 +76,22 @@ module.exports = {
                         },
                     },
                 ],
+            },
+            {
+                test: /\.(woff)$/,
+                type: 'asset/resource',
+                /* Specify output path for 'asset/resource' */
+                generator: {
+                    filename: 'assets/fonts/[contenthash][ext]',
+                },
+                // use: [
+                //     {
+                //         loader: 'file-loader',
+                //         options: {
+                //             name: 'assets/fonts/[contenthash].[ext]',
+                //         },
+                //     },
+                // ],
             },
         ],
     },

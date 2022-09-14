@@ -14,10 +14,10 @@ import {
 import { bindBackToTopBtnEvent, bindLogoClickEvent } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
 
-await renderProjectsList();
-await renderLandingData();
-await renderAboutData();
-await renderContactDetails();
+renderProjectsList();
+renderLandingData();
+renderAboutData();
+renderContactDetails();
 bindAnimations();
 bindBackToTopBtnEvent();
 bindLogoClickEvent();

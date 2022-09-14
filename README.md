@@ -136,7 +136,7 @@ src /
 
 ```JSON
 {
-    "projectDetails": [
+    "projectsDetails": [
         {
             "id": 1,
             "name": "_NAME_",

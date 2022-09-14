@@ -71,6 +71,10 @@
     color: #0096ff;
 }
 
+#project-detail-container {
+    min-height: 100vh;
+}
+
 /* Mobile viewport */
 @media screen and (max-width: 770px) {
     .project-detail-description {
