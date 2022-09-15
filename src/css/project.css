@@ -28,8 +28,8 @@
     display: block;
     margin-top: 25px !important;
     /* 貌似没啥diao用 x_x */
-    background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
-    background-size: 64px;
+    /* background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
+    background-size: 64px; */
 }
 
 .project-detail-description__p {
@@ -71,6 +71,10 @@
 
 .project:hover {
     color: #0096ff;
+}
+
+#project-detail-container {
+    min-height: 100vh;
 }
 
 /* Mobile viewport */

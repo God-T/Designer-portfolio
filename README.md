@@ -133,7 +133,7 @@ src /
 
 ```JSON
 {
-    "projectDetails": [
+    "projectsDetails": [
         {
             "id": 1,
             "name": "_NAME_",
@@ -159,3 +159,9 @@ src /
     ]
 }
 ```
+
+### Things can be improve
+
+##### Organise styles with `.scss`
+
+-   store colors into variables

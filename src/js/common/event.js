@@ -17,13 +17,11 @@ export const bindBackToTopBtnEvent = () => {
     }
 };
 
-export const bindLogoClickEvent = (useRelativePath = false) => {
+export const bindLogoClickEvent = () => {
     try {
         const logo = document.getElementById('main-title__logo');
         logo.addEventListener('click', () => {
-            window.location.href = useRelativePath
-                ? `../index.html`
-                : `./index.html`;
+            window.location.href = '.';
         });
     } catch (e) {
         alert('Failed to bind event to logo');
@@ -43,9 +41,9 @@ export const bindMessageClickEvent = url => {
     }
 };
 
-export const bindProjectsNavEvent = async currentProjectId => {
+export const bindProjectsNavEvent = currentProjectId => {
     try {
-        const projectList = await getProjectList({});
+        const projectList = getProjectList({});
         const foundNext =
             currentProjectId < projectList.length
                 ? projectList.find(p => p.id == parseInt(currentProjectId) + 1)
@@ -57,7 +55,7 @@ export const bindProjectsNavEvent = async currentProjectId => {
 
         const nextBtn = document.getElementById('next-project-Btn');
         if (foundNext)
-            nextBtn.href = `./project.html?id=${foundNext.id}&name=${foundNext.name}`;
+            nextBtn.href = `project?id=${foundNext.id}&name=${foundNext.name}`;
         else {
             nextBtn.style.visibility = 'hidden';
             renderBackToHomePageBtn();
@@ -65,10 +63,15 @@ export const bindProjectsNavEvent = async currentProjectId => {
 
         const prevBtn = document.getElementById('prev-project-Btn');
         if (foundPrev)
-            prevBtn.href = `./project.html?id=${foundPrev.id}&name=${foundPrev.name}`;
+            prevBtn.href = `project?id=${foundPrev.id}&name=${foundPrev.name}`;
         else prevBtn.style.visibility = 'hidden';
     } catch (e) {
         alert('Failed to bind event to project list navgiations');
         console.log(e);
     }
+};
+
+export const bindBack2HomeEvent = () => {
+    const backbtn = document.getElementById('back-homepage-Btn');
+    backbtn.href = '.';
 };
