@@ -186,11 +186,14 @@ export const renderAboutData = () => {
     try {
         const data = getAboutDetails();
         setTextById('about-data-id--aboutText', data.aboutText);
-        setImgSrcById(
-            'about-data-id--photo',
-            getProjectImageSrc(data.photo.src),
-            data.photo.alt
+
+        const container = document.getElementById('about-data-id--photo');
+        const aboutImg = createNewElement(
+            'img',
+            'slideIn--bottom-up__large-box'
         );
+        aboutImg.src = getProjectImageSrc(data.photo.src);
+        container.appendChild(aboutImg);
     } catch (e) {
         alert('Failed to render about data');
         console.log(e);
