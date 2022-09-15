@@ -47,4 +47,11 @@ export const bindAnimations = () => {
             el.classList.add('slideIn--left2right__large-box--active');
         },
     });
+
+    scrollTrigger('.fadeIn--slow', {
+        rootMargin: '-20px -20px -50px -20px',
+        cb: function (el) {
+            el.classList.add('fadeIn--slow--active');
+        },
+    });
 };
