@@ -15,6 +15,7 @@
 .project-type {
     margin-top: 15px;
     font-size: 0.9vw;
+    text-align: end;
 }
 
 .project-detail-description {
@@ -26,8 +27,9 @@
     height: 100%;
     display: block;
     margin-top: 25px !important;
-
-    background-size: 64px;
+    /* 貌似没啥diao用 x_x */
+    /* background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
+    background-size: 64px; */
 }
 
 .project-detail-description__p {
