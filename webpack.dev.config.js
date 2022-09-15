@@ -1,6 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+// const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
@@ -10,16 +10,26 @@ module.exports = {
         project: './src/js/project.js',
     },
     output: {
-        filename: '[contenthash].bundle.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
-        /* Needs Webpack version > 5.20 */
+        /* Clean existing build files before build; needs Webpack version > 5.20 */
         clean: true,
         // clean: {
         //     dry: true, // Will just tell you which file to remove
         //     keep: /\.css/, // Defines files will keep
         // },
     },
-    mode: 'none',
+    mode: 'development',
+    devServer: {
+        port: 8080,
+        static: {
+            directory: path.resolve(__dirname, './dist'),
+        },
+        devMiddleware: {
+            index: 'index.html',
+            writeToDisk: true /* Generate files to disk */,
+        },
+    },
     module: {
         rules: [
             {
@@ -27,7 +37,7 @@ module.exports = {
                 type: 'asset/resource',
                 /* Specify output path for 'asset/resource' */
                 generator: {
-                    filename: 'assets/images/[contenthash][ext]',
+                    filename: 'assets/images/[name][ext]',
                 },
                 // use: [
                 //     {
@@ -63,8 +73,8 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                // use: ['style-loader', 'css-loader'],
-                use: [MiniCssExtractPlugin.loader, 'css-loader'],
+                use: ['style-loader', 'css-loader'],
+                // use: [MiniCssExtractPlugin.loader, 'css-loader'],
             },
             {
                 test: /\.htaccess$/,
@@ -82,7 +92,7 @@ module.exports = {
                 type: 'asset/resource',
                 /* Specify output path for 'asset/resource' */
                 generator: {
-                    filename: 'assets/fonts/[contenthash][ext]',
+                    filename: 'assets/fonts/[name][ext]',
                 },
                 // use: [
                 //     {
@@ -97,11 +107,11 @@ module.exports = {
     },
     plugins: [
         /* Minification of the resulting JS file bundle */
-        new TerserPlugin(),
+        // new TerserPlugin(),
         /* Extracting CSS into a separate bundle */
-        new MiniCssExtractPlugin({
-            filename: '[contenthash].min.css',
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: '[name].min.css',
+        // }),
         new HtmlWebpackPlugin({
             title: 'index',
             filename: 'index.html',

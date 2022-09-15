@@ -6,9 +6,10 @@
     "main": "index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack serve",
-        "deploy": "gh-pages -d src",
-        "build": "npx webpack"
+        "start": "webpack serve --config webpack.dev.config.js --hot",
+        "deploy": "gh-pages -d dist",
+        "build": "npx webpack --config webpack.prod.config.js",
+        "build:dev": "npx webpack  --config webpack.dev.config.js"
     },
     "repository": {
         "type": "git",
