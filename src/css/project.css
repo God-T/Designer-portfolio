@@ -53,6 +53,11 @@
 
 .padding-wrapper {
     padding: 6.5vw 17vw;
+    padding-bottom: 0;
+}
+
+.footer {
+    padding-inline: 0;
 }
 
 .projects-list-nav {
@@ -107,7 +112,7 @@
     }
 
     .navigation-bar a {
-        font-size: 10px;
+        font-size: 17px;
     }
 
     #back2top-Btn {
@@ -115,7 +120,7 @@
     }
 
     .padding-wrapper {
-        padding: 60px 12vw 3vh 12vw;
+        padding: 60px 12vw 1vh 12vw;
     }
 
     #main-title__logo {
@@ -162,6 +167,12 @@
 
     #back-homepage-Btn {
         display: none;
+    }
+
+    .footer {
+        margin-top: 30px;
+        height: 20px;
+        text-align: center;
     }
 }
 
