@@ -1,7 +1,7 @@
 .about-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 .about {
@@ -17,7 +17,7 @@
 }
 
 .navigation-bar {
-    height: 10vh;
+    height: 7vh;
     max-height: 70px;
     min-height: 50px;
     margin-top: 0;
@@ -206,6 +206,10 @@
     .margin-bottom {
         margin-bottom: 1.5vw !important;
     }
+
+    .footer {
+        padding-inline: 7.8vw;
+    }
 }
 
 @media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
@@ -213,6 +217,11 @@
     .contact-info h1 {
         font-size: 5.5vw !important;
         line-height: 7vw;
+    }
+
+    .footer {
+        text-align: center;
+        height: 25px;
     }
 
     .message-hyperlink {
@@ -227,6 +236,7 @@
 
     .about-photo-wrapper img {
         height: 65vw;
+        width: auto;
         margin-top: 5vw;
     }
 

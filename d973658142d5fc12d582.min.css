@@ -15,6 +15,7 @@
 .project-type {
     margin-top: 15px;
     font-size: 0.9vw;
+    text-align: end;
 }
 
 .project-detail-description {
@@ -26,12 +27,14 @@
     height: 100%;
     display: block;
     margin-top: 25px !important;
-
-    background-size: 64px;
+    /* 貌似没啥diao用 x_x */
+    /* background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
+    background-size: 64px; */
 }
 
 .project-detail-description__p {
     margin-bottom: 20px;
+    font-weight: 500;
 }
 
 .project-detail-description {
@@ -51,6 +54,11 @@
 
 .padding-wrapper {
     padding: 6.5vw 17vw;
+    padding-bottom: 0;
+}
+
+.footer {
+    padding-inline: 0;
 }
 
 .projects-list-nav {
@@ -105,7 +113,7 @@
     }
 
     .navigation-bar a {
-        font-size: 10px;
+        font-size: 17px;
     }
 
     #back2top-Btn {
@@ -113,7 +121,7 @@
     }
 
     .padding-wrapper {
-        padding: 60px 12vw 3vh 12vw;
+        padding: 60px 12vw 1vh 12vw;
     }
 
     #main-title__logo {
@@ -160,6 +168,18 @@
 
     #back-homepage-Btn {
         display: none;
+    }
+
+    .footer {
+        margin-top: 30px;
+        height: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .project-detail-img {
+        margin-top: 4vw !important;
     }
 }
 

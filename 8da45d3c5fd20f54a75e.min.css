@@ -1,157 +1,5 @@
-/* Regular weight */
-@font-face {
-    font-family: Orkney;
-    font-weight: normal;
-    font-style: normal;
-    src: url(assets/fonts/122d36f38c638086f266.woff) format('woff');
-}
-
-/* Light weight */
-@font-face {
-    font-family: Orkney;
-    font-weight: 300;
-    src: url(assets/fonts/c0352ca6b3fe29f34a18.woff) format('woff');
-}
-
-/* Medium weight */
-@font-face {
-    font-family: Orkney;
-    font-weight: 600;
-    src: url(assets/fonts/70cd2e8f7383e8719466.woff) format('woff');
-}
-
-/* Bold weight */
-@font-face {
-    font-family: Orkney;
-    font-weight: 700;
-    font-style: normal;
-    src: url(assets/fonts/f7a11718d490793a8411.woff) format('woff');
-}
-
-.orkney-font--regular {
-    font-weight: normal;
-    font-family: Orkney;
-}
-
-.orkney-font--light {
-    font-weight: 300;
-    font-family: Orkney;
-}
-
-.orkney-font--medium {
-    font-weight: 600;
-    font-family: Orkney;
-}
-
-.orkney-font--bold {
-    font-weight: 700;
-    font-family: Orkney;
-}
-
-* {
-    -webkit-tap-highlight-color: transparent !important;
-}
-
-html,
-body {
-    height: 100%;
-}
-
-/* Shared styles */
-.container--justified {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.container--center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-h1 {
-    margin: 0;
-}
-
-#main-title__logo {
-    display: flex;
-    justify-content: flex-end;
-    position: absolute;
-    top: 3vw;
-    right: 3vw;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-#main-title__logo:hover {
-    transform: scale(1.3);
-}
-
-.navigation-bar {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 4vw;
-}
-
-.navigation-bar a {
-    color: #a0a09f;
-    font-size: 22px;
-    text-decoration: none;
-    transition: color 0.5s ease;
-}
-
-.navigation-bar a:hover {
-    color: #656565;
-}
-
-#back2top-Btn {
-    cursor: pointer;
-}
-
-/* Wrappers styles */
-body {
-    font-family: Orkney;
-    font-weight: 600;
-    background-color: #efeeed;
-    margin: 0;
-    overflow-y: overlay;
-    overflow-x: hidden;
-}
-
-.landing-container {
-    padding: 5vw 4vw 5vw 7vw;
-    height: calc(100% - 10vw);
-}
-
-#contact-details-wrapper {
-    display: flex;
-    gap: 4vw;
-}
-
-/* ===== Scrollbar CSS ===== */
-/* Firefox */
-* {
-    scrollbar-width: auto;
-    scrollbar-color: #000000 transparent;
-}
-
-/* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
-    width: 10px;
-}
-
-*::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-*::-webkit-scrollbar-thumb {
-    background-color: #000000;
-    border-radius: 20px;
-    border: 2px solid #efeeed;
-}
-
 .fadeIn,
+.fadeIn--slow,
 .slideIn--left2right,
 .slideIn--right2left,
 .slideIn--bottom-up,
@@ -163,6 +11,11 @@ body {
 
 .fadeIn--active {
     animation: fadeIn 1.8s forwards;
+    animation-iteration-count: 1;
+}
+
+.fadeIn--slow--active {
+    animation: fadeIn 3s forwards;
     animation-iteration-count: 1;
 }
 
@@ -310,6 +163,173 @@ body {
     }
 }
 
+/* Regular weight */
+@font-face {
+    font-family: Orkney;
+    font-weight: normal;
+    font-style: normal;
+    src: url(assets/fonts/122d36f38c638086f266.woff) format('woff');
+}
+
+/* Light weight */
+@font-face {
+    font-family: Orkney;
+    font-weight: 300;
+    src: url(assets/fonts/c0352ca6b3fe29f34a18.woff) format('woff');
+}
+
+/* Medium weight */
+@font-face {
+    font-family: Orkney;
+    font-weight: 600;
+    src: url(assets/fonts/70cd2e8f7383e8719466.woff) format('woff');
+}
+
+/* Bold weight */
+@font-face {
+    font-family: Orkney;
+    font-weight: 700;
+    font-style: normal;
+    src: url(assets/fonts/f7a11718d490793a8411.woff) format('woff');
+}
+
+.orkney-font--regular {
+    font-weight: normal;
+    font-family: Orkney;
+}
+
+.orkney-font--light {
+    font-weight: 300;
+    font-family: Orkney;
+}
+
+.orkney-font--medium {
+    font-weight: 600;
+    font-family: Orkney;
+}
+
+.orkney-font--bold {
+    font-weight: 700;
+    font-family: Orkney;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent !important;
+    /* border: red 1px solid; */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.footer {
+    height: 30px;
+    font-weight: 300;
+    font-size: 5px;
+    padding-inline: 2.6vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+/* Shared styles */
+.container--justified {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#main-title__logo {
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#main-title__logo:hover {
+    transform: scale(1.3);
+}
+
+.navigation-bar {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4vw;
+}
+
+.navigation-bar a {
+    color: #a0a09f;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.5s ease;
+}
+
+.navigation-bar a:hover {
+    color: #0096ff;
+}
+
+#back2top-Btn {
+    cursor: pointer;
+}
+
+#back2top-Btn:hover {
+    color: #656565;
+}
+
+/* Wrappers styles */
+body {
+    font-family: Orkney;
+    font-weight: 600;
+    background-color: #efeeed;
+    margin: 0;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+.landing-container {
+    padding: 5vw 4vw 5vw 7vw;
+    height: calc(100% - 10vw);
+}
+
+#contact-details-wrapper {
+    display: flex;
+    gap: 4vw;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+    width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 20px;
+    border: 2px solid #efeeed;
+}
+
 .project {
     display: flex;
     justify-content: space-between;
@@ -323,11 +343,17 @@ body {
     background-size: 202% 100%;
     background-position: right bottom;
     transition: all 0.8s ease;
+    /* transition: color 0.5s ease-in-out; */
 }
 
 .project:hover {
+    /* color: #0096ff; */
     background-position: left bottom;
 }
+
+/* .project:hover {
+    background-position: left bottom;
+} */
 
 .project-top-divider {
     border-bottom: 4px solid #959595;
