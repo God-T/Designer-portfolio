@@ -55,7 +55,7 @@ export const bindProjectsNavEvent = currentProjectId => {
 
         const nextBtn = document.getElementById('next-project-Btn');
         if (foundNext)
-            nextBtn.href = `project?id=${foundNext.id}&name=${foundNext.name}`;
+            nextBtn.href = `?id=${foundNext.id}&name=${foundNext.name}`;
         else {
             nextBtn.style.visibility = 'hidden';
             renderBackToHomePageBtn();
@@ -63,7 +63,7 @@ export const bindProjectsNavEvent = currentProjectId => {
 
         const prevBtn = document.getElementById('prev-project-Btn');
         if (foundPrev)
-            prevBtn.href = `project?id=${foundPrev.id}&name=${foundPrev.name}`;
+            prevBtn.href = `?id=${foundPrev.id}&name=${foundPrev.name}`;
         else prevBtn.style.visibility = 'hidden';
     } catch (e) {
         alert('Failed to bind event to project list navgiations');

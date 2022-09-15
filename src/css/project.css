@@ -40,6 +40,7 @@
 .project-detail-description {
     font-size: 25px;
     width: 60%;
+    overflow: hidden;
 }
 
 #projects-list-container {
