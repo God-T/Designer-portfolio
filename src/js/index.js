@@ -26,4 +26,4 @@ bindLogoClickEvent();
 /* Enable animation after every components have been rendered */
 setTimeout(() => {
     bindAnimations();
-}, 1000);
+}, 100);
