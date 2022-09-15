@@ -3,7 +3,7 @@ import '../css/about.css';
 import '../css/landing.css';
 import '../css/projects-list.css';
 import '../css/animation.css';
-
+// import '../.htaccess';
 import {
     renderProjectsList,
     renderLandingData,

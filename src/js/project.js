@@ -2,6 +2,7 @@ import '../css/index.css';
 import '../css/projects-list.css';
 import '../css/project.css';
 import '../css/animation.css';
+// import '../.htaccess';
 import {
     renderProjectsList,
     renderProjectDetails,
