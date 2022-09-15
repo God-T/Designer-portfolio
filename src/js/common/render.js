@@ -84,13 +84,16 @@ export const renderProjectDetails = projectID => {
 
         /* Render divider */
         projectDetailElement.appendChild(
-            createNewElement('div', ['project-top-divider'])
+            createNewElement('div', [
+                'project-top-divider',
+                'slideIn--left2right__large-box',
+            ])
         );
 
         /* Render project */
         const project = createNewElement('div', [
             'project-detail',
-            'slideIn--left2right',
+            'slideIn--left2right__large-box',
         ]);
         project.appendChild(
             createNewElement('h1', 'project-name', projectDetails.name)
@@ -111,7 +114,10 @@ export const renderProjectDetails = projectID => {
             descriptionEle.appendChild(
                 createNewElement(
                     'div',
-                    ['project-detail-description__p', 'fadeIn'],
+                    [
+                        'project-detail-description__p',
+                        'slideIn--bottom-up--slow',
+                    ],
                     p
                 )
             );
@@ -124,7 +130,7 @@ export const renderProjectDetails = projectID => {
         for (let i = 0; i < fileNames.length; i++) {
             const projectImg = createNewElement('img', [
                 'project-detail-img',
-                'fadeIn',
+                'fadeIn--slow',
             ]);
             projectImg.src = getProjectImageSrc(
                 `${imageData.folderName}/${fileNames[i]}`
