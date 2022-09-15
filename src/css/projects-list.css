@@ -11,11 +11,17 @@
     background-size: 202% 100%;
     background-position: right bottom;
     transition: all 0.8s ease;
+    /* transition: color 0.5s ease-in-out; */
 }
 
 .project:hover {
+    /* color: #0096ff; */
     background-position: left bottom;
 }
+
+/* .project:hover {
+    background-position: left bottom;
+} */
 
 .project-top-divider {
     border-bottom: 4px solid #959595;

@@ -10,6 +10,15 @@ body {
     height: 100%;
 }
 
+.footer {
+    height: 30px;
+    font-weight: 300;
+    font-size: 5px;
+    padding-inline: 2.6vw;
+    overflow: hidden;
+    text-align: center;
+}
+
 /* Shared styles */
 .container--justified {
     display: flex;
@@ -55,11 +64,15 @@ h1 {
 }
 
 .navigation-bar a:hover {
-    color: #656565;
+    color: #0096ff;
 }
 
 #back2top-Btn {
     cursor: pointer;
+}
+
+#back2top-Btn:hover {
+    color: #656565;
 }
 
 /* Wrappers styles */
