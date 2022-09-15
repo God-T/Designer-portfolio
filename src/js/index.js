@@ -1,8 +1,8 @@
+import '../css/animation.css';
 import '../css/index.css';
 import '../css/about.css';
 import '../css/landing.css';
 import '../css/projects-list.css';
-import '../css/animation.css';
 // import '../.htaccess';
 import {
     renderProjectsList,
@@ -18,6 +18,12 @@ renderProjectsList();
 renderLandingData();
 renderAboutData();
 renderContactDetails();
-bindAnimations();
 bindBackToTopBtnEvent();
 bindLogoClickEvent();
+
+// bindAnimations();
+
+/* Enable animation after every components have been rendered */
+setTimeout(() => {
+    bindAnimations();
+}, 1000);

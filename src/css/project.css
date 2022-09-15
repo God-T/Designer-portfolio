@@ -164,3 +164,9 @@
         display: none;
     }
 }
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .project-detail-img {
+        margin-top: 4vw !important;
+    }
+}

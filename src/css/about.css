@@ -229,6 +229,7 @@
 
     .about-photo-wrapper img {
         height: 65vw;
+        width: auto;
         margin-top: 5vw;
     }
 
