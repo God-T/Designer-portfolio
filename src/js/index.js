@@ -20,8 +20,4 @@ renderAboutData();
 renderContactDetails();
 bindBackToTopBtnEvent();
 bindLogoClickEvent();
-
-// bindAnimations();
-
-/* Enable animation after every components have been rendered */
 bindAnimations();

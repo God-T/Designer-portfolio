@@ -1,5 +1,19 @@
 import { scrollTrigger } from './trigger.js';
 
+const testFunc = el => {
+    var rect = el.getBoundingClientRect();
+    var availableWidth =
+        window.innerWidth ||
+        document.documentElement.clientWidth ||
+        document.body.clientWidth;
+    var availableHeight =
+        window.innerHeight ||
+        document.documentElement.clientHeight ||
+        document.body.clientHeight;
+    console.log(rect.top, rect.right, rect.bottom, rect.left);
+    console.log(availableWidth, availableHeight);
+};
+
 export const bindAnimations = () => {
     scrollTrigger('.fadeIn', {
         rootMargin: '-20px -20px -50px -20px',
@@ -42,7 +56,7 @@ export const bindAnimations = () => {
     });
 
     scrollTrigger('.slideIn--left2right__large-box', {
-        rootMargin: '0px -100px -200px -100px',
+        rootMargin: '-100px -100px -200px -100px',
         cb: function (el) {
             el.classList.add('slideIn--left2right__large-box--active');
         },

@@ -19,7 +19,7 @@
 .sub-title {
     width: 100%;
     height: 100%;
-    height: -webkit-fill-available;
+    /* height: -webkit-fill-available; */
 }
 
 .sub-title {
@@ -105,9 +105,10 @@
         right: 1vw;
     }
 
+    /* #main-title__logo:active,
     #main-title__logo:hover {
         transform: scale(1);
-    }
+    } */
 
     .main-title-content__bottom__city {
         bottom: -75px !important;
