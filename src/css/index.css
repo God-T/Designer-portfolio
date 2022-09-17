@@ -87,7 +87,8 @@ body {
 
 .landing-container {
     padding: 5vw 4vw 5vw 7vw;
-    height: calc(100% - 10vw);
+    /* height: calc(100% - 10vw); */
+    height: -webkit-fill-available;
 }
 
 #contact-details-wrapper {
