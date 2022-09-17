@@ -22,7 +22,7 @@ function loadFrames(context) {
 export const projectsImageFramesMap = loadFrames(
     require.context('../../assets/images', true, /\.(png|jpg|ico|gif)$/)
 );
-console.log(projectsImageFramesMap);
+// console.log(projectsImageFramesMap);
 // require.context(
 //     directory: String,
 //     includeSubdirs: Boolean /* default: true */,
