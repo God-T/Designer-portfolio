@@ -15,14 +15,11 @@
 }
 
 .fadeIn--slow--active {
-    animation: fadeIn 3s forwards;
+    animation: fadeIn 2.5s forwards;
     animation-iteration-count: 1;
 }
 
 .slideIn--left2right--active {
-    -webkit-animation: slideIn--left2right 2s forwards;
-    -webkit-animation-iteration-count: 1;
-
     animation: slideIn--left2right 2s forwards;
     animation-iteration-count: 1;
 }
@@ -300,7 +297,8 @@ body {
 
 .landing-container {
     padding: 5vw 4vw 5vw 7vw;
-    height: calc(100% - 10vw);
+    /* height: calc(100% - 10vw); */
+    height: -webkit-fill-available;
 }
 
 #contact-details-wrapper {
