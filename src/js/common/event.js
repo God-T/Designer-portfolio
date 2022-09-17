@@ -73,5 +73,5 @@ export const bindProjectsNavEvent = currentProjectId => {
 
 export const bindBack2HomeEvent = () => {
     const backbtn = document.getElementById('back-homepage-Btn');
-    backbtn.href = '.';
+    backbtn.href = '/';
 };
