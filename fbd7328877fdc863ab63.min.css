@@ -223,7 +223,7 @@ body {
 .footer {
     height: 30px;
     font-weight: 300;
-    font-size: 5px;
+    font-size: 15px;
     padding-inline: 2.6vw;
     overflow: hidden;
     text-align: center;
@@ -249,15 +249,14 @@ h1 {
 #main-title__logo {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    position: fixed;
     top: 3vw;
     right: 3vw;
     cursor: pointer;
     transition: all 0.3s ease;
-}
-
-#main-title__logo:hover {
-    transform: scale(1.3);
+    z-index: 3;
+    height: 2em;
+    width: 2em;
 }
 
 .navigation-bar {
@@ -270,9 +269,10 @@ h1 {
     color: #a0a09f;
     font-size: 22px;
     text-decoration: none;
-    transition: color 0.5s ease;
+    transition: color 0.3s ease;
 }
 
+.navigation-bar a:active,
 .navigation-bar a:hover {
     color: #0096ff;
 }
@@ -281,6 +281,7 @@ h1 {
     cursor: pointer;
 }
 
+#back2top-Btn:active,
 #back2top-Btn:hover {
     color: #656565;
 }
@@ -297,8 +298,9 @@ body {
 
 .landing-container {
     padding: 5vw 4vw 5vw 7vw;
-    /* height: calc(100% - 10vw); */
-    height: -webkit-fill-available;
+    height: calc(100% - 10vw);
+    /* height: -webkit-fill-available; */
+    overflow: hidden;
 }
 
 #contact-details-wrapper {
@@ -314,18 +316,31 @@ body {
 }
 
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 10px;
 }
 
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: transparent;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #000000;
+body::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    border: 2px solid #efeeed;
+    border: 2px solid;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-color: #efeeed;
+}
+
+.scrollbar--transparent::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.disable-scroll {
+    overflow-y: hidden;
 }
 
 .project {
@@ -335,6 +350,7 @@ body {
     border-bottom: 4px solid #959595;
     padding: 40px;
     cursor: pointer;
+    opacity: 0;
 
     /* Gradually fill in color from left to right */
     background: linear-gradient(to right, #d4d4d4 50%, #efeeed 50%);
@@ -344,6 +360,7 @@ body {
     /* transition: color 0.5s ease-in-out; */
 }
 
+.project:active,
 .project:hover {
     /* color: #0096ff; */
     background-position: left bottom;
