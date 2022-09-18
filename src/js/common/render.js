@@ -6,7 +6,7 @@ import {
     getProjectImageSrc,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
-import { bindMessageClickEvent } from './event.js';
+import { bindContactLinkClickEvent } from './event.js';
 import { scrollTrigger } from './trigger.js';
 
 const createNewElement = (tagType, classNames, content = null) => {
@@ -205,7 +205,10 @@ export const renderContactDetails = (shouldRenderMainMessage = false) => {
         for (let i in data.contactDetails) {
             const contact = data.contactDetails[i];
             if (!shouldRenderMainMessage && contact.type === 'main-message') {
-                bindMessageClickEvent(contact.href);
+                bindContactLinkClickEvent(
+                    'about-data-id--main-message',
+                    'mailto:' + contact.href
+                );
                 continue;
             }
 
@@ -214,6 +217,7 @@ export const renderContactDetails = (shouldRenderMainMessage = false) => {
                 `contact-${contact.name}`,
                 contact.name
             );
+
             a.href =
                 data.contactDetails[i].type === 'media'
                     ? contact.href
@@ -265,6 +269,50 @@ export const renderFavicon = () => {
         fav.href = getProjectImageSrc('favicon.ico');
     } catch (e) {
         alert('Failed to render favicon');
+        console.log(e);
+    }
+};
+
+export const renderNavMenu = () => {
+    try {
+        const mediaFlexWrapper = createNewElement('div', 'media-icon-flex-row');
+        const data = getAboutDetails();
+        for (let i in data.contactDetails) {
+            const contact = data.contactDetails[i];
+            if (contact.type === 'main-message') {
+                const message = createNewElement(
+                    'div',
+                    'hover-turn-color-blue',
+                    contact.href
+                );
+                bindContactLinkClickEvent(message, 'mailto:' + contact.href);
+                const messageContainer = document.getElementById(
+                    'nav-menu-data-id__main-message'
+                );
+                messageContainer.appendChild(message);
+                continue;
+            }
+
+            const media = createNewElement('div', [
+                'hover-turn-bgcolor-blue',
+                'circle-shape',
+            ]);
+            const icon = createNewElement('i', [
+                'fa-brands',
+                `fa-${contact.name}`,
+            ]);
+
+            bindContactLinkClickEvent(media, contact.href);
+
+            media.appendChild(icon);
+            mediaFlexWrapper.appendChild(media);
+        }
+        const mediaContainer = document.getElementById(
+            'nav-menu-data-id__media'
+        );
+        mediaContainer.appendChild(mediaFlexWrapper);
+    } catch (e) {
+        alert('Failed to render nav menu');
         console.log(e);
     }
 };

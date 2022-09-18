@@ -21,7 +21,20 @@ export const bindLogoClickEvent = () => {
     try {
         const logo = document.getElementById('main-title__logo');
         logo.addEventListener('click', () => {
-            window.location.href = '.';
+            const navMenu = document.getElementById('nav-menu');
+            if (navMenu.classList.contains('overlay__nav-menu--toggleOn')) {
+                navMenu.classList.remove('overlay__nav-menu--toggleOn');
+                // Change style of scrollbar back to black
+                setTimeout(() => {
+                    document.body.classList.remove('disable-scroll');
+                    navMenu.style.opacity = 0;
+                }, 600);
+            } else {
+                navMenu.classList.add('overlay__nav-menu--toggleOn');
+                // Change style of scrollbar to transparent
+                document.body.classList.add('disable-scroll');
+                navMenu.style.opacity = 1;
+            }
         });
     } catch (e) {
         alert('Failed to bind event to logo');
@@ -29,14 +42,17 @@ export const bindLogoClickEvent = () => {
     }
 };
 
-export const bindMessageClickEvent = url => {
+export const bindContactLinkClickEvent = (elementRef, url) => {
     try {
-        const message = document.getElementById('about-data-id--main-message');
-        message.addEventListener('click', () => {
-            window.open('mailto:' + url, '_blank').focus();
-        });
+        let el = elementRef;
+        if (typeof elementRef === 'string')
+            el = document.getElementById(elementRef);
+        if (el)
+            el.addEventListener('click', () => {
+                window.open(url, '_blank').focus();
+            });
     } catch (e) {
-        alert('Failed to bind event to message');
+        alert('Failed to bind event to contact link');
         console.log(e);
     }
 };
@@ -73,5 +89,12 @@ export const bindProjectsNavEvent = currentProjectId => {
 
 export const bindBack2HomeEvent = () => {
     const backbtn = document.getElementById('back-homepage-Btn');
-    backbtn.href = '/';
+    backbtn.href = '../';
+};
+
+export const bindNavMenuBtnEvents = () => {
+    let btn = document.getElementById('nav-menu__home-nav-btn');
+    btn.addEventListener('click', () => {
+        window.location.href = '../';
+    });
 };

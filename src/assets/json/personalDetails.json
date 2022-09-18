@@ -12,17 +12,17 @@
         "aboutText": "I am Sydney based visual designer. After I finished my business degree in university, I realised that I am more passionate about creating. Shillington has given me the opportunity to discover the design industry and learn skills. I am still willing to have more chances to learn and follow my design directions.",
         "contactDetails": [
             {
-                "name": "Instagram",
+                "name": "instagram",
                 "href": "https://www.instagram.com/myu_q5/",
                 "type": "media"
             },
             {
-                "name": "Behance",
+                "name": "behance",
                 "href": "https://www.behance.net/monicaqian",
                 "type": "media"
             },
             {
-                "name": "Email",
+                "name": "email",
                 "href": "monicaqsy1@gmail.com",
                 "type": "main-message"
             }

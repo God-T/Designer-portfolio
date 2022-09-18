@@ -39,11 +39,14 @@ h1 {
 #main-title__logo {
     display: flex;
     justify-content: flex-end;
-    position: absolute;
+    position: fixed;
     top: 3vw;
     right: 3vw;
     cursor: pointer;
     transition: all 0.3s ease;
+    z-index: 3;
+    height: 2em;
+    width: 2em;
 }
 
 .navigation-bar {
@@ -103,16 +106,29 @@ body {
 }
 
 /* Chrome, Edge, and Safari */
-*::-webkit-scrollbar {
+body::-webkit-scrollbar {
     width: 10px;
 }
 
-*::-webkit-scrollbar-track {
+body::-webkit-scrollbar-track {
     background: transparent;
 }
 
-*::-webkit-scrollbar-thumb {
-    background-color: #000000;
+body::-webkit-scrollbar-thumb {
     border-radius: 20px;
-    border: 2px solid #efeeed;
+    border: 2px solid;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-color: #efeeed;
+}
+
+.scrollbar--transparent::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.disable-scroll {
+    overflow-y: hidden;
 }
