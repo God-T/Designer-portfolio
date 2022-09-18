@@ -31,8 +31,4 @@ renderContactDetails(true);
 bindBackToTopBtnEvent();
 bindProjectsNavEvent(projectId);
 bindBack2HomeEvent();
-
-/* Enable animation after every components have been rendered */
-setTimeout(() => {
-    bindAnimations();
-}, 100);
+bindAnimations();

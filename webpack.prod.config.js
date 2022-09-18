@@ -55,6 +55,13 @@ module.exports = {
                     filename: 'assets/fonts/[contenthash][ext]',
                 },
             },
+            {
+                test: /\.js$/,
+                exclude: /(node_modules)/,
+                use: {
+                    loader: 'babel-loader',
+                },
+            },
         ],
     },
     plugins: [

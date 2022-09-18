@@ -23,10 +23,12 @@
 }
 
 .project-detail-img {
+    opacity: 0;
     width: 100%;
     height: 100%;
     display: block;
     margin-top: 25px !important;
+    background-color: #959595;
     /* 貌似没啥diao用 x_x */
     /* background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
     background-size: 64px; */
@@ -40,6 +42,7 @@
 .project-detail-description {
     font-size: 25px;
     width: 60%;
+    overflow: hidden;
 }
 
 #projects-list-container {
@@ -70,11 +73,11 @@
 }
 
 .project {
-    /* Gradually fill in color from left to right*/
     background: initial;
     transition: color 0.5s ease-in-out;
 }
 
+.project:active,
 .project:hover {
     color: #0096ff;
 }
@@ -162,6 +165,7 @@
         color: black !important;
     }
 
+    .projects-list-nav--font:active,
     .projects-list-nav--font:hover {
         color: #0096ff !important;
     }
@@ -180,5 +184,9 @@
 @media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
     .project-detail-img {
         margin-top: 4vw !important;
+    }
+
+    .footer {
+        font-size: 10px;
     }
 }

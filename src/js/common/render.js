@@ -7,6 +7,7 @@ import {
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindMessageClickEvent } from './event.js';
+import { scrollTrigger } from './trigger.js';
 
 const createNewElement = (tagType, classNames, content = null) => {
     const newEl = document.createElement(tagType);
@@ -127,16 +128,55 @@ export const renderProjectDetails = projectID => {
         /* Render image */
         const imageData = projectDetails.image;
         const fileNames = imageData.fileNames;
+        let isFirst = true;
+        let firstImage = null;
         for (let i = 0; i < fileNames.length; i++) {
-            const projectImg = createNewElement('img', [
-                'project-detail-img',
-                'fadeIn--slow',
-            ]);
-            projectImg.src = getProjectImageSrc(
+            // const container = createNewElement('div', '');
+            const projectImg = createNewElement('img', ['project-detail-img']);
+
+            const imageSrc = getProjectImageSrc(
                 `${imageData.folderName}/${fileNames[i]}`
             );
+            projectImg.src = imageSrc;
+
+            // let img = new Image();
+            // img.onload = function () {
+            //     console.log(
+            //         `${Math.round(img.height / (img.width / 76))}vw`,
+            //         img.height,
+            //         img.width,
+            //         imageSrc
+            //     );
+
+            //     projectImg.style.height = `${Math.round(
+            //         img.height / (img.width / 76)
+            //     )}vw`;
+            // };
+            // img.src = imageSrc;
+
             projectDetailElement.appendChild(projectImg);
         }
+
+        /**
+         * In project details page, before the image content is rendered, the image element will
+         * have 0 height, and this always causes the cb() to be executed, so to work around this,
+         * delay subscriptions by setting a timeout to allow the observers to observe the images
+         * elements after the image content has been rendered.
+         */
+        setTimeout(() => {
+            scrollTrigger('.project-detail-img', {
+                rootMargin: '-20px -20px -50px -20px',
+                cb: function (el) {
+                    /**
+                     * The min height of the first image will be set to 100vh to push the other images out of
+                     * the viewport, preventing the observer from triggering the cb(). Therefore, as elements
+                     * enter the viewport, we need to remove the min height.
+                     */
+                    // el.style.minHeight = '0';
+                    el.classList.add('fadeIn--active');
+                },
+            });
+        }, 100);
     } catch (e) {
         alert('Failed to render project deatils');
         console.log(e);

@@ -14,6 +14,7 @@ function addObserver(el, options) {
     /* Check if "IntersectionObserver" is supported */
     if (!('IntersectionObserver' in window)) {
         /* Call/trigger  animation/callback immediately */
+        alert('"IntersectionObserver" is supported');
         if (options.cb) options.cb(el);
         return;
     }

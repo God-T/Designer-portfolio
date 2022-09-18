@@ -5,6 +5,7 @@
     border-bottom: 4px solid #959595;
     padding: 40px;
     cursor: pointer;
+    opacity: 0;
 
     /* Gradually fill in color from left to right */
     background: linear-gradient(to right, #d4d4d4 50%, #efeeed 50%);
@@ -14,6 +15,7 @@
     /* transition: color 0.5s ease-in-out; */
 }
 
+.project:active,
 .project:hover {
     /* color: #0096ff; */
     background-position: left bottom;
