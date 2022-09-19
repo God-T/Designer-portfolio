@@ -12,6 +12,7 @@ import {
     renderContactDetails,
     renderFavicon,
     renderNavMenu,
+    renderAboutComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
@@ -20,13 +21,18 @@ import {
 } from './common/event.js';
 import { bindAnimations } from './common/animation.js';
 
+/* Render shared components */
+renderAboutComponent();
+/* Render other components */
 renderFavicon();
 renderNavMenu();
 renderProjectsList();
 renderLandingData();
 renderAboutData();
 renderContactDetails();
+/* Bind events */
 bindNavMenuBtnEvents();
 bindBackToTopBtnEvent();
 bindLogoClickEvent();
+/* Enable Animations */
 bindAnimations();

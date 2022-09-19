@@ -4,6 +4,7 @@ import {
     getLandingDetails,
     getAboutDetails,
     getProjectImageSrc,
+    getAboutComponentHtmlContent,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindContactLinkClickEvent } from './event.js';
@@ -313,6 +314,16 @@ export const renderNavMenu = () => {
         mediaContainer.appendChild(mediaFlexWrapper);
     } catch (e) {
         alert('Failed to render nav menu');
+        console.log(e);
+    }
+};
+
+export const renderAboutComponent = () => {
+    try {
+        document.getElementById('__about-component').innerHTML =
+            getAboutComponentHtmlContent();
+    } catch (e) {
+        alert('Failed to render about component');
         console.log(e);
     }
 };

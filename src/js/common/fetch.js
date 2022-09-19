@@ -2,6 +2,7 @@ import {
     personalDetails,
     projectsDetails,
     projectsImageFramesMap,
+    aboutComponentHtmlContent,
 } from './loadData.js';
 
 export const getProjectList = except => {
@@ -58,6 +59,15 @@ export const getProjectImageSrc = path => {
         return projectsImageFramesMap.get(path);
     } catch (e) {
         alert('Failed to load project image src');
+        console.log(e);
+    }
+};
+
+export const getAboutComponentHtmlContent = () => {
+    try {
+        return aboutComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load about component content');
         console.log(e);
     }
 };
