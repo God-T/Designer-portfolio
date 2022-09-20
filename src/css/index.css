@@ -36,7 +36,7 @@ h1 {
     margin: 0;
 }
 
-#main-title__logo {
+#main-logo {
     display: flex;
     justify-content: flex-end;
     position: fixed;
@@ -47,6 +47,21 @@ h1 {
     z-index: 3;
     height: 2em;
     width: 2em;
+}
+
+/* Tablet viewport */
+@media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
+    #main-logo {
+        transform: scale(0.7);
+        right: 1vw;
+    }
+}
+
+/* Mobile viewport 425px < width < 600px */
+@media (max-aspect-ratio: 1/1), screen and (max-width: 600px) {
+    #main-logo {
+        right: 4vw;
+    }
 }
 
 .navigation-bar {

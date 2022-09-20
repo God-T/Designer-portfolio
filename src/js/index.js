@@ -11,8 +11,10 @@ import {
     renderAboutData,
     renderContactDetails,
     renderFavicon,
-    renderNavMenu,
+    renderLogo,
+    renderNavMenuContactDetails,
     renderAboutComponent,
+    renderNavMenuComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
@@ -22,17 +24,19 @@ import {
 import { bindAnimations } from './common/animation.js';
 
 /* Render shared components */
+renderNavMenuComponent();
 renderAboutComponent();
 /* Render other components */
 renderFavicon();
-renderNavMenu();
+renderNavMenuContactDetails();
+renderLogo('dark');
 renderProjectsList();
 renderLandingData();
 renderAboutData();
 renderContactDetails();
 /* Bind events */
-bindNavMenuBtnEvents();
+bindNavMenuBtnEvents(true);
 bindBackToTopBtnEvent();
-bindLogoClickEvent();
+bindLogoClickEvent('dark');
 /* Enable Animations */
 bindAnimations();

@@ -2,6 +2,7 @@
 import personalDetailsRaw from '../../assets/json/personalDetails.json';
 import projectsDetailsRaw from '../../assets/json/projectsDetails.json';
 import aboutComponent from '../../html/components/about.component.html';
+import navMenuComponent from '../../html/components/nav-menu.component.html';
 
 /* Export data as json objects */
 export const personalDetails = JSON.parse(personalDetailsRaw);
@@ -9,6 +10,7 @@ export const projectsDetails = JSON.parse(projectsDetailsRaw);
 
 /* Export shared HTML content */
 export const aboutComponentHtmlContent = aboutComponent;
+export const navMenuComponentHtmlContent = navMenuComponent;
 
 /**
  * Load all images

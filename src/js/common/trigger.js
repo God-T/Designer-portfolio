@@ -25,7 +25,7 @@ function addObserver(el, options) {
                 /* Excute callback */
                 if (options.cb) options.cb(el);
                 /* Unsubscribe observer*/
-                observer.unobserve(entry.target);
+                if (!options.isLooping) observer.unobserve(entry.target);
             }
         });
     }, options);

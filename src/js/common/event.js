@@ -1,5 +1,6 @@
 import { getProjectList } from './fetch.js';
-import { renderBackToHomePageBtn } from './render.js';
+import { renderBackToHomePageBtn, renderLogo } from './render.js';
+import { resetAnimationStates, triggerAnimation } from './animation.js';
 
 const goToTop = () => {
     document.body.scrollIntoView({
@@ -17,23 +18,37 @@ export const bindBackToTopBtnEvent = () => {
     }
 };
 
-export const bindLogoClickEvent = () => {
+export const bindLogoClickEvent = defaultLogoTheme => {
     try {
-        const logo = document.getElementById('main-title__logo');
+        const logo = document.getElementById('main-logo');
         logo.addEventListener('click', () => {
             const navMenu = document.getElementById('nav-menu');
             if (navMenu.classList.contains('overlay__nav-menu--toggleOn')) {
+                /* Turn off */
                 navMenu.classList.remove('overlay__nav-menu--toggleOn');
-                // Change style of scrollbar back to black
+                /* Change style of scrollbar back to black */
                 setTimeout(() => {
                     document.body.classList.remove('disable-scroll');
-                    navMenu.style.opacity = 0;
+                    navMenu.style.visibility = 'hidden';
+                    renderLogo(defaultLogoTheme);
+                    resetAnimationStates(
+                        '.slideIn--bottom-up--slow__nav-menu',
+                        'slideIn--bottom-up--slow-2400ms'
+                    );
                 }, 600);
             } else {
+                /* Turn on */
+                renderLogo('light');
+                /* Reset animation for nav links */
+                resetAnimationStates('.nav-menu__link', 'slideIn--bottom-up');
+                triggerAnimation(
+                    '.slideIn--bottom-up--slow__nav-menu',
+                    'slideIn--bottom-up--slow-2400ms'
+                );
                 navMenu.classList.add('overlay__nav-menu--toggleOn');
-                // Change style of scrollbar to transparent
+                /* Change style of scrollbar to transparent */
                 document.body.classList.add('disable-scroll');
-                navMenu.style.opacity = 1;
+                navMenu.style.visibility = 'visible';
             }
         });
     } catch (e) {
@@ -92,9 +107,9 @@ export const bindBack2HomeEvent = () => {
     backbtn.href = '../';
 };
 
-export const bindNavMenuBtnEvents = () => {
+export const bindNavMenuBtnEvents = isRoot => {
     let btn = document.getElementById('nav-menu__home-nav-btn');
     btn.addEventListener('click', () => {
-        window.location.href = '../';
+        window.location.href = isRoot ? '/' : '../';
     });
 };

@@ -4,7 +4,9 @@ import {
     getLandingDetails,
     getAboutDetails,
     getProjectImageSrc,
+    getLogoDetails,
     getAboutComponentHtmlContent,
+    getNavMenuComponentHtmlContent,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindContactLinkClickEvent } from './event.js';
@@ -184,14 +186,27 @@ export const renderProjectDetails = projectID => {
     }
 };
 
+export const renderLogo = theme => {
+    const logoData = getLogoDetails();
+    const logo = document.getElementById('logo-image');
+    logo.src = getProjectImageSrc(logoData[theme]);
+
+    const logoWrapper = document.getElementById('main-logo');
+    if (theme === 'transparent') {
+        logoWrapper.style.height = '1em';
+        logoWrapper.style.width = '1em';
+    } else {
+        logoWrapper.style.height = '2em';
+        logoWrapper.style.width = '2em';
+    }
+};
+
 export const renderLandingData = () => {
     try {
         const data = getLandingDetails();
         for (let key in data) {
             setTextById(`landing-data-id--${key}`, data[key]);
         }
-        const logo = document.getElementById('main-title__logo-image');
-        logo.src = getProjectImageSrc(data.logoFilename);
     } catch (e) {
         alert('Failed to render landing data');
         console.log(e);
@@ -274,7 +289,7 @@ export const renderFavicon = () => {
     }
 };
 
-export const renderNavMenu = () => {
+export const renderNavMenuContactDetails = () => {
     try {
         const mediaFlexWrapper = createNewElement('div', 'media-icon-flex-row');
         const data = getAboutDetails();
@@ -283,7 +298,12 @@ export const renderNavMenu = () => {
             if (contact.type === 'main-message') {
                 const message = createNewElement(
                     'div',
-                    'hover-turn-color-blue',
+                    [
+                        'hover-turn-color-blue',
+                        'contact-link--font-size',
+                        'slideIn--bottom-up--slow__nav-menu',
+                        'slideIn--bottom-up--slow-2400ms',
+                    ],
                     contact.href
                 );
                 bindContactLinkClickEvent(message, 'mailto:' + contact.href);
@@ -297,6 +317,8 @@ export const renderNavMenu = () => {
             const media = createNewElement('div', [
                 'hover-turn-bgcolor-blue',
                 'circle-shape',
+                'slideIn--bottom-up--slow__nav-menu',
+                'slideIn--bottom-up--slow-2400ms',
             ]);
             const icon = createNewElement('i', [
                 'fa-brands',
@@ -324,6 +346,16 @@ export const renderAboutComponent = () => {
             getAboutComponentHtmlContent();
     } catch (e) {
         alert('Failed to render about component');
+        console.log(e);
+    }
+};
+
+export const renderNavMenuComponent = () => {
+    try {
+        document.getElementById('__nav-menu-component').innerHTML =
+            getNavMenuComponentHtmlContent();
+    } catch (e) {
+        alert('Failed to render nav menu component');
         console.log(e);
     }
 };

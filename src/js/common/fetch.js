@@ -3,7 +3,8 @@ import {
     projectsDetails,
     projectsImageFramesMap,
     aboutComponentHtmlContent,
-} from './loadData.js';
+    navMenuComponentHtmlContent,
+} from './load.js';
 
 export const getProjectList = except => {
     try {
@@ -44,6 +45,16 @@ export const getLandingDetails = () => {
     }
 };
 
+export const getLogoDetails = () => {
+    try {
+        const res = personalDetails.logo;
+        return res;
+    } catch (e) {
+        alert('Failed to load logo details');
+        console.log(e);
+    }
+};
+
 export const getAboutDetails = () => {
     try {
         const res = personalDetails.about;
@@ -68,6 +79,15 @@ export const getAboutComponentHtmlContent = () => {
         return aboutComponentHtmlContent;
     } catch (e) {
         alert('Failed to load about component content');
+        console.log(e);
+    }
+};
+
+export const getNavMenuComponentHtmlContent = () => {
+    try {
+        return navMenuComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load nav menu component content');
         console.log(e);
     }
 };

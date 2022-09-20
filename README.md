@@ -58,6 +58,11 @@ A personal website that can be used to exhibit portfolio and projects. Implement
     -   Defines observer `index.html`<sub>_line 44_</sub>[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/index.html)
     -   Defines animation trigger events `render.js`<sub>_line 33_</sub> [<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/blob/main/src/js/common/render.js)
 
+### Load HTML content as shared component
+
+-   Load content from HTML file though `import`
+-   Bundle with `Webpack` `html-loader`
+
 ## Code structure
 
 Organise code based on pages and functionaliteis, extract scripts and styles into different files. Routing between 2 template files `index.html` and `project.html`

@@ -86,6 +86,12 @@
     min-height: 100vh;
 }
 
+#main-logo {
+    right: 4vw;
+    height: 1em;
+    width: 1em;
+}
+
 /* Mobile viewport */
 @media screen and (max-width: 770px) {
     .project-detail-description {
@@ -125,10 +131,6 @@
 
     .padding-wrapper {
         padding: 60px 12vw 1vh 12vw;
-    }
-
-    #main-title__logo {
-        transform: scale(0.4);
     }
 
     .projects-list-nav {
