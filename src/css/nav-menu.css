@@ -132,4 +132,8 @@
     .nav-menu__right-wrapper > div {
         gap: 5vw;
     }
+
+    .mobile-style--overflow-hidden {
+        overflow: hidden;
+    }
 }

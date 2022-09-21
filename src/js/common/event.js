@@ -18,37 +18,70 @@ export const bindBackToTopBtnEvent = () => {
     }
 };
 
+function measureClickTime(callback) {
+    return (...args) => {
+        callback.apply(this, args);
+    };
+}
+
 export const bindLogoClickEvent = defaultLogoTheme => {
     try {
+        /* Enclose nav menu expanding time as parameter in event handler */
+        let expandingTime = void 0;
+        let shouldWait = false;
+        let shouldExpandAfterCollapse = false;
         const logo = document.getElementById('main-logo');
+
+        const handleNavMenuCollapse = navMenu => {
+            /* Turn on */
+            expandingTime = performance.now();
+            renderLogo('light');
+            /* Reset animation for nav links */
+            resetAnimationStates('.nav-menu__link', 'slideIn--bottom-up');
+            triggerAnimation(
+                '.slideIn--bottom-up--slow__nav-menu',
+                'slideIn--bottom-up--slow-2400ms'
+            );
+            navMenu.classList.add('overlay__nav-menu--toggleOn');
+            /* Change style of scrollbar to transparent */
+            document.body.classList.add('disable-scroll');
+            navMenu.style.visibility = 'visible';
+        };
+
         logo.addEventListener('click', () => {
             const navMenu = document.getElementById('nav-menu');
             if (navMenu.classList.contains('overlay__nav-menu--toggleOn')) {
                 /* Turn off */
+                shouldWait = true;
+                const expandingLastsTime =
+                    !expandingTime || performance.now() - expandingTime > 600
+                        ? 600
+                        : performance.now() - expandingTime;
                 navMenu.classList.remove('overlay__nav-menu--toggleOn');
                 /* Change style of scrollbar back to black */
                 setTimeout(() => {
                     document.body.classList.remove('disable-scroll');
-                    navMenu.style.visibility = 'hidden';
-                    renderLogo(defaultLogoTheme);
                     resetAnimationStates(
                         '.slideIn--bottom-up--slow__nav-menu',
                         'slideIn--bottom-up--slow-2400ms'
                     );
-                }, 600);
+                    navMenu.style.visibility = 'hidden';
+                    renderLogo(defaultLogoTheme);
+
+                    shouldWait = false;
+                    setTimeout(() => {
+                        if (shouldExpandAfterCollapse) {
+                            shouldExpandAfterCollapse = false;
+                            handleNavMenuCollapse(navMenu);
+                        }
+                    }, 50);
+                }, expandingLastsTime);
             } else {
-                /* Turn on */
-                renderLogo('light');
-                /* Reset animation for nav links */
-                resetAnimationStates('.nav-menu__link', 'slideIn--bottom-up');
-                triggerAnimation(
-                    '.slideIn--bottom-up--slow__nav-menu',
-                    'slideIn--bottom-up--slow-2400ms'
-                );
-                navMenu.classList.add('overlay__nav-menu--toggleOn');
-                /* Change style of scrollbar to transparent */
-                document.body.classList.add('disable-scroll');
-                navMenu.style.visibility = 'visible';
+                if (shouldWait) {
+                    shouldExpandAfterCollapse = true;
+                    return;
+                }
+                handleNavMenuCollapse(navMenu);
             }
         });
     } catch (e) {
