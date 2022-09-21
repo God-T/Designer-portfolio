@@ -7,6 +7,7 @@ import {
     getLogoDetails,
     getAboutComponentHtmlContent,
     getNavMenuComponentHtmlContent,
+    getLogoComponentHtmlContent,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindContactLinkClickEvent } from './event.js';
@@ -41,7 +42,7 @@ const setImgSrcById = (id, imgFileName, alt = '') => {
     }
 };
 
-export const renderProjectsList = (except = {}) => {
+export const renderProjectsList = (isLite, except = {}) => {
     try {
         const projectListElement = document.getElementById(
             'projects-list-container'
@@ -57,7 +58,7 @@ export const renderProjectsList = (except = {}) => {
         const projectList = getProjectList(except);
         for (let i = 0; i < projectList.length; i++) {
             const project = createNewElement('div', [
-                'project',
+                isLite ? 'project--lite' : 'project',
                 'slideIn--left2right__large-box',
             ]);
             project.setAttribute('id', 'project-' + projectList[i].id);
@@ -350,12 +351,14 @@ export const renderAboutComponent = () => {
     }
 };
 
-export const renderNavMenuComponent = () => {
+export const renderLogoComponent = () => {
     try {
+        document.getElementById('__logo-component').innerHTML =
+            getLogoComponentHtmlContent();
         document.getElementById('__nav-menu-component').innerHTML =
             getNavMenuComponentHtmlContent();
     } catch (e) {
-        alert('Failed to render nav menu component');
+        alert('Failed to render logo component');
         console.log(e);
     }
 };

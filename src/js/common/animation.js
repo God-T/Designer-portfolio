@@ -14,7 +14,7 @@ const testFunc = el => {
     console.log(availableWidth, availableHeight);
 };
 
-export const bindAnimations = () => {
+export const bindGeneralAnimations = () => {
     scrollTrigger('.fadeIn', {
         rootMargin: '-20px -20px -50px -20px',
         cb: function (el) {
@@ -42,25 +42,11 @@ export const bindAnimations = () => {
         },
     });
 
-    scrollTrigger('.nav-menu__link', {
-        cb: function (el) {
-            el.classList.add('slideIn--bottom-up--active');
-        },
-        isLooping: true,
-    });
-
     scrollTrigger('.slideIn--bottom-up--slow', {
         cb: function (el) {
             el.classList.add('slideIn--bottom-up--slow--active');
         },
     });
-
-    // scrollTrigger('.slideIn--bottom-up--slow__nav-menu', {
-    //     cb: function (el) {
-    //         el.classList.add('slideIn--bottom-up--slow--active');
-    //     },
-    //     isLooping: true,
-    // });
 
     scrollTrigger('.slideIn--bottom-up__large-box', {
         rootMargin: '0px -100px -100px -100px',
@@ -72,7 +58,6 @@ export const bindAnimations = () => {
     scrollTrigger('.slideIn--left2right__large-box', {
         rootMargin: '-50px -100px -200px -100px',
         cb: function (el) {
-            testFunc(el);
             el.classList.add('slideIn--left2right__large-box--active');
         },
     });
@@ -83,7 +68,18 @@ export const bindAnimations = () => {
             el.classList.add('fadeIn--slow--active');
         },
     });
+
+    bindNavMenuAnimation();
 };
+
+export function bindNavMenuAnimation() {
+    scrollTrigger('.nav-menu__link', {
+        cb: function (el) {
+            el.classList.add('slideIn--bottom-up--active');
+        },
+        isLooping: true,
+    });
+}
 
 export const resetAnimationStates = (targetSelecter, activedAnimationClass) => {
     document
@@ -95,4 +91,17 @@ export const triggerAnimation = (targetSelecter, animationClass) => {
     document
         .querySelectorAll(targetSelecter)
         .forEach(el => el.classList.add(animationClass + '--active'));
+};
+
+export const triggerAnimationInTurn = (
+    targetSelecter,
+    animationClass,
+    interval
+) => {
+    document.querySelectorAll(targetSelecter).forEach((el, index) => {
+        setTimeout(
+            () => el.classList.add(animationClass + '--active'),
+            index * interval
+        );
+    });
 };

@@ -14,23 +14,23 @@ import {
     renderLogo,
     renderNavMenuContactDetails,
     renderAboutComponent,
-    renderNavMenuComponent,
+    renderLogoComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
     bindLogoClickEvent,
     bindNavMenuBtnEvents,
 } from './common/event.js';
-import { bindAnimations } from './common/animation.js';
+import { bindGeneralAnimations } from './common/animation.js';
 
 /* Render shared components */
-renderNavMenuComponent();
+renderLogoComponent();
 renderAboutComponent();
+renderProjectsList(false);
 /* Render other components */
 renderFavicon();
 renderNavMenuContactDetails();
 renderLogo('dark');
-renderProjectsList();
 renderLandingData();
 renderAboutData();
 renderContactDetails();
@@ -39,4 +39,4 @@ bindNavMenuBtnEvents(true);
 bindBackToTopBtnEvent();
 bindLogoClickEvent('dark');
 /* Enable Animations */
-bindAnimations();
+bindGeneralAnimations();

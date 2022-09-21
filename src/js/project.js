@@ -10,7 +10,7 @@ import {
     renderFavicon,
     renderLogo,
     renderNavMenuContactDetails,
-    renderNavMenuComponent,
+    renderLogoComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
@@ -19,7 +19,7 @@ import {
     bindLogoClickEvent,
     bindNavMenuBtnEvents,
 } from './common/event.js';
-import { bindAnimations } from './common/animation.js';
+import { bindGeneralAnimations } from './common/animation.js';
 
 const getCurrentProjectId = () => {
     const queryString = window.location.search;
@@ -27,15 +27,15 @@ const getCurrentProjectId = () => {
     const projectID = urlParams.get('id');
     return projectID;
 };
+const projectId = getCurrentProjectId();
 
 /* Render shared components */
-renderNavMenuComponent();
+renderLogoComponent();
+renderProjectsList(true, { id: projectId });
 /* Render other components */
 renderFavicon();
 renderNavMenuContactDetails();
 renderLogo('transparent');
-const projectId = getCurrentProjectId();
-renderProjectsList({ id: projectId });
 renderProjectDetails(projectId);
 renderContactDetails(true);
 /* Bind events */
@@ -45,4 +45,4 @@ bindBack2HomeEvent();
 bindLogoClickEvent('transparent');
 bindNavMenuBtnEvents();
 /* Enable Animations */
-bindAnimations();
+bindGeneralAnimations();

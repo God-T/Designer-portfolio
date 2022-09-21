@@ -11,6 +11,10 @@ const HtmlWebpack = [
         entry: 'project',
         dir: 'src/html',
     },
+    {
+        entry: 'projects-list',
+        dir: 'src/html',
+    },
 ];
 
 const HtmlWebpackPlugins = HtmlWebpack.map(

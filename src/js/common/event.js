@@ -145,8 +145,17 @@ export const bindBack2HomeEvent = () => {
 };
 
 export const bindNavMenuBtnEvents = isRoot => {
-    let btn = document.getElementById('nav-menu__home-nav-btn');
-    btn.addEventListener('click', () => {
-        window.location.href = isRoot ? '/' : '../';
-    });
+    document
+        .getElementById('nav-menu__home-nav-btn')
+        .addEventListener('click', () => {
+            window.location.href = isRoot ? '/' : '../';
+        });
+
+    document
+        .getElementById('nav-menu__projects-nav-btn')
+        .addEventListener('click', () => {
+            window.location.href = isRoot
+                ? '/projects-list'
+                : '../projects-list';
+        });
 };

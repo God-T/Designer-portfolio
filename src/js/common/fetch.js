@@ -4,6 +4,7 @@ import {
     projectsImageFramesMap,
     aboutComponentHtmlContent,
     navMenuComponentHtmlContent,
+    logoComponentHtmlContent,
 } from './load.js';
 
 export const getProjectList = except => {
@@ -88,6 +89,15 @@ export const getNavMenuComponentHtmlContent = () => {
         return navMenuComponentHtmlContent;
     } catch (e) {
         alert('Failed to load nav menu component content');
+        console.log(e);
+    }
+};
+
+export const getLogoComponentHtmlContent = () => {
+    try {
+        return logoComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load logo component content');
         console.log(e);
     }
 };
