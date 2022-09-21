@@ -30,6 +30,7 @@ export const bindLogoClickEvent = defaultLogoTheme => {
         let expandingTime = void 0;
         let shouldWait = false;
         let shouldExpandAfterCollapse = false;
+        const collapseDuration = 600;
         const logo = document.getElementById('main-logo');
 
         const handleNavMenuCollapse = navMenu => {
@@ -45,6 +46,7 @@ export const bindLogoClickEvent = defaultLogoTheme => {
             navMenu.classList.add('overlay__nav-menu--toggleOn');
             /* Change style of scrollbar to transparent */
             document.body.classList.add('disable-scroll');
+            logo.classList.add('main-logo-position--light');
             navMenu.style.visibility = 'visible';
         };
 
@@ -54,13 +56,15 @@ export const bindLogoClickEvent = defaultLogoTheme => {
                 /* Turn off */
                 shouldWait = true;
                 const expandingLastsTime =
-                    !expandingTime || performance.now() - expandingTime > 600
-                        ? 600
+                    !expandingTime ||
+                    performance.now() - expandingTime > collapseDuration
+                        ? collapseDuration
                         : performance.now() - expandingTime;
                 navMenu.classList.remove('overlay__nav-menu--toggleOn');
                 /* Change style of scrollbar back to black */
                 setTimeout(() => {
                     document.body.classList.remove('disable-scroll');
+                    logo.classList.remove('main-logo-position--light');
                     resetAnimationStates(
                         '.slideIn--bottom-up--slow__nav-menu',
                         'slideIn--bottom-up--slow-2400ms'
