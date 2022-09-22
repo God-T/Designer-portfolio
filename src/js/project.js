@@ -3,6 +3,9 @@ import '../css/index.css';
 import '../css/projects-list.css';
 import '../css/project.css';
 import '../css/nav-menu.css';
+import '../css/index-shared.css';
+import '../css/footer.css';
+
 import {
     renderProjectsList,
     renderProjectDetails,
@@ -11,6 +14,7 @@ import {
     renderLogo,
     renderNavMenuContactDetails,
     renderLogoComponent,
+    renderFooterComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
@@ -32,6 +36,7 @@ const projectId = getCurrentProjectId();
 /* Render shared components */
 renderLogoComponent();
 renderProjectsList(true, { id: projectId });
+renderFooterComponent();
 /* Render other components */
 renderFavicon();
 renderNavMenuContactDetails();

@@ -4,6 +4,7 @@ import projectsDetailsRaw from '../../assets/json/projectsDetails.json';
 import aboutComponent from '../../html/components/about.component.html';
 import navMenuComponent from '../../html/components/nav-menu.component.html';
 import logoComponent from '../../html/components/logo.component.html';
+import footerComponent from '../../html/components/footer.component.html';
 
 /* Export data as json objects */
 export const personalDetails = JSON.parse(personalDetailsRaw);
@@ -13,6 +14,7 @@ export const projectsDetails = JSON.parse(projectsDetailsRaw);
 export const aboutComponentHtmlContent = aboutComponent;
 export const navMenuComponentHtmlContent = navMenuComponent;
 export const logoComponentHtmlContent = logoComponent;
+export const footerComponentHtmlContent = footerComponent;
 
 /**
  * Load all images

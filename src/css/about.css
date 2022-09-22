@@ -210,10 +210,6 @@
     .margin-bottom {
         margin-bottom: 1.5vw !important;
     }
-
-    .footer {
-        padding-inline: 7.8vw;
-    }
 }
 
 @media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
@@ -221,12 +217,6 @@
     .contact-info h1 {
         font-size: 5.5vw !important;
         line-height: 7vw;
-    }
-
-    .footer {
-        text-align: center;
-        height: 25px;
-        font-size: 10px;
     }
 
     .message-hyperlink {

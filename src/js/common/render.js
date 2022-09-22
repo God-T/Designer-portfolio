@@ -5,9 +5,11 @@ import {
     getAboutDetails,
     getProjectImageSrc,
     getLogoDetails,
+    getFooterDetails,
     getAboutComponentHtmlContent,
     getNavMenuComponentHtmlContent,
     getLogoComponentHtmlContent,
+    getFooterComponentHtmlContent,
 } from './fetch.js';
 import { createParagraphsWithNewLinekey } from './util.js';
 import { bindContactLinkClickEvent } from './event.js';
@@ -135,28 +137,12 @@ export const renderProjectDetails = projectID => {
         let isFirst = true;
         let firstImage = null;
         for (let i = 0; i < fileNames.length; i++) {
-            // const container = createNewElement('div', '');
             const projectImg = createNewElement('img', ['project-detail-img']);
 
             const imageSrc = getProjectImageSrc(
                 `${imageData.folderName}/${fileNames[i]}`
             );
             projectImg.src = imageSrc;
-
-            // let img = new Image();
-            // img.onload = function () {
-            //     console.log(
-            //         `${Math.round(img.height / (img.width / 76))}vw`,
-            //         img.height,
-            //         img.width,
-            //         imageSrc
-            //     );
-
-            //     projectImg.style.height = `${Math.round(
-            //         img.height / (img.width / 76)
-            //     )}vw`;
-            // };
-            // img.src = imageSrc;
 
             projectDetailElement.appendChild(projectImg);
         }
@@ -194,11 +180,13 @@ export const renderLogo = theme => {
 
     const logoWrapper = document.getElementById('main-logo');
     if (theme === 'transparent') {
-        logoWrapper.style.height = '1em';
-        logoWrapper.style.width = '1em';
+        logoWrapper.style.transform = 'scale(0.7)';
+        // logoWrapper.style.height = '1em';
+        // logoWrapper.style.width = '1em';
     } else {
-        logoWrapper.style.height = '2em';
-        logoWrapper.style.width = '2em';
+        logoWrapper.style.transform = 'scale(1)';
+        // logoWrapper.style.height = '2em';
+        // logoWrapper.style.width = '2em';
     }
 };
 
@@ -359,6 +347,25 @@ export const renderLogoComponent = () => {
             getNavMenuComponentHtmlContent();
     } catch (e) {
         alert('Failed to render logo component');
+        console.log(e);
+    }
+};
+
+export const renderFooterComponent = () => {
+    try {
+        document.getElementById('__footer-component').innerHTML =
+            getFooterComponentHtmlContent();
+        document
+            .getElementById('footer-data-id--rights-reserved')
+            .appendChild(
+                document.createTextNode(
+                    `©${getFooterDetails().year} ${
+                        getFooterDetails().rightsHolder
+                    } - All Rights Reserved`
+                )
+            );
+    } catch (e) {
+        alert('Failed to render footer component');
         console.log(e);
     }
 };

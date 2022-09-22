@@ -5,6 +5,7 @@ import {
     aboutComponentHtmlContent,
     navMenuComponentHtmlContent,
     logoComponentHtmlContent,
+    footerComponentHtmlContent,
 } from './load.js';
 
 export const getProjectList = except => {
@@ -66,6 +67,16 @@ export const getAboutDetails = () => {
     }
 };
 
+export const getFooterDetails = () => {
+    try {
+        const res = personalDetails.footer;
+        return res;
+    } catch (e) {
+        alert('Failed to load footer details');
+        console.log(e);
+    }
+};
+
 export const getProjectImageSrc = path => {
     try {
         return projectsImageFramesMap.get(path);
@@ -98,6 +109,15 @@ export const getLogoComponentHtmlContent = () => {
         return logoComponentHtmlContent;
     } catch (e) {
         alert('Failed to load logo component content');
+        console.log(e);
+    }
+};
+
+export const getFooterComponentHtmlContent = () => {
+    try {
+        return footerComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load footer component content');
         console.log(e);
     }
 };

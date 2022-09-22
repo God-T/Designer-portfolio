@@ -1,0 +1,22 @@
+.footer {
+    height: 30px;
+    font-weight: 300;
+    font-size: 15px;
+    padding-inline: 2.6vw;
+    overflow: hidden;
+    text-align: center;
+}
+
+@media screen and (max-aspect-ratio: 1/1), screen and (max-width: 770px) {
+    .footer {
+        padding-inline: 7.8vw;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .footer {
+        text-align: center;
+        height: 25px;
+        font-size: 10px;
+    }
+}

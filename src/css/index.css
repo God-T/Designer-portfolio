@@ -10,15 +10,6 @@ body {
     height: 100%;
 }
 
-.footer {
-    height: 30px;
-    font-weight: 300;
-    font-size: 15px;
-    padding-inline: 2.6vw;
-    overflow: hidden;
-    text-align: center;
-}
-
 /* Shared styles */
 .container--justified {
     display: flex;
@@ -43,7 +34,7 @@ h1 {
     top: 3vw;
     right: 3vw;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all 0.3s ease-out;
     z-index: 3;
     height: 2em;
     width: 2em;
@@ -52,15 +43,10 @@ h1 {
 /* Tablet viewport */
 @media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
     #main-logo {
-        transform: scale(0.7);
-        right: 1vw;
-    }
-}
-
-/* Mobile viewport 425px < width < 600px */
-@media (max-aspect-ratio: 1/1), screen and (max-width: 600px) {
-    #main-logo {
-        right: 4vw;
+        top: 5vw;
+        right: 6vw;
+        height: 1.5em;
+        width: 1.5em;
     }
 }
 

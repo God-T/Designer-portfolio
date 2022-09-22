@@ -40,26 +40,38 @@
 
 .project-name {
     font-weight: 600;
+    font-size: 4vw;
+}
+
+.project--lite .project-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-type {
     font-weight: 300;
-}
-
-.project-name {
-    font-size: 4vw;
-}
-
-.project-type {
     font-size: 0.9vw;
 }
 
+.project--lite .project-type {
+    flex: 25%;
+    text-align: end;
+}
+
+.project-list-page--flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+
 /* Mobile viewport */
-@media screen and (max-width: 770px) {
+@media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
     .project-top-divider {
         border-bottom-width: 2px;
     }
 
+    .project--lite,
     .project {
         padding: 15px 30px;
         border-bottom-width: 2px;
@@ -69,9 +81,14 @@
 
     .project-name {
         font-size: 5.5vw;
+        text-align: center;
     }
 
     .project-type {
         font-size: 1.5vw;
+        text-align: center;
     }
+}
+
+@media (max-aspect-ratio: 1/1), screen and (max-width: 600px) {
 }

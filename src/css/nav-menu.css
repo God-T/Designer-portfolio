@@ -122,11 +122,11 @@
     }
 
     .contact-link--font-size {
-        font-size: 4.5vw;
+        font-size: 3vw;
     }
 
     .margin--bottom {
-        margin-bottom: 2vw;
+        margin-bottom: 1vw;
     }
 
     .nav-menu__right-wrapper > div {
@@ -135,5 +135,23 @@
 
     .mobile-style--overflow-hidden {
         overflow: hidden;
+    }
+
+    .nav-menu__left-wrapper {
+        font-size: 8vw;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 501px) {
+    .contact-link--font-size {
+        font-size: 4vw;
+    }
+
+    .margin--bottom {
+        margin-bottom: 2vw;
+    }
+
+    .nav-menu__left-wrapper {
+        font-size: 10vw;
     }
 }

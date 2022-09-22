@@ -4,7 +4,7 @@ import '../css/about.css';
 import '../css/landing.css';
 import '../css/projects-list.css';
 import '../css/nav-menu.css';
-// import '../.htaccess';
+import '../css/footer.css';
 import {
     renderProjectsList,
     renderLandingData,
@@ -15,6 +15,7 @@ import {
     renderNavMenuContactDetails,
     renderAboutComponent,
     renderLogoComponent,
+    renderFooterComponent,
 } from './common/render.js';
 import {
     bindBackToTopBtnEvent,
@@ -27,6 +28,7 @@ import { bindGeneralAnimations } from './common/animation.js';
 renderLogoComponent();
 renderAboutComponent();
 renderProjectsList(false);
+renderFooterComponent();
 /* Render other components */
 renderFavicon();
 renderNavMenuContactDetails();

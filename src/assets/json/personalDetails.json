@@ -35,5 +35,9 @@
         "dark": "logo-dark.png",
         "light": "logo-light.png",
         "transparent": "logo-transparent.png"
+    },
+    "footer": {
+        "year": "2022",
+        "rightsHolder": "Siyu Qian"
     }
 }
