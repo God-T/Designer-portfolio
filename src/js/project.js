@@ -1,20 +1,21 @@
 import '../css/animation.css';
-import '../css/index.css';
+import '../css/main.css';
 import '../css/projects-list.css';
+import '../css/contact.css';
+import '../css/nav-menu.css';
+import '../css/index-shared.css';
+import '../css/footer.css';
 import '../css/project.css';
-// import '../.htaccess';
 import {
     renderProjectsList,
     renderProjectDetails,
-    renderContactDetails,
     renderFavicon,
+    renderLogoComponent,
+    renderFooterComponent,
+    renderContactComponent,
 } from './common/render.js';
-import {
-    bindBackToTopBtnEvent,
-    bindProjectsNavEvent,
-    bindBack2HomeEvent,
-} from './common/event.js';
-import { bindAnimations } from './common/animation.js';
+import { bindGeneralAnimations } from './common/animation.js';
+import { bindProjectsNavEvent } from './common/event.js';
 
 const getCurrentProjectId = () => {
     const queryString = window.location.search;
@@ -22,13 +23,17 @@ const getCurrentProjectId = () => {
     const projectID = urlParams.get('id');
     return projectID;
 };
-
-renderFavicon();
 const projectId = getCurrentProjectId();
-renderProjectsList({ id: projectId });
+
+/* Render shared components */
+renderFavicon();
+renderLogoComponent('transparent');
+renderProjectsList(true, { id: projectId });
+renderContactComponent(true);
+renderFooterComponent();
+/* Render other components */
 renderProjectDetails(projectId);
-renderContactDetails(true);
-bindBackToTopBtnEvent();
+/* Bind events */
 bindProjectsNavEvent(projectId);
-bindBack2HomeEvent();
-bindAnimations();
+/* Enable Animations */
+bindGeneralAnimations();

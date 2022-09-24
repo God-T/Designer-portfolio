@@ -1,10 +1,3 @@
-.project-name {
-    font-size: 4vw;
-    width: 80%;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
 .project-detail {
     display: flex;
     justify-content: space-between;
@@ -13,9 +6,11 @@
 }
 
 .project-type {
-    margin-top: 15px;
-    font-size: 0.9vw;
-    text-align: end;
+    margin-top: 10px;
+}
+
+.project-name {
+    text-align: left;
 }
 
 .project-detail-description {
@@ -29,9 +24,6 @@
     display: block;
     margin-top: 25px !important;
     background-color: #959595;
-    /* 貌似没啥diao用 x_x */
-    /* background: #efeeed url(../assets/images/Rolling-1s-200px.gif) no-repeat center;
-    background-size: 64px; */
 }
 
 .project-detail-description__p {
@@ -49,19 +41,24 @@
     margin-top: 10vw;
 }
 
-.navigation-bar {
-    height: 10vh;
-    min-height: 80px;
+.navigation-projects-list a {
+    color: #a0a09f;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.navigation-projects-list a:active,
+.navigation-projects-list a:hover {
+    color: #0096ff;
+}
+
+.navigation-projects-list {
     overflow: hidden;
 }
 
 .padding-wrapper {
-    padding: 6.5vw 17vw;
-    padding-bottom: 0;
-}
-
-.footer {
-    padding-inline: 0;
+    padding-bottom: 0 !important;
 }
 
 .projects-list-nav {
@@ -70,20 +67,6 @@
 
 .project-detail .project-name {
     font-weight: 700;
-}
-
-.project {
-    background: initial;
-    transition: color 0.5s ease-in-out;
-}
-
-.project:active,
-.project:hover {
-    color: #0096ff;
-}
-
-#project-detail-container {
-    min-height: 100vh;
 }
 
 /* Mobile viewport */
@@ -98,7 +81,7 @@
     }
 
     #project-detail-container {
-        padding-bottom: 10px;
+        padding-bottom: 30px;
     }
 
     .project-detail-description {
@@ -109,13 +92,14 @@
         display: none;
     }
 
-    .navigation-bar {
+    .navigation-projects-list {
         display: flex;
         flex-direction: column;
         border-top: 2px solid #959595;
+        padding-bottom: 20px;
     }
 
-    .navigation-bar a {
+    .navigation-projects-list a {
         font-size: 17px;
     }
 
@@ -124,11 +108,7 @@
     }
 
     .padding-wrapper {
-        padding: 60px 12vw 1vh 12vw;
-    }
-
-    #main-title__logo {
-        transform: scale(0.4);
+        padding: 60px 12vw 1vh 12vw !important;
     }
 
     .projects-list-nav {
@@ -174,10 +154,18 @@
         display: none;
     }
 
-    .footer {
-        margin-top: 30px;
-        height: 20px;
-        text-align: center;
+    #contact-details-wrapper {
+        flex-direction: row !important;
+    }
+
+    .navigation-bar {
+        justify-content: center !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 1/1), screen and (max-width: 770px) {
+    .contact-info {
+        padding: 0 !important;
     }
 }
 
@@ -186,7 +174,8 @@
         margin-top: 4vw !important;
     }
 
-    .footer {
-        font-size: 10px;
+    .contact-info {
+        padding: 0;
+        padding-top: 4.5vw !important;
     }
 }

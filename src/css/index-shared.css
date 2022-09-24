@@ -1,0 +1,40 @@
+.padding-wrapper {
+    padding: 6.5vw 17vw;
+}
+
+.padding-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.footer {
+    padding-inline: 0;
+}
+
+.contact-info {
+    border-top: none !important;
+}
+
+@media screen and (max-width: 770px) {
+    .padding-wrapper {
+        padding: 60px 12vw;
+    }
+
+    .footer {
+        margin-top: 30px;
+        height: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .footer {
+        font-size: 10px;
+    }
+
+    #main-logo {
+        top: 6vw;
+        right: 3.5vw;
+        height: 1.5em;
+        width: 1.5em;
+    }
+}

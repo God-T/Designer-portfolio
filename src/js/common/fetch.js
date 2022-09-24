@@ -1,8 +1,13 @@
 import {
     personalDetails,
     projectsDetails,
-    projectsImageFramesMap,
-} from './loadData.js';
+    imageFramesMap,
+    aboutComponentHtmlContent,
+    navMenuComponentHtmlContent,
+    logoComponentHtmlContent,
+    footerComponentHtmlContent,
+    contactComponentHtmlContent,
+} from './load.js';
 
 export const getProjectList = except => {
     try {
@@ -43,6 +48,16 @@ export const getLandingDetails = () => {
     }
 };
 
+export const getLogoDetails = () => {
+    try {
+        const res = personalDetails.logo;
+        return res;
+    } catch (e) {
+        alert('Failed to load logo details');
+        console.log(e);
+    }
+};
+
 export const getAboutDetails = () => {
     try {
         const res = personalDetails.about;
@@ -53,11 +68,76 @@ export const getAboutDetails = () => {
     }
 };
 
-export const getProjectImageSrc = path => {
+export const getPhotographyDetails = () => {
     try {
-        return projectsImageFramesMap.get(path);
+        const res = personalDetails.photography;
+        return res;
     } catch (e) {
-        alert('Failed to load project image src');
+        alert('Failed to load photography details');
+        console.log(e);
+    }
+};
+
+export const getFooterDetails = () => {
+    try {
+        const res = personalDetails.footer;
+        return res;
+    } catch (e) {
+        alert('Failed to load footer details');
+        console.log(e);
+    }
+};
+
+export const getImageSrc = path => {
+    try {
+        return imageFramesMap.get(path);
+    } catch (e) {
+        alert('Failed to load image src');
+        console.log(e);
+    }
+};
+
+export const getAboutComponentHtmlContent = () => {
+    try {
+        return aboutComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load about component content');
+        console.log(e);
+    }
+};
+
+export const getNavMenuComponentHtmlContent = () => {
+    try {
+        return navMenuComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load nav menu component content');
+        console.log(e);
+    }
+};
+
+export const getLogoComponentHtmlContent = () => {
+    try {
+        return logoComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load logo component content');
+        console.log(e);
+    }
+};
+
+export const getFooterComponentHtmlContent = () => {
+    try {
+        return footerComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load footer component content');
+        console.log(e);
+    }
+};
+
+export const getContactComponentHtmlContent = () => {
+    try {
+        return contactComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load contact component content');
         console.log(e);
     }
 };

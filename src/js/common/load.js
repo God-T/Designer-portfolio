@@ -1,9 +1,22 @@
+/* Caputure by Webpack */
 import personalDetailsRaw from '../../assets/json/personalDetails.json';
 import projectsDetailsRaw from '../../assets/json/projectsDetails.json';
+import aboutComponent from '../../html/components/about.component.html';
+import navMenuComponent from '../../html/components/nav-menu.component.html';
+import logoComponent from '../../html/components/logo.component.html';
+import footerComponent from '../../html/components/footer.component.html';
+import contactComponent from '../../html/components/contact.component.html';
 
 /* Export data as json objects */
 export const personalDetails = JSON.parse(personalDetailsRaw);
 export const projectsDetails = JSON.parse(projectsDetailsRaw);
+
+/* Export shared HTML content */
+export const aboutComponentHtmlContent = aboutComponent;
+export const navMenuComponentHtmlContent = navMenuComponent;
+export const logoComponentHtmlContent = logoComponent;
+export const footerComponentHtmlContent = footerComponent;
+export const contactComponentHtmlContent = contactComponent;
 
 /**
  * Load all images
@@ -19,10 +32,10 @@ function loadFrames(context) {
 }
 
 /* Export images from map with input path */
-export const projectsImageFramesMap = loadFrames(
+export const imageFramesMap = loadFrames(
     require.context('../../assets/images', true, /\.(png|jpg|ico|gif)$/)
 );
-// console.log(projectsImageFramesMap);
+
 // require.context(
 //     directory: String,
 //     includeSubdirs: Boolean /* default: true */,

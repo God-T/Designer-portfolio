@@ -5,8 +5,7 @@
         "titleLine2": "DESIGNER",
         "nickName": "MONICA",
         "city": "BASED IN SYDNEY",
-        "years": "2021 & 2022",
-        "logoFilename": "logo.png"
+        "years": "2021 & 2022"
     },
     "about": {
         "aboutText": "I am Sydney based visual designer. After I finished my business degree in university, I realised that I am more passionate about creating. Shillington has given me the opportunity to discover the design industry and learn skills. I am still willing to have more chances to learn and follow my design directions.",
@@ -31,5 +30,28 @@
             "src": "about.jpg",
             "alt": "about-monica"
         }
+    },
+    "photography": {
+        "folderName": "photography",
+        "fileNames": [
+            { "id": "p1", "name": "IMG_6051.jpg" },
+            { "id": "p2", "name": "IMG_2365.jpg" },
+            { "id": "p3", "name": "IMG_1291.jpg" },
+            { "id": "p6", "name": "ccdr 2022-07-09 161816.706.jpg" },
+            { "id": "p5", "name": "IMG_1299.jpg" },
+            { "id": "p7", "name": "IMG_8794.jpg" },
+            { "id": "p9", "name": "IMG_1642.jpg" },
+            { "id": "p8", "name": "IMG_1644.jpg" },
+            { "id": "p4", "name": "IMG_3053.jpg" }
+        ]
+    },
+    "logo": {
+        "dark": "logo-dark.png",
+        "light": "logo-light.png",
+        "transparent": "logo-transparent.png"
+    },
+    "footer": {
+        "year": "2022",
+        "rightsHolder": "Siyu Qian"
     }
 }

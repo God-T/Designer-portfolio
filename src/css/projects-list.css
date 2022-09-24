@@ -1,3 +1,4 @@
+.project--lite,
 .project {
     display: flex;
     justify-content: space-between;
@@ -6,7 +7,9 @@
     padding: 40px;
     cursor: pointer;
     opacity: 0;
+}
 
+.project {
     /* Gradually fill in color from left to right */
     background: linear-gradient(to right, #d4d4d4 50%, #efeeed 50%);
     background-size: 202% 100%;
@@ -21,9 +24,15 @@
     background-position: left bottom;
 }
 
-/* .project:hover {
-    background-position: left bottom;
-} */
+.project--lite {
+    background: initial;
+    transition: color 0.5s ease-in-out;
+}
+
+.project--lite:active,
+.project--lite:hover {
+    color: #0096ff;
+}
 
 .project-top-divider {
     border-bottom: 4px solid #959595;
@@ -31,28 +40,43 @@
 
 .project-name {
     font-weight: 600;
+    font-size: 4vw;
+}
+
+.project--lite .project-name {
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-type {
     font-weight: 300;
-}
-
-.project-name {
-    font-size: 4vw;
-}
-
-.project-type {
     font-size: 0.9vw;
 }
 
+.project--lite .project-type {
+    flex: 25%;
+    text-align: end;
+}
+
+.project-list-page--flex-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: space-between;
+}
+a {
+    height: fit-content;
+}
+
 /* Mobile viewport */
-@media screen and (max-width: 770px) {
+@media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
     .project-top-divider {
         border-bottom-width: 2px;
     }
 
+    .project--lite,
     .project {
-        padding: 15px 30px;
+        padding: 15px 30px !important;
         border-bottom-width: 2px;
         flex-direction: column;
         align-items: center;
@@ -60,9 +84,11 @@
 
     .project-name {
         font-size: 5.5vw;
+        text-align: center;
     }
 
     .project-type {
         font-size: 1.5vw;
+        text-align: center;
     }
 }

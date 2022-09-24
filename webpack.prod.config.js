@@ -2,11 +2,55 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-module.exports = {
-    entry: {
-        index: './src/js/index.js',
-        project: './src/js/project.js',
+const HtmlWebpack = [
+    {
+        entry: 'index',
+        dir: 'src',
     },
+    {
+        entry: 'project',
+        dir: 'src/html',
+    },
+    {
+        entry: 'projects-list',
+        dir: 'src/html',
+    },
+    {
+        entry: 'about',
+        dir: 'src/html',
+    },
+    {
+        entry: 'photography',
+        dir: 'src/html',
+    },
+];
+
+const HtmlWebpackPlugins = HtmlWebpack.map(
+    i =>
+        new HtmlWebpackPlugin({
+            title: i.entry,
+            filename:
+                i.entry === 'index'
+                    ? `${i.entry}.html`
+                    : `${i.entry}/index.html`,
+            template: `${i.dir}/${i.entry}.html`,
+            /* Specify which entry js to load */
+            chunks: [i.entry],
+        })
+);
+
+const HtmlLoaderExclude = HtmlWebpack.filter(
+    i => !i.dir.includes('common')
+).map(i => path.resolve(__dirname, `${i.dir}/${i.entry}.html`));
+
+const entries = () => {
+    entry = {};
+    HtmlWebpack.map(i => (entry[i.entry] = `./src/js/${i.entry}.js`));
+    return entry;
+};
+
+module.exports = {
+    entry: entries,
     output: {
         filename: '[contenthash].bundle.js',
         path: path.resolve(__dirname, './dist'),
@@ -56,6 +100,13 @@ module.exports = {
                 },
             },
             {
+                test: /\.html$/,
+                exclude: [/(node_modules)/, ...HtmlLoaderExclude],
+                use: {
+                    loader: 'html-loader',
+                },
+            },
+            {
                 test: /\.js$/,
                 exclude: /(node_modules)/,
                 use: {
@@ -68,18 +119,7 @@ module.exports = {
         new MiniCssExtractPlugin({
             filename: '[contenthash].min.css',
         }),
-        new HtmlWebpackPlugin({
-            title: 'index',
-            filename: 'index.html',
-            template: 'src/index.html',
-            chunks: ['index'],
-        }),
-        new HtmlWebpackPlugin({
-            title: 'project',
-            filename: 'project/index.html',
-            template: 'src/html/project.html',
-            chunks: ['project'],
-        }),
+        ...HtmlWebpackPlugins,
     ],
     experiments: {
         topLevelAwait: true,

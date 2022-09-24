@@ -10,11 +10,11 @@ const testFunc = el => {
         window.innerHeight ||
         document.documentElement.clientHeight ||
         document.body.clientHeight;
-    console.log(rect.top, rect.right, rect.bottom, rect.left);
+    console.log(el, rect.top, rect.right, rect.bottom, rect.left);
     console.log(availableWidth, availableHeight);
 };
 
-export const bindAnimations = () => {
+export const bindGeneralAnimations = () => {
     scrollTrigger('.fadeIn', {
         rootMargin: '-20px -20px -50px -20px',
         cb: function (el) {
@@ -23,7 +23,7 @@ export const bindAnimations = () => {
     });
 
     scrollTrigger('.slideIn--left2right', {
-        rootMargin: '-50px',
+        rootMargin: '0px -50px -50px -50px',
         cb: function (el) {
             el.classList.add('slideIn--left2right--active');
         },
@@ -56,7 +56,7 @@ export const bindAnimations = () => {
     });
 
     scrollTrigger('.slideIn--left2right__large-box', {
-        rootMargin: '-100px -100px -200px -100px',
+        rootMargin: '-50px -100px -200px -100px',
         cb: function (el) {
             el.classList.add('slideIn--left2right__large-box--active');
         },
@@ -67,5 +67,41 @@ export const bindAnimations = () => {
         cb: function (el) {
             el.classList.add('fadeIn--slow--active');
         },
+    });
+
+    bindNavMenuAnimation();
+};
+
+export function bindNavMenuAnimation() {
+    scrollTrigger('.nav-menu__link', {
+        cb: function (el) {
+            el.classList.add('slideIn--bottom-up--active');
+        },
+        isLooping: true,
+    });
+}
+
+export const resetAnimationStates = (targetSelecter, activedAnimationClass) => {
+    document
+        .querySelectorAll(targetSelecter)
+        .forEach(el => el.classList.remove(activedAnimationClass + '--active'));
+};
+
+export const triggerAnimation = (targetSelecter, animationClass) => {
+    document
+        .querySelectorAll(targetSelecter)
+        .forEach(el => el.classList.add(animationClass + '--active'));
+};
+
+export const triggerAnimationInTurn = (
+    targetSelecter,
+    animationClass,
+    interval
+) => {
+    document.querySelectorAll(targetSelecter).forEach((el, index) => {
+        setTimeout(
+            () => el.classList.add(animationClass + '--active'),
+            index * interval
+        );
     });
 };

@@ -1,16 +1,13 @@
 import '../css/animation.css';
-import '../css/index.css';
 import '../css/main.css';
-import '../css/about.css';
-import '../css/landing.css';
-import '../css/projects-list.css';
 import '../css/nav-menu.css';
+import '../css/index-shared.css';
+import '../css/contact.css';
 import '../css/footer.css';
+import '../css/photography.css';
+import { renderPhotography } from './common/render.js';
 import {
-    renderProjectsList,
-    renderLandingData,
     renderFavicon,
-    renderAboutComponent,
     renderLogoComponent,
     renderFooterComponent,
     renderContactComponent,
@@ -19,12 +16,10 @@ import { bindGeneralAnimations } from './common/animation.js';
 
 /* Render shared components */
 renderFavicon();
-renderLogoComponent('dark', true);
-renderProjectsList(false);
-renderAboutComponent();
-renderContactComponent();
+renderLogoComponent('transparent');
+renderContactComponent(true);
 renderFooterComponent();
-/* Render the page */
-renderLandingData();
+/* Render other components */
+renderPhotography();
 /* Enable Animations */
 bindGeneralAnimations();
