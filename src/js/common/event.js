@@ -18,19 +18,13 @@ export const bindBackToTopBtnEvent = () => {
     }
 };
 
-function measureClickTime(callback) {
-    return (...args) => {
-        callback.apply(this, args);
-    };
-}
-
 export const bindLogoClickEvent = defaultLogoTheme => {
     try {
         /* Enclose nav menu expanding time as parameter in event handler */
         let expandingTime = void 0;
         let shouldWait = false;
         let shouldExpandAfterCollapse = false;
-        const collapseDuration = 600;
+        const collapseDuration = 400;
         const logo = document.getElementById('main-logo');
 
         const handleNavMenuCollapse = navMenu => {
@@ -41,7 +35,7 @@ export const bindLogoClickEvent = defaultLogoTheme => {
             resetAnimationStates('.nav-menu__link', 'slideIn--bottom-up');
             triggerAnimation(
                 '.slideIn--bottom-up--slow__nav-menu',
-                'slideIn--bottom-up--slow-2400ms'
+                'slideIn--bottom-up--slow-2200ms'
             );
             navMenu.classList.add('overlay__nav-menu--toggleOn');
             /* Change style of scrollbar to transparent */
@@ -67,7 +61,7 @@ export const bindLogoClickEvent = defaultLogoTheme => {
                     logo.classList.remove('main-logo-position--light');
                     resetAnimationStates(
                         '.slideIn--bottom-up--slow__nav-menu',
-                        'slideIn--bottom-up--slow-2400ms'
+                        'slideIn--bottom-up--slow-2200ms'
                     );
                     navMenu.style.visibility = 'hidden';
                     renderLogo(defaultLogoTheme);
@@ -157,5 +151,11 @@ export const bindNavMenuBtnEvents = isRoot => {
             window.location.href = isRoot
                 ? '/projects-list'
                 : '../projects-list';
+        });
+
+    document
+        .getElementById('nav-menu__about-nav-btn')
+        .addEventListener('click', () => {
+            window.location.href = isRoot ? '/about' : '../about';
         });
 };

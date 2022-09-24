@@ -2,41 +2,19 @@
     padding: 6.5vw 17vw;
 }
 
-/* .main-logo-position--light {
-    right: 3.6vw !important;
-    top: 2.7vw !important;
-} */
-
-/* #main-logo {
-    right: 4vw;
-    top: 3vw;
-} */
+.padding-wrapper {
+    padding-bottom: 0 !important;
+}
 
 .footer {
     padding-inline: 0;
 }
 
-/* Tablet viewport */
-@media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
-    /* #main-logo {
-        top: 5vw;
-        right: 6vw;
-        height: 1.5em;
-        width: 1.5em;
-    } */
+.contact-info {
+    border-top: none !important;
 }
 
 @media screen and (max-width: 770px) {
-    /* #main-logo {
-        right: 5vw;
-        top: 5vw;
-    }
-
-    .main-logo-position--light {
-        right: 3.3vw !important;
-        top: 2.9vw !important;
-    } */
-
     .padding-wrapper {
         padding: 60px 12vw;
     }

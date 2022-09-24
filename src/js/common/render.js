@@ -10,28 +10,20 @@ import {
     getNavMenuComponentHtmlContent,
     getLogoComponentHtmlContent,
     getFooterComponentHtmlContent,
+    getContactComponentHtmlContent,
 } from './fetch.js';
-import { createParagraphsWithNewLinekey } from './util.js';
-import { bindContactLinkClickEvent } from './event.js';
+import {
+    createParagraphsWithNewLinekey,
+    createNewElement,
+    setTextById,
+} from './util.js';
+import {
+    bindLogoClickEvent,
+    bindBackToTopBtnEvent,
+    bindContactLinkClickEvent,
+    bindNavMenuBtnEvents,
+} from './event.js';
 import { scrollTrigger } from './trigger.js';
-
-const createNewElement = (tagType, classNames, content = null) => {
-    const newEl = document.createElement(tagType);
-    /* Create class name(s) */
-    if (Array.isArray(classNames))
-        classNames.map(name => {
-            newEl.classList.add(name);
-        });
-    else if (typeof classNames === 'string') newEl.className = classNames;
-    /* Create Text */
-    if (content) newEl.appendChild(document.createTextNode(content));
-    return newEl;
-};
-
-const setTextById = (id, content = '') => {
-    const el = document.getElementById(id);
-    if (el) el.textContent = content;
-};
 
 const setImgSrcById = (id, imgFileName, alt = '') => {
     try {
@@ -44,44 +36,37 @@ const setImgSrcById = (id, imgFileName, alt = '') => {
     }
 };
 
-export const renderProjectsList = (isLite, except = {}) => {
+export const renderBackToHomePageBtn = () => {
     try {
-        const projectListElement = document.getElementById(
-            'projects-list-container'
-        );
-        /* Render divider */
-        projectListElement.appendChild(
-            createNewElement('div', [
-                'project-top-divider',
-                'slideIn--left2right__large-box',
-            ])
-        );
-        /* Render projects */
-        const projectList = getProjectList(except);
-        for (let i = 0; i < projectList.length; i++) {
-            const project = createNewElement('div', [
-                isLite ? 'project--lite' : 'project',
-                'slideIn--left2right__large-box',
-            ]);
-            project.setAttribute('id', 'project-' + projectList[i].id);
-            project.appendChild(
-                createNewElement('h1', 'project-name', projectList[i].name)
-            );
-            project.appendChild(
-                createNewElement('span', 'project-type', projectList[i].type)
-            );
-            projectListElement.appendChild(project);
-
-            project.addEventListener('click', () => {
-                window.location.href = `project?id=${projectList[i].id}&name=${projectList[i].name}`;
-            });
-        }
+        const navBar = document.getElementById('projects-list-nav');
+        const a = createNewElement('a');
+        a.href = '.';
+        a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
+        navBar.appendChild(a);
     } catch (e) {
-        alert('Failed to render projects list');
+        alert('Failed to render back to home page btn');
         console.log(e);
     }
 };
 
+/***************************************************************
+                        Index Page
+***************************************************************/
+export const renderLandingData = () => {
+    try {
+        const data = getLandingDetails();
+        for (let key in data) {
+            setTextById(`landing-data-id--${key}`, data[key]);
+        }
+    } catch (e) {
+        alert('Failed to render landing data');
+        console.log(e);
+    }
+};
+
+/***************************************************************
+                        Project page
+***************************************************************/
 export const renderProjectDetails = projectID => {
     try {
         const projectDetails = getProjectDetails(projectID);
@@ -173,31 +158,103 @@ export const renderProjectDetails = projectID => {
     }
 };
 
-export const renderLogo = theme => {
-    const logoData = getLogoDetails();
-    const logo = document.getElementById('logo-image');
-    logo.src = getProjectImageSrc(logoData[theme]);
-
-    const logoWrapper = document.getElementById('main-logo');
-    if (theme === 'transparent') {
-        logoWrapper.style.transform = 'scale(0.7)';
-        // logoWrapper.style.height = '1em';
-        // logoWrapper.style.width = '1em';
-    } else {
-        logoWrapper.style.transform = 'scale(1)';
-        // logoWrapper.style.height = '2em';
-        // logoWrapper.style.width = '2em';
+/***************************************************************
+                        Favicon Component
+***************************************************************/
+export const renderFavicon = () => {
+    try {
+        const fav = document.getElementById('favicon-link');
+        fav.href = getProjectImageSrc('favicon.ico');
+    } catch (e) {
+        alert('Failed to render favicon');
+        console.log(e);
     }
 };
 
-export const renderLandingData = () => {
+/***************************************************************
+                        Project List Component
+***************************************************************/
+export const renderProjectsList = (isLite, except = {}) => {
     try {
-        const data = getLandingDetails();
-        for (let key in data) {
-            setTextById(`landing-data-id--${key}`, data[key]);
+        const projectListElement = document.getElementById(
+            'projects-list-container'
+        );
+        /* Render divider */
+        projectListElement.appendChild(
+            createNewElement('div', [
+                'project-top-divider',
+                'slideIn--left2right__large-box',
+            ])
+        );
+        /* Render projects */
+        const projectList = getProjectList(except);
+        for (let i = 0; i < projectList.length; i++) {
+            const project = createNewElement('div', [
+                isLite ? 'project--lite' : 'project',
+                'slideIn--left2right__large-box',
+            ]);
+            project.setAttribute('id', 'project-' + projectList[i].id);
+            project.appendChild(
+                createNewElement('h1', 'project-name', projectList[i].name)
+            );
+            project.appendChild(
+                createNewElement('span', 'project-type', projectList[i].type)
+            );
+            projectListElement.appendChild(project);
+
+            project.addEventListener('click', () => {
+                window.location.href = `project?id=${projectList[i].id}&name=${projectList[i].name}`;
+            });
         }
     } catch (e) {
-        alert('Failed to render landing data');
+        alert('Failed to render projects list');
+        console.log(e);
+    }
+};
+
+/***************************************************************
+                        About Component
+***************************************************************/
+export const renderAboutComponent = () => {
+    try {
+        document.getElementById('__about-component').innerHTML =
+            getAboutComponentHtmlContent();
+        renderAboutData();
+    } catch (e) {
+        alert('Failed to render about component');
+        console.log(e);
+    }
+};
+
+export const renderAboutData = () => {
+    try {
+        const data = getAboutDetails();
+        setTextById('about-data-id--aboutText', data.aboutText);
+
+        const container = document.getElementById('about-data-id--photo');
+        const aboutImg = createNewElement(
+            'img',
+            'slideIn--bottom-up__large-box'
+        );
+        aboutImg.src = getProjectImageSrc(data.photo.src);
+        container.appendChild(aboutImg);
+    } catch (e) {
+        alert('Failed to render about data');
+        console.log(e);
+    }
+};
+
+/***************************************************************
+                        Contact Component
+***************************************************************/
+export const renderContactComponent = (shouldRenderMainMessage = false) => {
+    try {
+        document.getElementById('__contact-component').innerHTML =
+            getContactComponentHtmlContent();
+        renderContactDetails(shouldRenderMainMessage);
+        bindBackToTopBtnEvent();
+    } catch (e) {
+        alert('Failed to render contact component');
         console.log(e);
     }
 };
@@ -206,6 +263,10 @@ export const renderContactDetails = (shouldRenderMainMessage = false) => {
     try {
         const data = getAboutDetails();
         const container = document.getElementById('contact-details-wrapper');
+
+        if (shouldRenderMainMessage)
+            document.getElementById('contact-info__greating').style.display =
+                'none';
 
         for (let i in data.contactDetails) {
             const contact = data.contactDetails[i];
@@ -237,44 +298,42 @@ export const renderContactDetails = (shouldRenderMainMessage = false) => {
     }
 };
 
-export const renderAboutData = () => {
+/***************************************************************
+                        Logo Component
+***************************************************************/
+export const renderLogoComponent = (logoTheme, isRoot = false) => {
     try {
-        const data = getAboutDetails();
-        setTextById('about-data-id--aboutText', data.aboutText);
+        /* Render logo */
+        document.getElementById('__logo-component').innerHTML =
+            getLogoComponentHtmlContent();
+        renderLogo(logoTheme);
+        bindLogoClickEvent(logoTheme);
 
-        const container = document.getElementById('about-data-id--photo');
-        const aboutImg = createNewElement(
-            'img',
-            'slideIn--bottom-up__large-box'
-        );
-        aboutImg.src = getProjectImageSrc(data.photo.src);
-        container.appendChild(aboutImg);
+        /* Render nav menu */
+        document.getElementById('__nav-menu-component').innerHTML =
+            getNavMenuComponentHtmlContent();
+        renderNavMenuContactDetails();
+        bindNavMenuBtnEvents(isRoot);
     } catch (e) {
-        alert('Failed to render about data');
+        alert('Failed to render logo component');
         console.log(e);
     }
 };
 
-export const renderBackToHomePageBtn = () => {
-    try {
-        const navBar = document.getElementById('projects-list-nav');
-        const a = createNewElement('a');
-        a.href = '.';
-        a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
-        navBar.appendChild(a);
-    } catch (e) {
-        alert('Failed to render back to home page btn');
-        console.log(e);
-    }
-};
+export const renderLogo = theme => {
+    const logoData = getLogoDetails();
+    const logo = document.getElementById('logo-image');
+    logo.src = getProjectImageSrc(logoData[theme]);
 
-export const renderFavicon = () => {
-    try {
-        const fav = document.getElementById('favicon-link');
-        fav.href = getProjectImageSrc('favicon.ico');
-    } catch (e) {
-        alert('Failed to render favicon');
-        console.log(e);
+    const logoWrapper = document.getElementById('main-logo');
+    if (theme === 'transparent') {
+        logoWrapper.style.transform = 'scale(0.7)';
+        // logoWrapper.style.height = '1em';
+        // logoWrapper.style.width = '1em';
+    } else {
+        logoWrapper.style.transform = 'scale(1)';
+        // logoWrapper.style.height = '2em';
+        // logoWrapper.style.width = '2em';
     }
 };
 
@@ -291,7 +350,7 @@ export const renderNavMenuContactDetails = () => {
                         'hover-turn-color-blue',
                         'contact-link--font-size',
                         'slideIn--bottom-up--slow__nav-menu',
-                        'slideIn--bottom-up--slow-2400ms',
+                        'slideIn--bottom-up--slow-2200ms',
                     ],
                     contact.href
                 );
@@ -307,7 +366,7 @@ export const renderNavMenuContactDetails = () => {
                 'hover-turn-bgcolor-blue',
                 'circle-shape',
                 'slideIn--bottom-up--slow__nav-menu',
-                'slideIn--bottom-up--slow-2400ms',
+                'slideIn--bottom-up--slow-2200ms',
             ]);
             const icon = createNewElement('i', [
                 'fa-brands',
@@ -329,28 +388,9 @@ export const renderNavMenuContactDetails = () => {
     }
 };
 
-export const renderAboutComponent = () => {
-    try {
-        document.getElementById('__about-component').innerHTML =
-            getAboutComponentHtmlContent();
-    } catch (e) {
-        alert('Failed to render about component');
-        console.log(e);
-    }
-};
-
-export const renderLogoComponent = () => {
-    try {
-        document.getElementById('__logo-component').innerHTML =
-            getLogoComponentHtmlContent();
-        document.getElementById('__nav-menu-component').innerHTML =
-            getNavMenuComponentHtmlContent();
-    } catch (e) {
-        alert('Failed to render logo component');
-        console.log(e);
-    }
-};
-
+/***************************************************************
+                        Footer Component
+***************************************************************/
 export const renderFooterComponent = () => {
     try {
         document.getElementById('__footer-component').innerHTML =

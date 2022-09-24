@@ -4,7 +4,7 @@
 .slideIn--right2left,
 .slideIn--bottom-up,
 .slideIn--bottom-up--slow,
-.slideIn--bottom-up--slow-2400ms,
+.slideIn--bottom-up--slow-2200ms,
 .slideIn--bottom-up--slow--reverse,
 .slideIn--bottom-up__large-box,
 .slideIn--left2right__large-box {
@@ -31,7 +31,11 @@
     animation-iteration-count: 1;
 }
 
-.slideIn--bottom-up__large-box--active,
+.slideIn--bottom-up__large-box--active {
+    animation: slideIn--bottom-up 1.5s forwards;
+    animation-iteration-count: 1;
+}
+
 .slideIn--bottom-up--active {
     animation: slideIn--bottom-up 1s forwards;
     animation-iteration-count: 1;
@@ -42,8 +46,8 @@
     animation-iteration-count: 1;
 }
 
-.slideIn--bottom-up--slow-2400ms--active {
-    animation: slideIn--bottom-up 2.4s forwards;
+.slideIn--bottom-up--slow-2200ms--active {
+    animation: slideIn--bottom-up 2.2s forwards;
     animation-iteration-count: 1;
 }
 

@@ -6,6 +6,7 @@ import {
     navMenuComponentHtmlContent,
     logoComponentHtmlContent,
     footerComponentHtmlContent,
+    contactComponentHtmlContent,
 } from './load.js';
 
 export const getProjectList = except => {
@@ -118,6 +119,15 @@ export const getFooterComponentHtmlContent = () => {
         return footerComponentHtmlContent;
     } catch (e) {
         alert('Failed to load footer component content');
+        console.log(e);
+    }
+};
+
+export const getContactComponentHtmlContent = () => {
+    try {
+        return contactComponentHtmlContent;
+    } catch (e) {
+        alert('Failed to load contact component content');
         console.log(e);
     }
 };

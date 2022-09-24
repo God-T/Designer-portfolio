@@ -1,0 +1,116 @@
+@import './fonts.css';
+
+* {
+    -webkit-tap-highlight-color: transparent !important;
+    /* border: red 1px solid; */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Shared styles */
+.container--justified {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container--center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    margin: 0;
+}
+
+#main-logo {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 3vw;
+    right: 3vw;
+    cursor: pointer;
+    transition: all 0.3s ease-out;
+    z-index: 3;
+    height: 2em;
+    width: 2em;
+}
+
+/* Tablet viewport */
+@media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
+    #main-logo {
+        top: 5vw;
+        right: 6vw;
+        height: 1.5em;
+        width: 1.5em;
+    }
+}
+
+#back2top-Btn {
+    cursor: pointer;
+}
+
+#back2top-Btn:active,
+#back2top-Btn:hover {
+    color: #656565;
+}
+
+/* Wrappers styles */
+body {
+    font-family: Orkney;
+    font-weight: 600;
+    background-color: #efeeed;
+    margin: 0;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+.landing-container {
+    padding: 5vw 4vw 5vw 7vw;
+    height: calc(100% - 10vw);
+    overflow: hidden;
+}
+
+#contact-details-wrapper {
+    display: flex;
+    gap: 4vw;
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 transparent;
+}
+
+/* Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 20px;
+    border: 2px solid;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-color: #efeeed;
+}
+
+.scrollbar--transparent::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.disable-scroll {
+    overflow-y: hidden;
+}

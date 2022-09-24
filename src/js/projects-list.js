@@ -1,36 +1,29 @@
 import '../css/animation.css';
-import '../css/index.css';
+import '../css/main.css';
 import '../css/nav-menu.css';
+import '../css/contact.css';
 import '../css/projects-list.css';
 import '../css/index-shared.css';
 import '../css/footer.css';
-
 import {
     renderLogoComponent,
     renderProjectsList,
-    renderLogo,
     renderFavicon,
-    renderNavMenuContactDetails,
     renderFooterComponent,
+    renderContactComponent,
 } from './common/render.js';
 import {
     bindNavMenuAnimation,
     triggerAnimationInTurn,
 } from './common/animation.js';
 import { scrollTrigger } from './common/trigger.js';
-import { bindLogoClickEvent, bindNavMenuBtnEvents } from './common/event.js';
 
 /* Render shared components */
-renderLogoComponent();
-renderProjectsList(true);
-renderFooterComponent();
-/* Render other components */
 renderFavicon();
-renderNavMenuContactDetails();
-renderLogo('transparent');
-/* Bind events */
-bindLogoClickEvent('transparent');
-bindNavMenuBtnEvents();
+renderLogoComponent('transparent');
+renderProjectsList(true);
+renderContactComponent(true);
+renderFooterComponent();
 /* Enable Projects List Animations */
 triggerAnimationInTurn(
     '.slideIn--left2right__large-box',
