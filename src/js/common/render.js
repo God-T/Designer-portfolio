@@ -180,6 +180,10 @@ export const renderPhotography = () => {
 ***************************************************************/
 export const renderFavicon = () => {
     try {
+        const title = document.getElementsByTagName('title')[0];
+        title.appendChild(
+            document.createTextNode(getLandingDetails().fullName)
+        );
         const fav = document.getElementById('favicon-link');
         fav.href = getImageSrc('favicon.ico');
     } catch (e) {
