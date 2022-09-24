@@ -64,6 +64,9 @@
     min-height: 100vh;
     justify-content: space-between;
 }
+a {
+    height: fit-content;
+}
 
 /* Mobile viewport */
 @media (max-aspect-ratio: 70/100), screen and (max-width: 770px) {
@@ -73,7 +76,7 @@
 
     .project--lite,
     .project {
-        padding: 15px 30px;
+        padding: 15px 30px !important;
         border-bottom-width: 2px;
         flex-direction: column;
         align-items: center;

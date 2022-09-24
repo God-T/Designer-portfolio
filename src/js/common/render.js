@@ -3,9 +3,10 @@ import {
     getProjectDetails,
     getLandingDetails,
     getAboutDetails,
-    getProjectImageSrc,
+    getImageSrc,
     getLogoDetails,
     getFooterDetails,
+    getPhotographyDetails,
     getAboutComponentHtmlContent,
     getNavMenuComponentHtmlContent,
     getLogoComponentHtmlContent,
@@ -40,7 +41,7 @@ export const renderBackToHomePageBtn = () => {
     try {
         const navBar = document.getElementById('projects-list-nav');
         const a = createNewElement('a');
-        a.href = '.';
+        a.href = '../';
         a.appendChild(createNewElement('i', ['fa-solid', 'fa-house']));
         navBar.appendChild(a);
     } catch (e) {
@@ -119,12 +120,10 @@ export const renderProjectDetails = projectID => {
         /* Render image */
         const imageData = projectDetails.image;
         const fileNames = imageData.fileNames;
-        let isFirst = true;
-        let firstImage = null;
         for (let i = 0; i < fileNames.length; i++) {
             const projectImg = createNewElement('img', ['project-detail-img']);
 
-            const imageSrc = getProjectImageSrc(
+            const imageSrc = getImageSrc(
                 `${imageData.folderName}/${fileNames[i]}`
             );
             projectImg.src = imageSrc;
@@ -159,12 +158,30 @@ export const renderProjectDetails = projectID => {
 };
 
 /***************************************************************
+                        Photography Page
+***************************************************************/
+export const renderPhotography = () => {
+    const photographyDetails = getPhotographyDetails();
+    /* Render image */
+    const fileNames = photographyDetails.fileNames;
+    for (let i = 0; i < fileNames.length; i++) {
+        const img = document.getElementById(
+            `photography-data-id__${fileNames[i].id}`
+        );
+        const imageSrc = getImageSrc(
+            `${photographyDetails.folderName}/${fileNames[i].name}`
+        );
+        img.src = imageSrc;
+    }
+};
+
+/***************************************************************
                         Favicon Component
 ***************************************************************/
 export const renderFavicon = () => {
     try {
         const fav = document.getElementById('favicon-link');
-        fav.href = getProjectImageSrc('favicon.ico');
+        fav.href = getImageSrc('favicon.ico');
     } catch (e) {
         alert('Failed to render favicon');
         console.log(e);
@@ -236,7 +253,7 @@ export const renderAboutData = () => {
             'img',
             'slideIn--bottom-up__large-box'
         );
-        aboutImg.src = getProjectImageSrc(data.photo.src);
+        aboutImg.src = getImageSrc(data.photo.src);
         container.appendChild(aboutImg);
     } catch (e) {
         alert('Failed to render about data');
@@ -323,18 +340,11 @@ export const renderLogoComponent = (logoTheme, isRoot = false) => {
 export const renderLogo = theme => {
     const logoData = getLogoDetails();
     const logo = document.getElementById('logo-image');
-    logo.src = getProjectImageSrc(logoData[theme]);
+    logo.src = getImageSrc(logoData[theme]);
 
     const logoWrapper = document.getElementById('main-logo');
-    if (theme === 'transparent') {
-        logoWrapper.style.transform = 'scale(0.7)';
-        // logoWrapper.style.height = '1em';
-        // logoWrapper.style.width = '1em';
-    } else {
-        logoWrapper.style.transform = 'scale(1)';
-        // logoWrapper.style.height = '2em';
-        // logoWrapper.style.width = '2em';
-    }
+    if (theme === 'transparent') logoWrapper.style.transform = 'scale(0.7)';
+    else logoWrapper.style.transform = 'scale(1)';
 };
 
 export const renderNavMenuContactDetails = () => {

@@ -6,7 +6,11 @@
 }
 
 .project-type {
-    margin-top: 15px;
+    margin-top: 10px;
+}
+
+.project-name {
+    text-align: left;
 }
 
 .project-detail-description {
@@ -63,10 +67,6 @@
 
 .project-detail .project-name {
     font-weight: 700;
-}
-
-#project-detail-container {
-    min-height: 100vh;
 }
 
 /* Mobile viewport */
@@ -172,5 +172,10 @@
 @media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
     .project-detail-img {
         margin-top: 4vw !important;
+    }
+
+    .contact-info {
+        padding: 0;
+        padding-top: 4.5vw !important;
     }
 }

@@ -1,13 +1,13 @@
 import '../css/animation.css';
 import '../css/main.css';
 import '../css/nav-menu.css';
-import '../css/about.css';
-import '../css/about-page.css';
 import '../css/index-shared.css';
+import '../css/contact.css';
 import '../css/footer.css';
+import '../css/photography.css';
+import { renderPhotography } from './common/render.js';
 import {
     renderFavicon,
-    renderAboutComponent,
     renderLogoComponent,
     renderFooterComponent,
     renderContactComponent,
@@ -17,8 +17,9 @@ import { bindGeneralAnimations } from './common/animation.js';
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('transparent');
-renderAboutComponent();
 renderContactComponent(true);
 renderFooterComponent();
+/* Render other components */
+renderPhotography();
 /* Enable Animations */
 bindGeneralAnimations();

@@ -32,7 +32,7 @@ function loadFrames(context) {
 }
 
 /* Export images from map with input path */
-export const projectsImageFramesMap = loadFrames(
+export const imageFramesMap = loadFrames(
     require.context('../../assets/images', true, /\.(png|jpg|ico|gif)$/)
 );
 

@@ -1,7 +1,7 @@
 import {
     personalDetails,
     projectsDetails,
-    projectsImageFramesMap,
+    imageFramesMap,
     aboutComponentHtmlContent,
     navMenuComponentHtmlContent,
     logoComponentHtmlContent,
@@ -68,6 +68,16 @@ export const getAboutDetails = () => {
     }
 };
 
+export const getPhotographyDetails = () => {
+    try {
+        const res = personalDetails.photography;
+        return res;
+    } catch (e) {
+        alert('Failed to load photography details');
+        console.log(e);
+    }
+};
+
 export const getFooterDetails = () => {
     try {
         const res = personalDetails.footer;
@@ -78,11 +88,11 @@ export const getFooterDetails = () => {
     }
 };
 
-export const getProjectImageSrc = path => {
+export const getImageSrc = path => {
     try {
-        return projectsImageFramesMap.get(path);
+        return imageFramesMap.get(path);
     } catch (e) {
-        alert('Failed to load project image src');
+        alert('Failed to load image src');
         console.log(e);
     }
 };

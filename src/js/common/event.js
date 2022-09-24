@@ -133,11 +133,6 @@ export const bindProjectsNavEvent = currentProjectId => {
     }
 };
 
-export const bindBack2HomeEvent = () => {
-    const backbtn = document.getElementById('back-homepage-Btn');
-    backbtn.href = '../';
-};
-
 export const bindNavMenuBtnEvents = isRoot => {
     document
         .getElementById('nav-menu__home-nav-btn')
@@ -157,5 +152,11 @@ export const bindNavMenuBtnEvents = isRoot => {
         .getElementById('nav-menu__about-nav-btn')
         .addEventListener('click', () => {
             window.location.href = isRoot ? '/about' : '../about';
+        });
+
+    document
+        .getElementById('nav-menu__photography-nav-btn')
+        .addEventListener('click', () => {
+            window.location.href = isRoot ? '/photography' : '../photography';
         });
 };
