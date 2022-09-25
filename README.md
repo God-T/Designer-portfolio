@@ -2,7 +2,7 @@
 
 ### Published on Github
 
-[:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html)
+[:dart: View Site](https://god-t.github.io/Projects-portfolio-template)
 
 ### About
 
