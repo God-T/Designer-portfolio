@@ -137,26 +137,26 @@ export const bindNavMenuBtnEvents = isRoot => {
     document
         .getElementById('nav-menu__home-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/' : '../';
+            window.location.href = isRoot ? '' : '../';
         });
 
     document
         .getElementById('nav-menu__projects-nav-btn')
         .addEventListener('click', () => {
             window.location.href = isRoot
-                ? '/projects-list'
+                ? 'projects-list'
                 : '../projects-list';
         });
 
     document
         .getElementById('nav-menu__about-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/about' : '../about';
+            window.location.href = isRoot ? 'about' : '../about';
         });
 
     document
         .getElementById('nav-menu__photography-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/photography' : '../photography';
+            window.location.href = isRoot ? 'photography' : '../photography';
         });
 };
