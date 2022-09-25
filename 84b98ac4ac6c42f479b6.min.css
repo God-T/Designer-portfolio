@@ -52,116 +52,6 @@
     }
 }
 
-.about-container {
-    display: flex;
-    flex-direction: column;
-}
-
-.about {
-    display: flex;
-    flex: 70%;
-}
-
-.about-content-wrapper {
-    flex: 1 1 70%;
-}
-
-.about-content-wrapper h1 {
-    margin: 0;
-    width: 80%;
-    font-size: 3vw;
-    font-weight: 700;
-    line-height: 3.7vw;
-}
-
-.about-content-wrapper h5 {
-    font-size: 1.6vw;
-    color: #a0a09f;
-    margin-top: 4.5vw;
-    margin-right: 5.5vw;
-    font-weight: normal;
-}
-
-.about-photo-wrapper {
-    flex: 1 1 30%;
-}
-
-.about-photo-wrapper img {
-    height: 25vw;
-    width: 100%;
-    object-fit: contain;
-    margin-left: 1vw;
-}
-
-/* Viewports Responsiveness  */
-@media (max-aspect-ratio: 160/100) {
-    .about-content-wrapper h5 {
-        font-size: 2vw;
-    }
-
-    .about-photo-wrapper img {
-        height: 30vw;
-    }
-
-    .about {
-        margin-bottom: 0;
-    }
-
-    .about-content-wrapper h1 {
-        font-size: 4vw;
-    }
-}
-
-@media screen and (max-aspect-ratio: 1/1), screen and (max-width: 770px) {
-    .about {
-        flex-direction: column;
-        margin: 5vw 8vw 3vw 8vw;
-    }
-
-    .about-content-wrapper {
-        flex: 0 0 0;
-    }
-
-    .about-content-wrapper h5 {
-        font-size: 3.5vw;
-        margin-right: 23vw;
-        margin-bottom: 0;
-    }
-
-    .about-content-wrapper h1 {
-        font-weight: 700;
-        font-size: 5.5vw;
-    }
-
-    .about-photo-wrapper {
-        display: flex;
-        justify-content: flex-end;
-        margin-bottom: 30px;
-    }
-
-    .about-photo-wrapper img {
-        height: 50vw;
-        width: fit-content;
-        margin-top: 5px !important;
-    }
-}
-
-@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
-    .about-photo-wrapper {
-        margin-bottom: 20px;
-    }
-
-    .about-photo-wrapper img {
-        height: 65vw;
-        width: auto;
-        margin-top: 5vw;
-    }
-
-    .about-content-wrapper h5 {
-        font-size: 4.5vw;
-    }
-}
-
 .main-title > div:first-child,
 .main-title > div:last-child {
     width: 100%;
@@ -395,6 +285,116 @@ a {
     .project-type {
         font-size: 1.5vw;
         text-align: center;
+    }
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.about {
+    display: flex;
+    flex: 70%;
+}
+
+.about-content-wrapper {
+    flex: 1 1 70%;
+}
+
+.about-content-wrapper h1 {
+    margin: 0;
+    width: 80%;
+    font-size: 3vw;
+    font-weight: 700;
+    line-height: 3.7vw;
+}
+
+.about-content-wrapper h5 {
+    font-size: 1.6vw;
+    color: #a0a09f;
+    margin-top: 4.5vw;
+    margin-right: 5.5vw;
+    font-weight: normal;
+}
+
+.about-photo-wrapper {
+    flex: 1 1 30%;
+}
+
+.about-photo-wrapper img {
+    height: 25vw;
+    width: 100%;
+    object-fit: contain;
+    margin-left: 1vw;
+}
+
+/* Viewports Responsiveness  */
+@media (max-aspect-ratio: 160/100) {
+    .about-content-wrapper h5 {
+        font-size: 2vw;
+    }
+
+    .about-photo-wrapper img {
+        height: 30vw;
+    }
+
+    .about {
+        margin-bottom: 0;
+    }
+
+    .about-content-wrapper h1 {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-aspect-ratio: 1/1), screen and (max-width: 770px) {
+    .about {
+        flex-direction: column;
+        margin: 5vw 8vw 3vw 8vw;
+    }
+
+    .about-content-wrapper {
+        flex: 0 0 0;
+    }
+
+    .about-content-wrapper h5 {
+        font-size: 3.5vw;
+        margin-right: 23vw;
+        margin-bottom: 0;
+    }
+
+    .about-content-wrapper h1 {
+        font-weight: 700;
+        font-size: 5.5vw;
+    }
+
+    .about-photo-wrapper {
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+    }
+
+    .about-photo-wrapper img {
+        height: 50vw;
+        width: fit-content;
+        margin-top: 5px !important;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .about-photo-wrapper {
+        margin-bottom: 20px;
+    }
+
+    .about-photo-wrapper img {
+        height: 65vw;
+        width: auto;
+        margin-top: 5vw;
+    }
+
+    .about-content-wrapper h5 {
+        font-size: 4.5vw;
     }
 }
 
