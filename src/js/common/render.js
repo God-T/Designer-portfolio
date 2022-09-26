@@ -195,7 +195,7 @@ export const renderFavicon = () => {
 /***************************************************************
                         Project List Component
 ***************************************************************/
-export const renderProjectsList = (isLite, except = {}) => {
+export const renderProjectsList = (isLite, isRoot, except = {}) => {
     try {
         const projectListElement = document.getElementById(
             'projects-list-container'
@@ -224,7 +224,9 @@ export const renderProjectsList = (isLite, except = {}) => {
             projectListElement.appendChild(project);
 
             project.addEventListener('click', () => {
-                window.location.href = `project?id=${projectList[i].id}&name=${projectList[i].name}`;
+                window.location.href = `${isRoot ? '.' : '..'}/project?id=${
+                    projectList[i].id
+                }&name=${projectList[i].name}`;
             });
         }
     } catch (e) {

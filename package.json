@@ -4,9 +4,13 @@
     "homepage": "https://god-t.github.io/Projects-portfolio-template",
     "description": "-   `IntersectionObserver`: to check if element in view",
     "main": "index.js",
+    "engines": {
+        "node": "16.13.0"
+    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "start": "webpack serve --config webpack.dev.config.js --hot",
+        "prod": "webpack serve --config webpack.prod.config.js --hot",
         "build": "npx webpack --config webpack.prod.config.js",
         "build:dev": "npx webpack  --config webpack.dev.config.js",
         "deploy": "npx webpack --config webpack.prod.config.js && gh-pages -d dist"

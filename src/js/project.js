@@ -28,7 +28,7 @@ const projectId = getCurrentProjectId();
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('transparent');
-renderProjectsList(true, { id: projectId });
+renderProjectsList(true, false, { id: projectId });
 renderContactComponent(true);
 renderFooterComponent();
 /* Render other components */

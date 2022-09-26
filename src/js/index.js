@@ -20,7 +20,7 @@ import { bindGeneralAnimations } from './common/animation.js';
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('dark', true);
-renderProjectsList(false);
+renderProjectsList(false, true);
 renderAboutComponent();
 renderContactComponent();
 renderFooterComponent();

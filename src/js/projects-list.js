@@ -21,7 +21,7 @@ import { scrollTrigger } from './common/trigger.js';
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('transparent');
-renderProjectsList(true);
+renderProjectsList(true, false);
 renderContactComponent(true);
 renderFooterComponent();
 /* Enable Projects List Animations */
