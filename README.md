@@ -36,7 +36,7 @@ A personal website that can be used to exhibit portfolio and projects. Implement
 
 -   `CSS` transition set `background: linear-gradient(to right, ...)` along with `background-size: 200% 100%;` and `background-position: right bottom;`
 -   Implementation:
-    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](./src/css/projects-list.css#L12)
+    -   Defines animation class `projects-list.css` <sub>_line 10-13_</sub> [<sup>:link:</sup>](/src/css/projects-list.css#L12)
 
 ### Trigger animations when elements scrolled into view
 
