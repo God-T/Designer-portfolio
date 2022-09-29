@@ -1,6 +1,6 @@
 {
     "name": "v2",
-    "version": "1.0.0",
+    "version": "3.0.0",
     "homepage": "https://god-t.github.io/Projects-portfolio-template",
     "description": "-   `IntersectionObserver`: to check if element in view",
     "main": "server.js",

@@ -1,9 +1,13 @@
-# Projects portfolio template
+# Projects Portfolio Template
+
+![](https://img.shields.io/github/package-json/v/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/license/God-T/Projects-portfolio-template)
+![](https://img.shields.io/github/commit-activity/m/God-T/Projects-portfolio-template?color=00cc00) ![](https://img.shields.io/github/issues-closed/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/issues-pr-closed/God-T/Projects-portfolio-template)
 
 ### Published
 
-[:dart: View Site (Github Page)](https://god-t.github.io/Projects-portfolio-template/index.html)
-[:rocket: View Site (Heroku)](https://portfolio-qsy.herokuapp.com/)
+[![](https://img.shields.io/badge/GitHub_Page-000?style=flat&logo=GitHub)](https://god-t.github.io/Projects-portfolio-template/) [![](https://img.shields.io/badge/Heroku-8767ac?style=flat&logo=Heroku)](https://portfolio-qsy.herokuapp.com/)
+
+> **Note** Click to visit sites
 
 ### About
 
@@ -15,12 +19,11 @@ A personal website that can be used to exhibit portfolio and projects. The site 
 
 ### Dev environment
 
-`Node JS`
-`Express JS`
-`Vanilla js | HTML | CSS`
-`Webpack`
-`Chrome dev tool`
-~~`http-server`~~ <sub>(_v2.0.0_)<sub>
+![](https://img.shields.io/badge/Node_JS-003300?style=flat&logo=Node.js)
+![](https://img.shields.io/badge/Express_JS-ff0000?logoColor=fff&style=flat&logo=Node.js)
+![](https://img.shields.io/badge/Vanilla_JavaScript-cccccc?style=flat&logo=JavaScript) ![](https://img.shields.io/badge/HTML-ffcc99?style=flat&logo=HTML5) ![](https://img.shields.io/badge/CSS-99ccff?logoColor=1572B6&style=flat&logo=CSS3)
+![](https://img.shields.io/badge/Webpack-33ccff?style=flat&logo=Webpack)
+![](https://img.shields.io/badge/Chrome_Dev_Tool-808080?logoColor=fff&style=flat&logo=GoogleChrome)
 
 ### Catlog
 
@@ -66,7 +69,7 @@ A personal website that can be used to exhibit portfolio and projects. The site 
 -   Implementation:
     -   Defines event handler `event.js`<sub>_line 5-9_</sub> [<sup>:link:</sup>](/src/js/common/event.js#L5)
 
-### ~~~Get relative path for each `.html`~~~
+### ~~Get relative path for each `.html`~~
 
 -   Define relative path of `.html` as an attribute in `<body>` e.g. `data-root="./../somePath"`, and get value in `.js` by `getAttribute`
 -   Implementation (One example):
@@ -219,9 +222,11 @@ Organise the code based on pages and functionaliteis, extract scripts and styles
 
 ## Design
 
-Designed by **Monica Qian[<sup>:link:</sup>](https://github.com/God-T/Projects-portfolio-template/tree/main/src/assets/fonts)** (Graphic designer)
+### Designed by
 
-[Full design doc](./design.pdf)
+[![](<https://img.shields.io/badge/Instagram-Monica_Qian_(Graphic_Designer)-ffccff?style=flat&logo=Instagram>)](https://www.instagram.com/myu_q5/)
+
+### [Full design doc](./design.pdf)
 
 ### Font family
 
