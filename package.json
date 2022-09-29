@@ -9,11 +9,11 @@
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start-webpack": "webpack serve --config webpack.dev.config.js --hot",
-        "start": "node src/server.js",
-        "prod": "webpack serve --config webpack.prod.config.js --hot",
+        "start-webpack-dev": "webpack serve --config webpack.dev.config.js --hot",
+        "start-webpack-prod": "webpack serve --config webpack.prod.config.js --hot",
+        "start": "npx webpack --config webpack.prod.config.js && node src/server.js",
         "build": "npx webpack --config webpack.prod.config.js",
-        "build:dev": "npx webpack  --config webpack.dev.config.js",
+        "build-dev": "npx webpack  --config webpack.dev.config.js",
         "deploy": "npx webpack --config webpack.prod.config.js && gh-pages -d dist"
     },
     "repository": {
