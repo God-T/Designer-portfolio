@@ -2,7 +2,7 @@
 
 ### Published on Github
 
-> **Note**
+> **Tip**
 > This is a note
 
 [:dart: View Site](https://god-t.github.io/Projects-portfolio-template)
