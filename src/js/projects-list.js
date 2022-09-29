@@ -1,8 +1,8 @@
 import '../css/animation.css';
 import '../css/main.css';
 import '../css/nav-menu.css';
-import '../css/contact.css';
 import '../css/projects-list.css';
+import '../css/contact.css';
 import '../css/index-shared.css';
 import '../css/footer.css';
 import {
@@ -21,7 +21,7 @@ import { scrollTrigger } from './common/trigger.js';
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('transparent');
-renderProjectsList(true);
+renderProjectsList(true, false);
 renderContactComponent(true);
 renderFooterComponent();
 /* Enable Projects List Animations */

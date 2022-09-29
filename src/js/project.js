@@ -1,8 +1,8 @@
 import '../css/animation.css';
 import '../css/main.css';
 import '../css/projects-list.css';
-import '../css/contact.css';
 import '../css/nav-menu.css';
+import '../css/contact.css';
 import '../css/index-shared.css';
 import '../css/footer.css';
 import '../css/project.css';
@@ -28,7 +28,7 @@ const projectId = getCurrentProjectId();
 /* Render shared components */
 renderFavicon();
 renderLogoComponent('transparent');
-renderProjectsList(true, { id: projectId });
+renderProjectsList(true, false, { id: projectId });
 renderContactComponent(true);
 renderFooterComponent();
 /* Render other components */

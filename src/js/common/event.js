@@ -117,15 +117,14 @@ export const bindProjectsNavEvent = currentProjectId => {
 
         const nextBtn = document.getElementById('next-project-Btn');
         if (foundNext)
-            nextBtn.href = `?id=${foundNext.id}&name=${foundNext.name}`;
+            nextBtn.href = `/project?id=${foundNext.id}&name=${foundNext.name}`;
         else {
             nextBtn.style.visibility = 'hidden';
-            renderBackToHomePageBtn();
         }
 
         const prevBtn = document.getElementById('prev-project-Btn');
         if (foundPrev)
-            prevBtn.href = `?id=${foundPrev.id}&name=${foundPrev.name}`;
+            prevBtn.href = `/project?id=${foundPrev.id}&name=${foundPrev.name}`;
         else prevBtn.style.visibility = 'hidden';
     } catch (e) {
         alert('Failed to bind event to project list navgiations');
@@ -137,26 +136,24 @@ export const bindNavMenuBtnEvents = isRoot => {
     document
         .getElementById('nav-menu__home-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/' : '../';
+            window.location.href = '/';
         });
 
     document
         .getElementById('nav-menu__projects-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot
-                ? '/projects-list'
-                : '../projects-list';
+            window.location.href = '/projects-list';
         });
 
     document
         .getElementById('nav-menu__about-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/about' : '../about';
+            window.location.href = '/about';
         });
 
     document
         .getElementById('nav-menu__photography-nav-btn')
         .addEventListener('click', () => {
-            window.location.href = isRoot ? '/photography' : '../photography';
+            window.location.href = '/photography';
         });
 };

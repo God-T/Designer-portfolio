@@ -53,7 +53,8 @@ module.exports = {
     entry: entries,
     output: {
         filename: '[contenthash].bundle.js',
-        path: path.resolve(__dirname, './dist'),
+        path: path.resolve(__dirname, '/dist'),
+        publicPath: '/static/',
         clean: true,
     },
     mode: 'production',
