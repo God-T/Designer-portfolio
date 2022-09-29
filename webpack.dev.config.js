@@ -62,6 +62,7 @@ module.exports = {
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, './dist'),
+        publicPath: '/static/',
         /* Clean existing build files before build; needs Webpack version > 5.20 */
         clean: true,
         // clean: {

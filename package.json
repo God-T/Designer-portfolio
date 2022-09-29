@@ -3,13 +3,14 @@
     "version": "1.0.0",
     "homepage": "https://god-t.github.io/Projects-portfolio-template",
     "description": "-   `IntersectionObserver`: to check if element in view",
-    "main": "index.js",
+    "main": "server.js",
     "engines": {
         "node": "16.13.0"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "webpack serve --config webpack.dev.config.js --hot",
+        "start-webpack": "webpack serve --config webpack.dev.config.js --hot",
+        "start": "node src/server.js",
         "prod": "webpack serve --config webpack.prod.config.js --hot",
         "build": "npx webpack --config webpack.prod.config.js",
         "build:dev": "npx webpack  --config webpack.dev.config.js",
@@ -40,5 +41,8 @@
         "webpack": "^5.74.0",
         "webpack-cli": "^4.10.0",
         "webpack-dev-server": "^4.11.0"
+    },
+    "dependencies": {
+        "express": "^4.18.1"
     }
 }

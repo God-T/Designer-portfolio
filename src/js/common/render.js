@@ -224,9 +224,7 @@ export const renderProjectsList = (isLite, isRoot, except = {}) => {
             projectListElement.appendChild(project);
 
             project.addEventListener('click', () => {
-                window.location.href = `${isRoot ? '.' : '..'}/project?id=${
-                    projectList[i].id
-                }&name=${projectList[i].name}`;
+                window.location.href = `/project?id=${projectList[i].id}&name=${projectList[i].name}`;
             });
         }
     } catch (e) {
