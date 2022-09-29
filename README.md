@@ -2,6 +2,9 @@
 
 ### Published on Github
 
+> **Note**
+> This is a note
+
 [:dart: View Site](https://god-t.github.io/Projects-portfolio-template)
 
 ### About
