@@ -7,7 +7,7 @@
 
 ### [:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html) <sub>[![](https://img.shields.io/badge/GitHub_Page-000?style=flat&logo=GitHub)](https://god-t.github.io/Projects-portfolio-template/)</sub>
 
-### [:rocket: View Site](https://portfolio-qsy.herokuapp.com/) [![](https://img.shields.io/badge/Heroku-8767ac?style=flat&logo=Heroku)](https://portfolio-qsy.herokuapp.com/)
+### [:rocket: View Site](https://portfolio-qsy.herokuapp.com/) <sub>[![](https://img.shields.io/badge/Heroku-8767ac?style=flat&logo=Heroku)](https://portfolio-qsy.herokuapp.com/)</sub>
 
 ### About
 
