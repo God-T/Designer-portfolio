@@ -112,7 +112,7 @@ src /
 
 ### Code structure
 
-Organise the code based on pages and functionaliteis, extract scripts and styles into shared files. Routing between serval templates by `Express JS`
+Organise the code based on pages and functionaliteis, extract scripts and styles into shared files. Routing between several templates by `Express JS`
 
 -   `src/server.js` host http server with contents.
 
