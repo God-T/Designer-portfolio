@@ -1,7 +1,7 @@
 # Projects Portfolio Template
 
 ![](https://img.shields.io/github/package-json/v/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/license/God-T/Projects-portfolio-template)
-![](https://img.shields.io/github/commit-activity/m/God-T/Projects-portfolio-template?color=00cc00) ![](https://img.shields.io/github/issues-closed/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/issues-pr-closed/God-T/Projects-portfolio-template)
+![](https://img.shields.io/github/commit-activity/y/God-T/Projects-portfolio-template?color=00cc00) ![](https://img.shields.io/github/issues-closed/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/issues-pr-closed/God-T/Projects-portfolio-template)
 <br>
 <br>
 
