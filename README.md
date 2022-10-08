@@ -11,7 +11,16 @@
 
 ### About
 
-A personal website that can be used to exhibit portfolio and projects. The site is pure front-end based, dynamically load from JSON with given [Json format](#json-format).
+A personal website that can be used to exhibit portfolio and projects.
+• The site is pure front-end based, dynamically load data from JSON file with given [Json format](#json-format), built with vanilla JavaScript,
+HTML, CSS under the Node JS.
+• Host HTTP server and route across several pages and serve assets through Express JS .
+• Organise the code based on pages and functionalities, extract scripts, templates, and styles into
+shared files in order to increase the code reusability.
+• Decorate site with various animations effects using CSS transition, @keyframes, control the
+animations triggers by scrolling into view using Intersection Observer API.
+• Config Webpack to convert JS code into backwards-compatible with Babel for old browsers, and
+extract CSS, HTML, assets with HtmlWebpackPlugin, MiniCssExtractPlugin and Assets Modules
 
 ### Reponsiveness enabled
 
