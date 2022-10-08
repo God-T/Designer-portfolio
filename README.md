@@ -11,7 +11,7 @@
 
 ### About
 
-A personal website that can be used to exhibit portfolio and projects. The site is template-driven that accepts images, Json data with given [Json format](#json-format).
+A personal website that can be used to exhibit portfolio and projects. The site is pure front-end based, dynamically load from JSON with given [Json format](#json-format).
 
 ### Reponsiveness enabled
 
