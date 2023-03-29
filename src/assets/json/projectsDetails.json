@@ -21,7 +21,15 @@
             },
             "video": {
                 "folderName": "P1-2022",
-                "fileNames": ["happymea.mp4"]
+                "files": [
+                    {
+                        "name": "happymea.mp4",
+                        "playOption": {
+                            "autoplay": true,
+                            "loop": true
+                        }
+                    }
+                ]
             }
         },
         {
