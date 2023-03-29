@@ -12,6 +12,7 @@ import {
     getLogoComponentHtmlContent,
     getFooterComponentHtmlContent,
     getContactComponentHtmlContent,
+    getVideoSrc,
 } from './fetch.js';
 import {
     createParagraphsWithNewLinekey,
@@ -129,6 +130,30 @@ export const renderProjectDetails = projectID => {
             projectImg.src = imageSrc;
 
             projectDetailElement.appendChild(projectImg);
+        }
+
+        /* Render video */
+        const videoData = projectDetails.video;
+        if (videoData !== undefined) {
+            const videoFileNames = videoData.files.map(file => file.name);
+            for (let i = 0; i < videoFileNames.length; i++) {
+                const videoSrc = getVideoSrc(
+                    `${videoData.folderName}/${videoFileNames[i]}`
+                );
+                const sourceElem = createNewElement('source');
+                const videoElem = createNewElement('video', [
+                    'project-detail-img',
+                ]);
+                sourceElem.src = videoSrc;
+                for (const [key, value] of Object.entries(
+                    videoData.files[i].playOption
+                )) {
+                    videoElem.setAttribute(key, value);
+                }
+                videoElem.appendChild(sourceElem);
+
+                projectDetailElement.appendChild(videoElem);
+            }
         }
 
         /**
