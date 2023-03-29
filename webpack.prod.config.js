@@ -73,6 +73,13 @@ module.exports = {
                     filename: 'assets/images/[contenthash][ext]',
                 },
             },
+            {
+                test: /\.(mp4)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/videos/[contenthash][ext]',
+                },
+            },
 
             {
                 test: /\.json$/,
