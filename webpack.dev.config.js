@@ -84,7 +84,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.(png|jpg|ico|gif)$/,
+                test: /\.(png|jpg|ico|gif|mp4)$/,
                 type: 'asset/resource',
                 /* Specify output path for 'asset/resource' */
                 generator: {
@@ -118,6 +118,14 @@ module.exports = {
             //     test: /\.txt/,
             //     type: 'asset/source',
             // },
+
+            {
+                test: /\.(mp4)$/,
+                type: 'asset/resource',
+                generator: {
+                    filename: 'assets/videos/[name][ext]',
+                },
+            },
             {
                 test: /\.json$/,
                 type: 'asset/source',
