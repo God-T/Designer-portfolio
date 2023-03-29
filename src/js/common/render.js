@@ -118,20 +118,6 @@ export const renderProjectDetails = projectID => {
         });
         projectDetailElement.appendChild(descriptionEle);
 
-        /* Render image */
-        const imageData = projectDetails.image;
-        const fileNames = imageData.fileNames;
-        for (let i = 0; i < fileNames.length; i++) {
-            const projectImg = createNewElement('img', ['project-detail-img']);
-
-            const imageSrc = getImageSrc(
-                `${imageData.folderName}/${fileNames[i]}`
-            );
-            projectImg.src = imageSrc;
-
-            projectDetailElement.appendChild(projectImg);
-        }
-
         /* Render video */
         const videoData = projectDetails.video;
         if (videoData !== undefined) {
@@ -154,6 +140,20 @@ export const renderProjectDetails = projectID => {
 
                 projectDetailElement.appendChild(videoElem);
             }
+        }
+
+        /* Render image */
+        const imageData = projectDetails.image;
+        const fileNames = imageData.fileNames;
+        for (let i = 0; i < fileNames.length; i++) {
+            const projectImg = createNewElement('img', ['project-detail-img']);
+
+            const imageSrc = getImageSrc(
+                `${imageData.folderName}/${fileNames[i]}`
+            );
+            projectImg.src = imageSrc;
+
+            projectDetailElement.appendChild(projectImg);
         }
 
         /**
