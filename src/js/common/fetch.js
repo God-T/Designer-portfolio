@@ -7,6 +7,7 @@ import {
     logoComponentHtmlContent,
     footerComponentHtmlContent,
     contactComponentHtmlContent,
+    videoFramesMap,
 } from './load.js';
 
 export const getProjectList = except => {
@@ -93,6 +94,15 @@ export const getImageSrc = path => {
         return imageFramesMap.get(path);
     } catch (e) {
         alert('Failed to load image src');
+        console.log(e);
+    }
+};
+
+export const getVideoSrc = path => {
+    try {
+        return videoFramesMap.get(path);
+    } catch (e) {
+        alert('Failed to load video src');
         console.log(e);
     }
 };

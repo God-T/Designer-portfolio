@@ -36,6 +36,10 @@ export const imageFramesMap = loadFrames(
     require.context('../../assets/images', true, /\.(png|jpg|ico|gif)$/)
 );
 
+export const videoFramesMap = loadFrames(
+    require.context('../../assets/videos', true, /\.(mp4)$/)
+);
+
 // require.context(
 //     directory: String,
 //     includeSubdirs: Boolean /* default: true */,
