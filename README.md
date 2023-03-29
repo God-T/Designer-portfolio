@@ -4,7 +4,7 @@
 ![](https://img.shields.io/github/commit-activity/m/God-T/Projects-portfolio-template?color=00cc00) ![](https://img.shields.io/github/issues-closed/God-T/Projects-portfolio-template) ![](https://img.shields.io/github/issues-pr-closed/God-T/Projects-portfolio-template)
 <br>
 
-### :dart: [View Site](https://god-t.github.io/Projects-portfolio-template/index.html) <sub>[![](https://img.shields.io/badge/GitHub_Page-000?style=flat&logo=GitHub)](https://god-t.github.io/Projects-portfolio-template/)</sub>
+### [:dart: View Site](https://god-t.github.io/Projects-portfolio-template/index.html) <sub>[![](https://img.shields.io/badge/GitHub_Page-000?style=flat&logo=GitHub)](https://god-t.github.io/Projects-portfolio-template/)</sub>
 
 ### [:rocket: View Site](https://portfolio-qsy.herokuapp.com/) [![](https://img.shields.io/badge/Heroku-8767ac?style=flat&logo=Heroku)](https://portfolio-qsy.herokuapp.com/)
 
