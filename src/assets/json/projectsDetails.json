@@ -18,6 +18,10 @@
                     "I_stickers.jpg"
                 ],
                 "autoImporting": true
+            },
+            "video": {
+                "folderName": "P1-2022",
+                "fileNames": ["happymea.mp4"]
             }
         },
         {
