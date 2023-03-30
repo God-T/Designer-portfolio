@@ -1,0 +1,156 @@
+.padding-wrapper {
+    padding: 6.5vw 17vw;
+}
+
+.padding-wrapper {
+    padding-bottom: 0 !important;
+}
+
+.footer {
+    padding-inline: 0;
+}
+
+.contact-info {
+    border-top: none !important;
+}
+
+@media screen and (max-width: 770px) {
+    .padding-wrapper {
+        padding: 60px 12vw;
+    }
+
+    .footer {
+        margin-top: 30px;
+        height: 20px;
+        text-align: center;
+    }
+}
+
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 450px) {
+    .footer {
+        font-size: 10px;
+    }
+
+    #main-logo {
+        top: 6vw;
+        right: 3.5vw;
+        height: 1.5em;
+        width: 1.5em;
+    }
+}
+
+.padding-wrapper {
+    padding: 6.5vw 5vw;
+}
+
+.photography-image-container {
+    height: 250vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+        'p1 p1 p1 p1 . . . . . . . .'
+        'p1 p1 p1 p1 . . . . . . . .'
+        'p1 p1 p1 p1 . . p2 p2 p2 p2 p2 .'
+        'p1 p1 p1 p1 . . p2 p2 p2 p2 p2 .'
+        'p1 p1 p1 p1 . . p2 p2 p2 p2 p2 .'
+        '. . . . . . p2 p2 p2 p2 p2 .'
+        '. p3 p3 p3 p3 p3 . . . . . .'
+        '. p3 p3 p3 p3 p3 . . p4 p4 p4 p4'
+        '. p3 p3 p3 p3 p3 . . p4 p4 p4 p4'
+        '. p3 p3 p3 p3 p3 . . p4 p4 p4 p4'
+        '. p3 p3 p3 p3 p3 . . p4 p4 p4 p4'
+        '. . . . . . . . p4 p4 p4 p4'
+        'p5 p5 p5 p5 . . . . . . . .'
+        'p5 p5 p5 p5 . . p6 p6 p6 p6 . .'
+        'p5 p5 p5 p5 . . p6 p6 p6 p6 . .'
+        'p5 p5 p5 p5 . . p6 p6 p6 p6 . .'
+        'p5 p5 p5 p5 . . p6 p6 p6 p6 . .'
+        '. . . . . . p6 p6 p6 p6 . .'
+        '. . . . . . . . . . . .'
+        'p7 p7 p7 p7 p7 . . . . . . .'
+        'p7 p7 p7 p7 p7 . . p8 p8 p8 p8 .'
+        'p7 p7 p7 p7 p7 . . p8 p8 p8 p8 .'
+        'p7 p7 p7 p7 p7 . . p8 p8 p8 p8 .'
+        '. . . . . . . p8 p8 p8 p8 .'
+        '. . . . . . . p8 p8 p8 p8 .'
+        '. . p9 p9 p9 p9 . . . . . .'
+        '. . p9 p9 p9 p9 . . . . . .'
+        '. . p9 p9 p9 p9 . . . . . .'
+        '. . p9 p9 p9 p9 . . . . . .'
+        '. . . . . . . . . . . .';
+}
+
+@media screen and (max-width: 770px) {
+    .padding-wrapper {
+        padding: 60px 12vw;
+    }
+}
+@media screen and (max-aspect-ratio: 0.45), screen and (max-width: 770px) {
+    .photography-image-container {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        gap: 20px;
+    }
+
+    .contact-info {
+        padding: 40px 0;
+    }
+}
+
+.p1 {
+    width: 100%;
+    grid-area: p1;
+    background-color: aqua;
+}
+
+.p2 {
+    width: 100%;
+    grid-area: p2;
+    background-color: rgb(0, 255, 0);
+}
+
+.p4 {
+    width: 100%;
+    grid-area: p4;
+    background-color: rgb(38, 0, 255);
+}
+
+.p3 {
+    width: 100%;
+    grid-area: p3;
+    background-color: rgb(184, 163, 7);
+}
+
+.p5 {
+    width: 100%;
+    grid-area: p5;
+    background-color: rgb(255, 0, 17);
+}
+
+.p6 {
+    width: 100%;
+    grid-area: p6;
+    background-color: rgb(183, 0, 255);
+}
+
+.p7 {
+    width: 100%;
+    grid-area: p7;
+    background-color: rgb(255, 123, 0);
+}
+
+.p8 {
+    width: 100%;
+    grid-area: p8;
+    background-color: rgb(4, 19, 19);
+}
+
+.p9 {
+    width: 100%;
+    grid-area: p9;
+    background-color: rgb(41, 43, 43);
+}
+
